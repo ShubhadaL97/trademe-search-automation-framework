@@ -1,0 +1,570 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-F-18] Search results should show correct count
+- Location: tests\search.spec.ts:188:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary [ref=e7]:
+    - iframe [ref=e14]:
+      - iframe [ref=f12e2]:
+        - generic [active] [ref=f16e1]:
+          - generic [ref=f16e2]:
+            - link "THE HIDDEN TRAIT BEHIND YOUR PERSONALITY TYPE THE HIDDEN TRAIT BEHIND YOUR PERSONALITY TYPE Personalityos OPEN" [ref=f16e3] [cursor=pointer]:
+              - /url: "https://trace-jp.mediago.io/ju/ic?tn=b9f6c6810e2148000cc17f9e98410921&trackingid=7f1057f6c9e32a62688ad9a85ccbcd68&acid=36751&data=GlKcrp72JQFV0Zp7J7F4IizHknC7-Qsd7vOqwNLlfhCPBTE_GmCxp3qDjO2TmtdRYefah-0m34KqrK9lwX0MLLGn5h1HPTYA1ufXZLuJpwHKKOuyb-TmVy-T4Gk7wEfkejfBjpDbE9I_6TbGdrG7iltWA6DL8AV8iv4Mil4rwZE1wFBJNuPAzHMq6pn6Y5BJUoGhphBSrk7qn3V59fRyLcZKoBC6T5apoOJZDfXazrBKjT3heXLA45PnQYxqkxAItZrcfTScv0uA2oADeiXyffDaetnYVrMw_h1YvtRj7yULvBA29J41hIxuoFGWvjmBt9G9PiPNmVMPiEzRgR2J85UYk2LPnaHsrnOP8BwHtvy3mT-5J2tP1E7gEPgQ1GTiyDmjH0tmt3_x2R8IwUu11URtWDPYRlelEfaFOTSd52OR76gZYubm4FROgZMoVNCNtQxU4KaaWBIBsIUhjMULKj3UWuOOlFSYwe4AMk764wQcizU6yMNdOz2ZCpm9GGT4EG9Qtl70gvkJpUuCEDC873BAiIVTX-BpAQ_SIaigTHSob-xBQM0AHspwkOSmcLO5ODkdaXMqDK5kF94AinKxZfVolH7IVMxqLIw674bY8y05iLEQ4yugwhRtjfYkm2B0RzU3yL8CRKVR70XEmzplI1IjU9V8rl0TRpXq2J5kheczgjdiOvg1i35NOSOaSWh7iBZxO_qhfZnXxp6h1v2agaPR1aGhJQYlCKJJhDezbL4MQzzChQnfc2jIJqGIN7Kq3S65fa30rm0Py8UwmuFPVcw9hxcvmhQTiiOT_Hm2JY6nyn3sHtwKUWeLm-8jd_OvjT6x9VIkRAn2aW1ea1ZCG2ievbadZZfZYxyMeoNDr-5q8RQZIoMbRorVzm_TUDbuAS6E95P9g1DorwslQEece7tdqOrK-jJsLm1AERvxpfrIAEtdSiP7cyevFB0L7rEm8j9kkLb1W7-XSG1W8sQ5amXGCKSxh242OcTaqYNvyW1T_smpzodyZhDFsofOPL-LAWbKYWUyZYcWaxAuMllnSNqQn9r-gLLzk40SvnZTAQBkb5BPIS24J_CVRVAvLs7MthN4T0RBNva_kmFd6B2hhJF90BJmLyc3iBepsB_xSj3y_8a9ZyicnVIHMNBPQ4ybF29bMv9SOUCKU3WJS9ExSQvUhutg2aAXdMm9QLiAfFmnu3de1u8DHO3FSO19YMyn3j2hmAPUwy3d0gLSL-jjfcs_ID5vh-Ip6S0giYjx5bAP4lDs8xkZm7sFPOE5STjREx4QaDyT8IiZn4YMITlbkAcpssYAUEH6pcZSz5qnRnWW6vguyKrlRpOgAn_oXZm6u7us1k3-UDvfBgdBv2ulyDkmQ2_DOLebvdzylqClxdE3jcLSc5VZiuBxA1rAExlrb5XGQVUT7WpLgmdDcalwDCnzUVytXfi_ATQQoFV_p6LueXwuN87DNhazM19xeGZomrr-SbxQW8bCRmOLyY-dqOWw4xNTqvjKTZHX3ctXlyduiZVJ7cUohnE9u9j8rYUIWsaVZnss1v4vj1pHKpTFv4OP4FhZBoqtyjcR58PPGFPLUSpUcjCGsXzLypeqXv06uHD7oXzKBBGOW1BgAccbN_hm5cXLLuFnCcX7N7zzjJFGvkUC0pV9DkRKZ7QCWgeyyDr-RCjX8SF2xIGXooZYSEKo2vN4L7CUPulz_sWp4sgeZ38ZXtC6iYFMzumOyXKQUhXffq6ds3SFdqJ4eVx8ex_X0BD9hwNixzXMq_8oOQD0PAgv3mKP4ehHg6XxmoslUvbge3Yl9Okk_KOHXjaXmSlzk4bnA4izyYyImflSsCmvIwLvEwPtX2zse0biDGe607CjAYOZj4fEBfnbB5khHm2lI7tEB-O43CUjP-mCcFuPIke66fCbGaOERvdvfq3N_8m-V5mIfl9AJnlqCbF7VJjBKDcrgJNec0_tiutWdswnnQ-Owjdz6TP6n_ASndRFEr7p0hX0qkAVTv6XACnnAl_6EP1Lsx3tdl86twvsFeU&uid=2720781227117899299&mguid=&ap={AUCTION_PRICE}&tid=106&gprice=9-jBCcJnAVD_L5O5KZcu_T2XyWeHF8rVjy964r_1ZdI&campaignid=5130720&c_sync=1"
+              - img "THE HIDDEN TRAIT BEHIND YOUR PERSONALITY TYPE" [ref=f16e4]
+              - generic [ref=f16e5]:
+                - generic [ref=f16e6]:
+                  - generic [ref=f16e7]: THE HIDDEN TRAIT BEHIND YOUR PERSONALITY TYPE
+                  - generic [ref=f16e8]: Personalityos
+                - generic [ref=f16e10]: OPEN
+            - link "ad" [ref=f16e11] [cursor=pointer]:
+              - /url: //cdn.mediago.io/js/officialWebsite/privacy.html
+              - img [ref=f16e12]
+          - iframe [ref=f16e14]:
+            
+          - img
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e15]:
+    - generic [ref=e16]:
+      - navigation "navigation bar" [ref=e17]:
+        - generic [ref=e21]:
+          - link "Trade Me" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e27]
+          - search [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Search all of Trade Me
+              - generic [ref=e34]:
+                - img [ref=e37]
+                - searchbox "Search all of Trade Me" [ref=e40]
+          - list [ref=e41]:
+            - listitem [ref=e42]:
+              - button "Categories" [ref=e47] [cursor=pointer]:
+                - generic [ref=e48]: Categories
+                - img [ref=e50]
+            - listitem
+            - listitem [ref=e53]:
+              - link "Watchlist" [ref=e54] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e55]: Watchlist
+                - img [ref=e57]
+            - listitem [ref=e59]:
+              - link "Favourites" [ref=e60] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e61]: Favourites
+                - img [ref=e63]
+            - listitem [ref=e65]:
+              - link "Start a listing" [ref=e66] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e67]: Start a listing
+                - img [ref=e69]
+            - listitem [ref=e71]:
+              - generic [ref=e72]:
+                - link "Sign up" [ref=e73] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e75]
+                - link "Log in" [ref=e77] [cursor=pointer]:
+                  - /url: search(modal:login)?search_string=furniture
+                  - text: Log in
+                  - img [ref=e79]
+      - navigation [ref=e82]
+  - main [ref=e85]:
+    - generic [ref=e86]: main content
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - generic [ref=e92]:
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - link "Home" [ref=e96] [cursor=pointer]:
+                - /url: /a/
+              - text: /
+            - listitem [ref=e97]: All Categories
+          - heading "All Categories" [level=1] [ref=e99]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e105]:
+                - generic [ref=e106]: Add Search keywords (optional)
+                - generic [ref=e107]:
+                  - img [ref=e110]
+                  - searchbox "Add Search keywords (optional) Clear input" [ref=e113]: furniture
+                  - button "Clear input" [ref=e115] [cursor=pointer]:
+                    - img "Clear input" [ref=e117]
+              - button "Save this search Save this search" [ref=e120] [cursor=pointer]:
+                - img "Save this search" [ref=e122]
+                - generic [ref=e124]: Save this search
+            - generic [ref=e126]:
+              - generic "Refine" [ref=e127]:
+                - button "Refine" [ref=e130] [cursor=pointer]:
+                  - img [ref=e132]
+                  - text: Refine
+                  - img [ref=e136]
+              - button "Category" [ref=e141] [cursor=pointer]:
+                - text: Category
+                - img [ref=e144]
+              - button "All Locations" [ref=e149] [cursor=pointer]:
+                - text: All Locations
+                - img [ref=e152]
+              - button "New & Used" [ref=e157] [cursor=pointer]:
+                - text: New & Used
+                - img [ref=e160]
+              - 'button "Shipping: All" [ref=e165] [cursor=pointer]':
+                - text: "Shipping: All"
+                - img [ref=e168]
+        - list [ref=e173]:
+          - listitem [ref=e174]:
+            - link "Trade Me Property (3)" [ref=e175] [cursor=pointer]:
+              - /url: /a/property/search?search_string=furniture
+        - generic [ref=e177]:
+          - heading "Showing 3 results for 'furniture'" [level=3] [ref=e179]
+          - generic [ref=e180]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: Sort order
+              - generic [ref=e186]:
+                - combobox "Sort order" [ref=e187] [cursor=pointer]:
+                  - 'option "Sort: Best match" [selected]'
+                  - option "Featured first"
+                  - option "Lowest price"
+                  - option "Highest price"
+                  - option "Lowest Buy Now"
+                  - option "Highest Buy Now"
+                  - option "Most bids"
+                  - option "Latest listings"
+                  - option "Closing soon"
+                  - option "Title"
+                  - option "Largest discount"
+                - generic:
+                  - generic:
+                    - img
+            - radiogroup "Card display mode (optional)" [ref=e190]:
+              - generic [ref=e191]: Card display mode (optional)
+              - generic [ref=e192]:
+                - generic [ref=e193]:
+                  - radio "Switch to list view List" [ref=e194]
+                  - generic [ref=e195] [cursor=pointer]:
+                    - img "Switch to list view" [ref=e197]
+                    - generic [ref=e199]: List
+                - generic [ref=e200]:
+                  - radio "Switch to card view Gallery" [checked] [ref=e201]
+                  - generic [ref=e202]:
+                    - img "Switch to card view" [ref=e204]
+                    - generic [ref=e206]: Gallery
+      - heading "Search Results" [level=2] [ref=e207]
+      - generic [ref=e215]:
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e220]:
+              - text: Advertisement
+              - iframe [ref=e224]:
+                - iframe [ref=f13e2]:
+                  - generic [active] [ref=f17e1]:
+                    - generic [ref=f17e2]:
+                      - link "ad" [ref=f17e3] [cursor=pointer]:
+                        - /url: //cdn.mediago.io/js/officialWebsite/privacy.html
+                        - img [ref=f17e4]
+                      - link [ref=f17e6] [cursor=pointer]:
+                        - /url: "https://trace-jp.mediago.io/ju/ic?tn=b9f6c6810e2148000cc17f9e98410921&trackingid=cc6245087d1246202a8a2c341a550881&acid=35157&data=lKpnFWp_HI6DHOO1qRegBNAkKqJ7weMNSfPUgRhAkk3GgMOEJLdExB4Meu0lFJF-XZGvvEBvRKHxUyPbWObD-2FSQS4_zSBK-5p0f-TqkDoOOIStnosNaXeM8PT2BrXtEG4CR3kYOWyNWVZsfO390Tre2Qcl3rtuz1jffmcgAErPvisX9_T4vKRu_rtD6kmOnPu9GTsEOpS-OdMPEC9mkpHM9rweykCJ9kxwsWRAidJY2wBVwUPUymM59jyUMT7Mci24-c5tHqcGDXC9RrlxB4ob82oNsl1O_wgc-_gm4EIO99aufkINuf4v0CVHzgPFpqnugC6Ei3OCT7q9ArFpzleYz-ImA7_-P0UOAlQJswVvjHmaAVdOumBtd0Zr9Pn6eBHVg-WHBg5VvKbLaj77v_mug3wEArqMUZnZAH8dIMLZ9Vky5d7hfRq8CCUHxsYCD3dpgDszg7hkDvq81f-HmbhBCMUccSG4AICW7NlJtlWk7-_g6A2-7s4y7orrJvSQmcsbocUNBt35MhR7ZMuCKI2s5aRps8VcVIzD6uy-qqxveq0VP9Y5jLvF7PmwAuuZKmBvnaQePehVMbAXsxK2aICQ1sIpefM0enpBa176cy3HkPYWuWeeeLQhkH-2uphsBdBDeMT7VRp_T90fBjIpG7ddtIxjWtQy2f4Aqe3PLvv7q8XPuaCxJl802Zn8SYiJuBvHNdvDEYZqmU9FBhixXTjRWOhuSGtYUQS0roa0WKo5oEBsBxyNd8WgJl9FfKOeMbWV_7Tu8yi5ULw2c0grXRPO0w78LvYo3edROELHKmaO7xZuXb7L-xn_5TCnaWirqLYgfbLT7xGOmT_OHgCa1WAS63JCYBQ2lviLq8dc7uH6nUPT1vMNHCwMvin3PYVRcqAN0iK_4LommqgjfGtASOVrvMS-2U0UwWPE6IrDREio_l37lZX2gQarjypWkX1lNC0zx3LSAlYr9VOOMxKvRVSJmTdQJyJmI01llbgqn22HNma2QVui2fubnAMGUgjJlA7IhyJ4MARX1vZwRsAm2F0DXxUMOU-GvXmNqWAq6u6z81GNWuA71Pp7q1vaXhYHx2I_Sk8qxQ0GgiONQ28LIxMmxNaE_twkEYFZvAGXmcrAG6bTSRgl9U44397w-fasPYptZJcDT_DZloKsNtEZrypv6oCDEJwsokQqx6Gb8rsSC1ni_nngYgSYf3Hbo6p5-xCvallgRPsps84YphY1T27HFh1Y7GtSJ2WvMsU_AjUtNBAn2MIFE0Z-xfTkXvTeyRRQzJ2HPeKbQ1megXuddoyETSRa3009s-eae9n5xSfUP1JDyjeBpaj8wwTuZ-S8taVD3aGRy4CVSAKwBRrPC45fYOC0go7kwWZmzjhL43BBn1aaFKcg7-hWVT2co5CWGi99LVTLGMoqu3VWaUFIJkidfkAs8WIZd6aSHdnKe4QR9PoF_oZeMWMWSosp-0tRTDdN99GWBjKJHnHQVgdIh9zA2IzFp9RH_OFoYofWNFy6TTb555hg-yPiT5GKgDMQSad7to9cmEHMAb69Gq57Cj-CtVNky2x9O_69Pnl4JpR0ZeiG3KccHVAJ5Ls3Ubeyg8v8fcWnc_QwKtGwrqtGRCpy6h9MCQ25gOOzbvG4Pv0A7slZ7-nqInwHKXav4d_3yc6bluSddDUrrRlqbb-DFAjLhjGf_GR9A2gPj08iIhxRPN-_mFoFaYcWug8XQjYwQ9bsM4DHTQ62WRwByk310teE00PbwGTdR-xxOWwt_nMUoVR0yCQxIoh1Jka_iGJzposSIE7EWvjd1davniI_--Dk94yDkNc7C5S5yM1YlxAkviKkYEaCSYqpDSAX2-SwbqQDGspdsB1GW7JhwGgXLTdfI1L1Dcv02giB-adGhm1Ae-tTWuaZURy4PkJ_J-MSHeSOB6jAOw5hhT2sfYNwmw&uid=2720781227117899299&mguid=&ap={AUCTION_PRICE}&tid=30&gprice=n9IhOHMzGyDR10uJrrvp-PJrrF5z1rH6CG7HCtbFdTU&campaignid=5137690&c_sync=1"
+                        - img [ref=f17e7]
+                    - iframe [ref=f17e8]:
+                      
+                    - img
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - 'link "City Centre, Auckland. Listed: Fri, 9 Dec NOT STAGED. FURNITURE INCLUDED!. Asking price $630,000" [ref=e230] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149480589?rsqid=4e367cf5122d471ba8e9f0f07899e197-001
+                  - generic [ref=e231]:
+                    - generic [ref=e232]:
+                      - generic [ref=e233]:
+                        - generic "City Centre, Auckland." [ref=e234]: Auckland
+                        - generic [ref=e235]: "Listed: Fri, 9 Dec"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e236]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e239]: Asking price $630,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e240] [cursor=pointer]:
+                            - img "Previous image" [ref=e243]
+                          - button "Next image" [ref=e245] [cursor=pointer]:
+                            - img "Next image" [ref=e248]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e250] [cursor=pointer]:
+                - img [ref=e254]
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - 'link "City Centre, Auckland. Listed: Fri, 13 Jan NOT STAGED. FURNITURE INCLUDED!. Asking price $630,000" [ref=e261] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149484650?rsqid=4e367cf5122d471ba8e9f0f07899e197-001
+                  - generic [ref=e262]:
+                    - generic [ref=e263]:
+                      - generic [ref=e264]:
+                        - generic "City Centre, Auckland." [ref=e265]: Auckland
+                        - generic [ref=e266]: "Listed: Fri, 13 Jan"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e267]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e270]: Asking price $630,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e271] [cursor=pointer]:
+                            - img "Previous image" [ref=e274]
+                          - button "Next image" [ref=e276] [cursor=pointer]:
+                            - img "Next image" [ref=e279]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e281] [cursor=pointer]:
+                - img [ref=e285]
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - 'link "City Centre, Auckland. Listed: Wed, 8 Feb NOT STAGED. FURNITURE INCLUDED!. Asking price $610,000" [ref=e292] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149497189?rsqid=4e367cf5122d471ba8e9f0f07899e197-001
+                  - generic [ref=e293]:
+                    - generic [ref=e294]:
+                      - generic [ref=e295]:
+                        - generic "City Centre, Auckland." [ref=e296]: Auckland
+                        - generic [ref=e297]: "Listed: Wed, 8 Feb"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e298]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e301]: Asking price $610,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e302] [cursor=pointer]:
+                            - img "Previous image" [ref=e305]
+                          - button "Next image" [ref=e307] [cursor=pointer]:
+                            - img "Next image" [ref=e310]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e312] [cursor=pointer]:
+                - img [ref=e316]
+          - navigation "Pagination" [ref=e319]:
+            - list [ref=e320]:
+              - listitem [ref=e321]
+              - listitem [ref=e322]:
+                - link "Current page, page 1" [ref=e324] [cursor=pointer]:
+                  - /url: /a/search?search_string=furniture
+                  - text: "1"
+              - listitem [ref=e325]
+          - button "Back to top" [ref=e327] [cursor=pointer]:
+            - img [ref=e329]
+            - text: Back to top
+        - generic:
+          - complementary
+  - generic [ref=e332]:
+    - generic [ref=e333]: We are upgrading some of our systems
+    - generic [ref=e334]:
+      - link "Learn more" [ref=e335] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e337]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e341] [cursor=pointer]:
+        - img [ref=e343]
+        - text: Tell us what you think
+  - contentinfo [ref=e345]:
+    - generic [ref=e347]:
+      - generic [ref=e349]:
+        - generic [ref=e351]:
+          - list [ref=e352]:
+            - listitem [ref=e353]:
+              - link "Home" [ref=e355] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e356]:
+                  - img "Trade Me" [ref=e357]
+          - list [ref=e358]:
+            - listitem [ref=e359]:
+              - generic [ref=e360]:
+                - img "Start a listing icon" [ref=e362]
+                - link "Start a listing" [ref=e364] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e365]:
+              - generic [ref=e366]:
+                - img "Watchlist icon" [ref=e368]
+                - link "Watchlist" [ref=e370] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e371]:
+              - generic [ref=e372]:
+                - img "Favourites icon" [ref=e374]
+                - link "Favourites" [ref=e376] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e377]:
+              - generic [ref=e379]:
+                - generic [ref=e380]:
+                  - img "Login icon" [ref=e382]
+                  - link "Log in" [ref=e385] [cursor=pointer]:
+                    - /url: search(modal:login)?search_string=furniture
+                - generic [ref=e386]:
+                  - img "Sign up icon" [ref=e388]
+                  - link "Sign up" [ref=e390] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e392]:
+          - list [ref=e393]:
+            - listitem [ref=e394]:
+              - generic [ref=e395]:
+                - img "Marketplace icon" [ref=e397]
+                - link "Marketplace" [ref=e399] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e400]:
+              - link "Latest deals" [ref=e402] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e403]:
+              - link "Stores" [ref=e405] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e406]:
+              - link "Closing soon" [ref=e408] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e409]:
+              - link "$1 reserve" [ref=e411] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e412]:
+              - link "Home & Living" [ref=e414] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e415]:
+            - listitem [ref=e416]:
+              - generic [ref=e417]:
+                - img "Property icon" [ref=e419]
+                - link "Property" [ref=e421] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e422]:
+              - link "International property" [ref=e424] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e425]:
+              - link "Property news & guides" [ref=e427] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e428]:
+              - link "Sold Properties" [ref=e430] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e431]:
+              - link "OneHub for agents" [ref=e433] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e434]:
+              - link "Find a Real Estate Agent" [ref=e436] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e437]:
+            - listitem [ref=e438]:
+              - generic [ref=e439]:
+                - img "Motors icon" [ref=e441]
+                - link "Motors" [ref=e443] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e444]:
+              - link "Cars for sale" [ref=e446] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e447]:
+              - link "Motorbikes for sale" [ref=e449] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e450]:
+              - link "Buying & selling advice" [ref=e452] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e453]:
+              - link "Dealer news & info" [ref=e455] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e456]:
+              - link "Sell my car" [ref=e458] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e459]:
+            - listitem [ref=e460]:
+              - generic [ref=e461]:
+                - img "Jobs icon" [ref=e463]
+                - link "Jobs" [ref=e466] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e467]:
+              - link "Browse job categories" [ref=e469] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e470]:
+              - link "Careers advice" [ref=e472] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e473]:
+              - link "JobSmart" [ref=e475] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e476]:
+              - link "Advertisers advice" [ref=e478] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e479]:
+              - link "Salary guide" [ref=e481] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e482]:
+            - listitem [ref=e483]:
+              - generic [ref=e484]:
+                - img "Services icon" [ref=e486]
+                - link "Services" [ref=e488] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e489]:
+              - link "Trades" [ref=e491] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e492]:
+              - link "Domestic services" [ref=e494] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e495]:
+              - link "Events & entertainment" [ref=e497] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e498]:
+              - link "Health & wellbeing" [ref=e500] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e501]:
+              - link "List my services" [ref=e503] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e504]:
+            - listitem [ref=e505]:
+              - generic [ref=e506]:
+                - img "Community icon" [ref=e508]
+                - link "Community" [ref=e512] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e513]:
+              - link "Help" [ref=e515] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e516]:
+              - link "Announcements" [ref=e518] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e519]:
+              - link "Trust & safety" [ref=e521] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e522]:
+              - link "Seller information" [ref=e524] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e525]:
+              - link "Help center community" [ref=e527] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e528]:
+        - group "Affiliate links" [ref=e531]:
+          - list [ref=e532]:
+            - listitem [ref=e533]:
+              - link "Trade Me Insurance" [ref=e534] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e535]:
+              - link "homes.co.nz" [ref=e536] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e537]:
+              - link "MotorWeb" [ref=e538] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e539]:
+              - link "CarExpert" [ref=e540] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e541]:
+              - link "Holiday Houses" [ref=e542] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e543]:
+              - link "FindSomeone" [ref=e544] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e545]:
+          - generic [ref=e546]: © 2026 Trade Me Limited
+          - list [ref=e549]:
+            - listitem [ref=e550]:
+              - link "Desktop site" [ref=e552] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e553]:
+              - link "About Us" [ref=e555] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e556]:
+              - link "Careers" [ref=e558] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e559]:
+              - link "News" [ref=e561] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e562]:
+              - link "Advertise" [ref=e564] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e565]:
+              - link "Privacy policy" [ref=e567] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e568]:
+              - link "Terms & conditions" [ref=e570] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e571]:
+              - link "Contact Us" [ref=e573] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e579]:
+            - listitem [ref=e580]:
+              - link "Follow Trade Me on Tiktok" [ref=e581] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e583]
+            - listitem [ref=e585]:
+              - link "Follow Trade Me on Instagram" [ref=e586] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e588]
+            - listitem [ref=e590]:
+              - link "Follow Trade Me on Facebook" [ref=e591] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e593]
+            - listitem [ref=e595]:
+              - link "Follow Trade Me on LinkedIn" [ref=e596] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e598]
+            - listitem [ref=e600]:
+              - link "Follow Trade Me on YouTube" [ref=e601] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e603]
+```

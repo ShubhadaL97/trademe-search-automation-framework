@@ -1,0 +1,678 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-NF-01] Suggestions should load within acceptable time
+- Location: tests\search.spec.ts:267:7
+
+# Error details
+
+```
+Error: expect(received).toBeLessThan(expected)
+
+Expected: < 2000
+Received:   5510
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - navigation "navigation bar" [ref=e8]:
+        - generic [ref=e12]:
+          - link "Trade Me" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e17]
+          - list [ref=e18]:
+            - listitem [ref=e19]:
+              - button "Categories" [ref=e24] [cursor=pointer]:
+                - generic [ref=e25]: Categories
+                - img [ref=e27]
+            - listitem
+            - listitem [ref=e30]:
+              - link "Watchlist" [ref=e31] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e32]: Watchlist
+                - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "Favourites" [ref=e37] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e38]: Favourites
+                - img [ref=e40]
+            - listitem [ref=e42]:
+              - link "Start a listing" [ref=e43] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e44]: Start a listing
+                - img [ref=e46]
+            - listitem [ref=e48]:
+              - generic [ref=e49]:
+                - link "Sign up" [ref=e50] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e52]
+                - link "Log in" [ref=e54] [cursor=pointer]:
+                  - /url: (modal:login)
+                  - text: Log in
+                  - img [ref=e56]
+      - navigation [ref=e59]
+  - main [ref=e62]:
+    - generic [ref=e63]: main content
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - heading "Trade Me Homepage" [level=1] [ref=e67]
+        - navigation "Search and Verticals" [ref=e68]:
+          - generic [ref=e72]:
+            - search [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: Search all of Trade Me
+                - generic [ref=e76]:
+                  - img [ref=e79]
+                  - searchbox "Search all of Trade Me Clear input" [active] [ref=e81]: camera
+                  - button "Clear input" [ref=e83] [cursor=pointer]:
+                    - img "Clear input" [ref=e85]
+              - button "Search all of Trade Me" [ref=e87] [cursor=pointer]: Search
+            - generic [ref=e88]:
+              - alert [ref=e89]: Search suggestions
+              - heading "Search suggestions" [level=5] [ref=e90]: Suggestions
+              - list [ref=e91]:
+                - listitem [ref=e92]:
+                  - link "camera" [ref=e93] [cursor=pointer]:
+                    - /url: /a/search?search_string=camera
+                - listitem [ref=e94]:
+                  - link "camera bag" [ref=e95] [cursor=pointer]:
+                    - /url: /a/search?search_string=camera%20bag
+                - listitem [ref=e96]:
+                  - link "cameras digital" [ref=e97] [cursor=pointer]:
+                    - /url: /a/search?search_string=cameras%20digital
+              - heading "Search suggestions" [level=5] [ref=e98]: Categories
+              - list [ref=e99]:
+                - listitem [ref=e100]:
+                  - link "Cameras Sports / Cycling / Bike accessories / Cameras" [ref=e101] [cursor=pointer]:
+                    - /url: /a/search?category=9777
+                    - text: Cameras
+                    - text: Sports / Cycling / Bike accessories / Cameras
+                - listitem [ref=e102]:
+                  - link "Camera & computer mounts Sports / Cycling / Bike accessories / Camera & computer mounts" [ref=e103] [cursor=pointer]:
+                    - /url: /a/search?category=9778
+                    - text: Camera & computer mounts
+                    - text: Sports / Cycling / Bike accessories / Camera & computer mounts
+                - listitem [ref=e104]:
+                  - link "Cameras Mobile phones / Replacement parts & components / Cameras" [ref=e105] [cursor=pointer]:
+                    - /url: /a/search?category=9995
+                    - text: Cameras
+                    - text: Mobile phones / Replacement parts & components / Cameras
+              - link "Browse all categories" [ref=e106] [cursor=pointer]:
+                - /url: /a/browse
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - link "Marketplace" [ref=e110] [cursor=pointer]:
+                - /url: /a/marketplace
+                - img [ref=e112]
+                - text: Marketplace
+            - listitem [ref=e119]:
+              - link "Property" [ref=e120] [cursor=pointer]:
+                - /url: /a/property
+                - img [ref=e122]
+                - text: Property
+            - listitem [ref=e127]:
+              - link "Motors" [ref=e128] [cursor=pointer]:
+                - /url: /a/motors
+                - img [ref=e130]
+                - text: Motors
+            - listitem [ref=e135]:
+              - link "Jobs" [ref=e136] [cursor=pointer]:
+                - /url: /a/jobs
+                - img [ref=e138]
+                - text: Jobs
+            - listitem [ref=e144]:
+              - link "Services" [ref=e145] [cursor=pointer]:
+                - /url: /a/services
+                - img [ref=e147]
+                - text: Services
+      - region "Trade Me listings" [ref=e152]:
+        - heading "Trade Me listings" [level=2] [ref=e153]
+        - generic [ref=e154]:
+          - generic [ref=e156]:
+            - heading "Trending Categories" [level=3] [ref=e157]
+            - generic [ref=e158]:
+              - link "marketplace Listings In Concerts" [ref=e160] [cursor=pointer]:
+                - /url: /a/marketplace/travel-events-activities/event-tickets/concerts
+                - generic [ref=e161]:
+                  - img [ref=e163]
+                  - generic [ref=e170]:
+                    - generic [ref=e171]: marketplace Listings
+                    - generic [ref=e172]: In Concerts
+              - link "marketplace Listings In Warhammer 40,000" [ref=e174] [cursor=pointer]:
+                - /url: /a/marketplace/gaming/war-games/warhammer-40-000
+                - generic [ref=e175]:
+                  - img [ref=e177]
+                  - generic [ref=e184]:
+                    - generic [ref=e185]: marketplace Listings
+                    - generic [ref=e186]: In Warhammer 40,000
+              - link "marketplace Listings In Jackets" [ref=e188] [cursor=pointer]:
+                - /url: /a/marketplace/sports/ski-board/snow-ski-clothing/jackets
+                - generic [ref=e189]:
+                  - img [ref=e191]
+                  - generic [ref=e198]:
+                    - generic [ref=e199]: marketplace Listings
+                    - generic [ref=e200]: In Jackets
+          - generic [ref=e203]:
+            - text: Advertisement
+            - iframe [ref=e207]:
+              - generic [active] [ref=f8e1]:
+                - generic [ref=f8e4]:
+                  - generic [ref=f8e5]:
+                    - generic "Zatoolive" [ref=f8e7]:
+                      - link "Three Steps to Continue" [ref=f8e8] [cursor=pointer]:
+                        - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CNIbPIHMbatOsCvjImsMPgNOw-Q_FwYishwHP_fKX3xWooPr_gAkQASD68_0aYKvssYXgGKABlMH0zELIAQGpAuMZoE-Kj7M-4AIAqAMByAMKqgSDAk_QvLAaN6I_q4eoI5NTFUVXo3_7G0XDza3651h8bJ-2JmjpxJ3tD3LKv8_U854zLEqznuzHgEfEmER70U4zOSORmxh3UnEJxWMoZWfzRcBaJ4pErgyD2iSc1_sRWWYebsW1b-_l_D_nmKpigwO5SP2uv5Xf-TGHtz_pBl_90P1ttbXYdelbnTSq2LHU8NTerNgba2M3IMYV75vDAEwT8cIGU_hZ5TfIU495ux-8g1EpAf4NyAry_50y_bTylhSrceO7W8oy6Wdk8efThn6nm3G5tRa6BAT03KfBgqaiMSjWsDxfOeGCKOAZWE02TK5wpF3brJso-goFZVZtKTQZgvjdWSTABPSxjZ_YBeAEAYgFnIKon1iAB5T5xKwdqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOli50rTLleKUA2ABsQn7cgOAePrPpoAKA5gLAcgLAaIMA5ABAaoNAk5ayA0B4g0TCO38tMuV4pQDFXikZgIdgCks_-oNEwj5zLXLleKUAxV4pGYCHYApLP_wDQKIDv___________wHYEw2IFAHQFQGYFgHKFgIKAPgWAYAXAbIXEBgBKgo0ODY1MDQyODMwUAa6FwI4AaoYFwkAAAAAWqcnQRIKNDg2NTA0MjgzMBgBshgJEgLybBgBIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE&num=1&cid=CAQSngIABaugfSsoWDXgj2Sv3w1xieVj5GCVWux3tls8UktICybAW5sFRnLwSA8dlDwVrQ-jN85x7vDrkhdMyaT0FY3bpzeibsLKWnUW7qD0mDhoiwnudimTaCq5a5B5SVpro7ohf0zM8DadM_h37tJrLHarLzEDx4ARV3oWcuPUvHpq0pofqKdZApChJpOvjTaUKOXeJNNWY1XLMYHuRfvGBGKStKeL8bciv73NHie7_G2MbJMXAejyPiKYY2o5WWPvXfHLDzW8DWCyIgefeCAj6Dg1brUsqMK88Fx9t7DfCk-AEE1Nd6L-9WNCOzYUucN_sW1KllAngt8X6_A8kac1eNBxosgFrTuxUPk4FiNyZoft5brxt_2UVhiELgDO6jzDGAE&sig=AOD64_0wsxC0nkXdV5Ntt7UDUb-YSZ7p5g&client=ca-pub-4363339964316411&rf=4&nb=0&adurl=https://premium.zatoolive.com/341%3Fplacement%3Dwww.tmsandbox.co.nz%26cityId%3D9194159%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23687987484%26adgroupid%3D195486243060%26ad_id%3D802172232438%26gad_source%3D5%26gad_campaignid%3D23687987484%26gclid%3DEAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE
+                    - generic [ref=f8e9]:
+                      - link "Get Started in Just a Few Clicks" [ref=f8e11] [cursor=pointer]:
+                        - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CNIbPIHMbatOsCvjImsMPgNOw-Q_FwYishwHP_fKX3xWooPr_gAkQASD68_0aYKvssYXgGKABlMH0zELIAQGpAuMZoE-Kj7M-4AIAqAMByAMKqgSDAk_QvLAaN6I_q4eoI5NTFUVXo3_7G0XDza3651h8bJ-2JmjpxJ3tD3LKv8_U854zLEqznuzHgEfEmER70U4zOSORmxh3UnEJxWMoZWfzRcBaJ4pErgyD2iSc1_sRWWYebsW1b-_l_D_nmKpigwO5SP2uv5Xf-TGHtz_pBl_90P1ttbXYdelbnTSq2LHU8NTerNgba2M3IMYV75vDAEwT8cIGU_hZ5TfIU495ux-8g1EpAf4NyAry_50y_bTylhSrceO7W8oy6Wdk8efThn6nm3G5tRa6BAT03KfBgqaiMSjWsDxfOeGCKOAZWE02TK5wpF3brJso-goFZVZtKTQZgvjdWSTABPSxjZ_YBeAEAYgFnIKon1iAB5T5xKwdqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOli50rTLleKUA2ABsQn7cgOAePrPpoAKA5gLAcgLAaIMA5ABAaoNAk5ayA0B4g0TCO38tMuV4pQDFXikZgIdgCks_-oNEwj5zLXLleKUAxV4pGYCHYApLP_wDQKIDv___________wHYEw2IFAHQFQGYFgHKFgIKAPgWAYAXAbIXEBgBKgo0ODY1MDQyODMwUAa6FwI4AaoYFwkAAAAAWqcnQRIKNDg2NTA0MjgzMBgBshgJEgLybBgBIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE&num=1&cid=CAQSngIABaugfSsoWDXgj2Sv3w1xieVj5GCVWux3tls8UktICybAW5sFRnLwSA8dlDwVrQ-jN85x7vDrkhdMyaT0FY3bpzeibsLKWnUW7qD0mDhoiwnudimTaCq5a5B5SVpro7ohf0zM8DadM_h37tJrLHarLzEDx4ARV3oWcuPUvHpq0pofqKdZApChJpOvjTaUKOXeJNNWY1XLMYHuRfvGBGKStKeL8bciv73NHie7_G2MbJMXAejyPiKYY2o5WWPvXfHLDzW8DWCyIgefeCAj6Dg1brUsqMK88Fx9t7DfCk-AEE1Nd6L-9WNCOzYUucN_sW1KllAngt8X6_A8kac1eNBxosgFrTuxUPk4FiNyZoft5brxt_2UVhiELgDO6jzDGAE&sig=AOD64_0wsxC0nkXdV5Ntt7UDUb-YSZ7p5g&client=ca-pub-4363339964316411&rf=4&nb=7&adurl=https://premium.zatoolive.com/341%3Fplacement%3Dwww.tmsandbox.co.nz%26cityId%3D9194159%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23687987484%26adgroupid%3D195486243060%26ad_id%3D802172232438%26gad_source%3D5%26gad_campaignid%3D23687987484%26gclid%3DEAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE
+                      - link [ref=f8e12] [cursor=pointer]:
+                        - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CNIbPIHMbatOsCvjImsMPgNOw-Q_FwYishwHP_fKX3xWooPr_gAkQASD68_0aYKvssYXgGKABlMH0zELIAQGpAuMZoE-Kj7M-4AIAqAMByAMKqgSDAk_QvLAaN6I_q4eoI5NTFUVXo3_7G0XDza3651h8bJ-2JmjpxJ3tD3LKv8_U854zLEqznuzHgEfEmER70U4zOSORmxh3UnEJxWMoZWfzRcBaJ4pErgyD2iSc1_sRWWYebsW1b-_l_D_nmKpigwO5SP2uv5Xf-TGHtz_pBl_90P1ttbXYdelbnTSq2LHU8NTerNgba2M3IMYV75vDAEwT8cIGU_hZ5TfIU495ux-8g1EpAf4NyAry_50y_bTylhSrceO7W8oy6Wdk8efThn6nm3G5tRa6BAT03KfBgqaiMSjWsDxfOeGCKOAZWE02TK5wpF3brJso-goFZVZtKTQZgvjdWSTABPSxjZ_YBeAEAYgFnIKon1iAB5T5xKwdqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOli50rTLleKUA2ABsQn7cgOAePrPpoAKA5gLAcgLAaIMA5ABAaoNAk5ayA0B4g0TCO38tMuV4pQDFXikZgIdgCks_-oNEwj5zLXLleKUAxV4pGYCHYApLP_wDQKIDv___________wHYEw2IFAHQFQGYFgHKFgIKAPgWAYAXAbIXEBgBKgo0ODY1MDQyODMwUAa6FwI4AaoYFwkAAAAAWqcnQRIKNDg2NTA0MjgzMBgBshgJEgLybBgBIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE&num=1&cid=CAQSngIABaugfSsoWDXgj2Sv3w1xieVj5GCVWux3tls8UktICybAW5sFRnLwSA8dlDwVrQ-jN85x7vDrkhdMyaT0FY3bpzeibsLKWnUW7qD0mDhoiwnudimTaCq5a5B5SVpro7ohf0zM8DadM_h37tJrLHarLzEDx4ARV3oWcuPUvHpq0pofqKdZApChJpOvjTaUKOXeJNNWY1XLMYHuRfvGBGKStKeL8bciv73NHie7_G2MbJMXAejyPiKYY2o5WWPvXfHLDzW8DWCyIgefeCAj6Dg1brUsqMK88Fx9t7DfCk-AEE1Nd6L-9WNCOzYUucN_sW1KllAngt8X6_A8kac1eNBxosgFrTuxUPk4FiNyZoft5brxt_2UVhiELgDO6jzDGAE&sig=AOD64_0wsxC0nkXdV5Ntt7UDUb-YSZ7p5g&client=ca-pub-4363339964316411&rf=4&nb=8&adurl=https://premium.zatoolive.com/341%3Fplacement%3Dwww.tmsandbox.co.nz%26cityId%3D9194159%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23687987484%26adgroupid%3D195486243060%26ad_id%3D802172232438%26gad_source%3D5%26gad_campaignid%3D23687987484%26gclid%3DEAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE
+                        - img [ref=f8e13]
+                  - generic "Zatoolive" [ref=f8e15]:
+                    - link "Zatoolive" [ref=f8e16] [cursor=pointer]:
+                      - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CNIbPIHMbatOsCvjImsMPgNOw-Q_FwYishwHP_fKX3xWooPr_gAkQASD68_0aYKvssYXgGKABlMH0zELIAQGpAuMZoE-Kj7M-4AIAqAMByAMKqgSDAk_QvLAaN6I_q4eoI5NTFUVXo3_7G0XDza3651h8bJ-2JmjpxJ3tD3LKv8_U854zLEqznuzHgEfEmER70U4zOSORmxh3UnEJxWMoZWfzRcBaJ4pErgyD2iSc1_sRWWYebsW1b-_l_D_nmKpigwO5SP2uv5Xf-TGHtz_pBl_90P1ttbXYdelbnTSq2LHU8NTerNgba2M3IMYV75vDAEwT8cIGU_hZ5TfIU495ux-8g1EpAf4NyAry_50y_bTylhSrceO7W8oy6Wdk8efThn6nm3G5tRa6BAT03KfBgqaiMSjWsDxfOeGCKOAZWE02TK5wpF3brJso-goFZVZtKTQZgvjdWSTABPSxjZ_YBeAEAYgFnIKon1iAB5T5xKwdqAenzLECqAfi2LECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOli50rTLleKUA2ABsQn7cgOAePrPpoAKA5gLAcgLAaIMA5ABAaoNAk5ayA0B4g0TCO38tMuV4pQDFXikZgIdgCks_-oNEwj5zLXLleKUAxV4pGYCHYApLP_wDQKIDv___________wHYEw2IFAHQFQGYFgHKFgIKAPgWAYAXAbIXEBgBKgo0ODY1MDQyODMwUAa6FwI4AaoYFwkAAAAAWqcnQRIKNDg2NTA0MjgzMBgBshgJEgLybBgBIgEA0BgBwhkCCAE&ae=1&gclid=EAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE&num=1&cid=CAQSngIABaugfSsoWDXgj2Sv3w1xieVj5GCVWux3tls8UktICybAW5sFRnLwSA8dlDwVrQ-jN85x7vDrkhdMyaT0FY3bpzeibsLKWnUW7qD0mDhoiwnudimTaCq5a5B5SVpro7ohf0zM8DadM_h37tJrLHarLzEDx4ARV3oWcuPUvHpq0pofqKdZApChJpOvjTaUKOXeJNNWY1XLMYHuRfvGBGKStKeL8bciv73NHie7_G2MbJMXAejyPiKYY2o5WWPvXfHLDzW8DWCyIgefeCAj6Dg1brUsqMK88Fx9t7DfCk-AEE1Nd6L-9WNCOzYUucN_sW1KllAngt8X6_A8kac1eNBxosgFrTuxUPk4FiNyZoft5brxt_2UVhiELgDO6jzDGAE&sig=AOD64_0wsxC0nkXdV5Ntt7UDUb-YSZ7p5g&client=ca-pub-4363339964316411&rf=4&nb=1&adurl=https://premium.zatoolive.com/341%3Fplacement%3Dwww.tmsandbox.co.nz%26cityId%3D9194159%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3D23687987484%26adgroupid%3D195486243060%26ad_id%3D802172232438%26gad_source%3D5%26gad_campaignid%3D23687987484%26gclid%3DEAIaIQobChMI07y2y5XilAMVeKRmAh2AKSz_EAEYASAAEgIpAfD_BwE
+                - generic [ref=f8e17]:
+                  - link [ref=f8e19] [cursor=pointer]:
+                    - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU9iRt1OMwKH1QIYALgdiDGu4Hc5RYVvnv6nI3o60Q9iag4KUfe-PD55kZ1IOFp9pFUcft8I-pRbGmD4qN7VGMGAj7y59Nr5-piSLksnGPWg3yKXgzAx3XZfXiQrL4RJBAGzbQADkM2B3wmQdOlMr_YOQp35_METN5qXxlwLKWITUlVLJjNN66iY3kQEv4HWVA6dxLVY400er0F5W-jpgmw01By80KfNTa8XDjkH5j21y4GbKVhbpK-iprfuKuVG1q2TpMyxBJ2JgLIg_oLBRSxwTrrigTK201Epz4sJC5M0ETrXubW1C2TJzLw-CVyUCqIMgoPC90-fehGAdlg2cK-IALbmEawKNTMZRhnPbnj6Qv9q1KKB3yG9tcTd5vrNMKkIaJhTjo-xHLxSn5ZmAjzkiX6yG2aBU_pNIDd9bIEbVgCHdRQkplDXw7BDw1lAIvjkOiQfBVMIH2KmP6goSfT2HqnhaJGqjaeA3OlEEpVvfq5yBqi2CuVNhVs6pzymgqHqzmPe4BvMN07g-ayExuTsRZNJEY8eLa8G2vRZE8NMsxsZADCgsUCy_Iq90OfI0-rSMGwGwh2wi4VF1eIWrKI9Atd26gpaQmLRQ4XfPnZfN-TpO1Hmirsbbpt8SVYY3WQFrRN5cZq_TOmCmLp16NksHowTgmXpDtMtrU7W8y0Gdzqz8tv0w4viJUv0htUQm1d0URPLBGRLrlJv2sTLArlMBT100ThUB0JpkJ3f2cTc8yyeAxMcNYLLVUsKak0ZyvZv1MLrGRqnHBF4QWgB67YwlRVRMaY1nCR2uCs-KYyOuNpL-8IKrT8brd2d8cEgMWbzQgz2TDgIQVlG9vKnkPkKR5I0hhUyBEDToNyzzVrV5cJwG1twl6aFtOjhqkhjWaot7SrSFGKJpXTo0ifNnjduewF_umKO-VKG_GCnJE0ybYKxUn_wRW6m6t8RNTq95txhpqyi7Qiue7NvVpmMWcRjdiQTko54a7fReMqt7x25oUo-jXjap9loROroRJ0u2sKnifdtbwg7tVK_hGoBAb9bII6kpQZrjkyGrz8EGSUwlSvp8etnFXlVHrBLgxwPLLn7tdLZuJKm8khDlxCd3umNDiFZwLRRpvNsoe48_oX68g3YMHjqIrop8GHdC2w4I_96wanW0XTloyINU3jNzpXYCAKoWBWuZiByb6iLshqCu2ovSclJ8VOYocR-cJ0Mue86sC-3TgLBMwrqaegjFpgpaVkuFd22RzqgcS7SAVsbJI1SF0RTUkCGo7b7EW6pwWFSYCv80Fw-waGalL-wnTAX6-y9SzZ7X2bpm_SxAipfrm9bxHAQa7jNHRvUTVy77pCFTeJwOG_Pkc0x27HTl6WlGlQnFoTdBTACnYq9MeMKo68iFEZSAsN35im3lqXpEGAdjrRAoH0L0tbn682Y_p2RlZh4ZRJbjNTGaZrwKzcSHLBSlIh99-MxsW8G8NRo83kX3f_DMfG2NrogiJj3TB_-h-bSou6RHNJ2Ctnds2IS-pAB9yhnYtKlZYfmpTRUQMPeZKld9SFrF98DuARnBy4SZ9zfluU9RtVMs7D3l_g8oNoumcE9zr-cNuGtZw4_z8hdn6BhHvTg-SGgHZaFx1aCp6zlaKGTvX5zmTbVrHyCJkGQ9QyOXv9rNgICJ_RODTkcOpGXt964107Kg04MUP4lfSYkqQjVwFWT7NVxWietQZzIarAhmljM-OGrUmF0lahryDkTwD0_-lD5lO-tSwCQdvHuYBXugd7KjuTAx_5a0dU2akczCMPVh8A_qvzFbNKqTGS7yQEmL_1mt83-ca0nUFuMsNHPtrSsfRwUrhjI9DACu-q31LQ9zQlgh76zEY8tfVMQGiyto8If3DaGZOF4p4OQ5j54DcWREzpOH10olraVqtdL_ug8gMYbcnlMzHdIEVRePRB74wGiQU92WxrD8riScHhMvczr0Dm23D_z_ijOkLuv8l8PrNwS3N9pqsbYEGCowk-3sZ_5hVgvJN8sxN6PZmM-vLhrB9aeOYc8k6TBhhv89jFTIGIsXtLEY0sm86VpIEfJoWptNDd11VXVCoAoh72FUufuiNEY_o8LJ-kUTtBiQr43btq8F7nwajGe3nZuIhsKo8IwZKFYmZS54DXoctqBauUGJPy82_IINb8Fi_wugY5Z8w61KecfH0MPPCKartgLezhCRxNdfVoGeoKzyEMkoPJ-6zgsq9zfIkQ34DTW9X77LpvbprTT1qsYYOCUAjoLzYqFoUdhRMIB912ehd4hKPfwz4yC_cEOfp_-JtgusMfYV7-646CJPp0A9i38vncLVaKciqpOSn9hTE08WKt9EQpIb8Q5Ca3bNy3ARfOuDe7-4hiF-DZhJPQTbrPBRPAFpqBdzxCVjhdCNTbjbctq_vtEVx7iIscDk282UKtaZGdr6Q10hIEH3p62jbd_Yb2rwRGsAmVyBmGhK89diq9U3k3SK5dkzvq5MFObM2juhkWL2XXIUGbR98B4BbaJl30DS60GBv0aAIC6AiM9_7m6A1nmiC_Q-Arm4M65H890FIho7TNnfFGnm-trO7dyd33iQANEXXKG3ig6nT0dsmGSLqwBTuF7OqUtb12yrmt3nfpi4_FwUARoO_1JEoWF_Y7uMg0JRaS_lkor7ljYYcJGuVOm-mYHmCWrCBGSYxzxjl7z0TZJBl1X3CuG8KWVIOFbjah8VoLmHYR1BYLzGeUKb1DvHSGEHBvyzUjr6zWfTacyMhYuQLKeeQyxWPtge6T8sYaWD_IOT_6sDs14HfNTjD6Wjmr3JiGvyuwl0orgRGnMDnmi3vLMHmByBfyfMEAFAJGg_Hh-j6EsxB0B84WuU66H8DsSV_q-y4nTfa95MonJ-HeAqyRkL7gGRqomCBHAFQku4oR1UNXZ8nnwkqMFw1cQBTXvDeYYs_y1cFRWHB9SJWzVEv5VYm6g1Hdsk-52nOFLOddo3QCsd1myxbHX4PZmisISq3NvNh_e-vGsA5LDBadj-u8uH4TrtFETyOG9hXO3p0HYLYAt7mfDGWLM3D1USIMv7Nm3j6KYbmn9rBjggddxkbG0vmdpdr9aQm0nZAGGXwbfM0Ago9AKWzogeTVjYgxs9DVVX5-doPNmLJmh3oWdKVRh0D9Tz8&opi=122715837
+                    - img [ref=f8e21]
+                  - link [ref=f8e23] [cursor=pointer]:
+                    - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU9iRt1OMwKH1QIYALgdiDGu4Hc5RYVvnv6nI3o60Q9iag4KUfe-PD55kZ1IOFp9pFUcft8I-pRbGmD4qN7VGMGAj7y59Nr5-piSLksnGPWg3yKXgzAx3XZfXiQrL4RJBAGzbQADkM2B3wmQdOlMr_YOQp35_METN5qXxlwLKWITUlVLJjNN66iY3kQEv4HWVA6dxLVY400er0F5W-jpgmw01By80KfNTa8XDjkH5j21y4GbKVhbpK-iprfuKuVG1q2TpMyxBJ2JgLIg_oLBRSxwTrrigTK201Epz4sJC5M0ETrXubW1C2TJzLw-CVyUCqIMgoPC90-fehGAdlg2cK-IALbmEawKNTMZRhnPbnj6Qv9q1KKB3yG9tcTd5vrNMKkIaJhTjo-xHLxSn5ZmAjzkiX6yG2aBU_pNIDd9bIEbVgCHdRQkplDXw7BDw1lAIvjkOiQfBVMIH2KmP6goSfT2HqnhaJGqjaeA3OlEEpVvfq5yBqi2CuVNhVs6pzymgqHqzmPe4BvMN07g-ayExuTsRZNJEY8eLa8G2vRZE8NMsxsZADCgsUCy_Iq90OfI0-rSMGwGwh2wi4VF1eIWrKI9Atd26gpaQmLRQ4XfPnZfN-TpO1Hmirsbbpt8SVYY3WQFrRN5cZq_TOmCmLp16NksHowTgmXpDtMtrU7W8y0Gdzqz8tv0w4viJUv0htUQm1d0URPLBGRLrlJv2sTLArlMBT100ThUB0JpkJ3f2cTc8yyeAxMcNYLLVUsKak0ZyvZv1MLrGRqnHBF4QWgB67YwlRVRMaY1nCR2uCs-KYyOuNpL-8IKrT8brd2d8cEgMWbzQgz2TDgIQVlG9vKnkPkKR5I0hhUyBEDToNyzzVrV5cJwG1twl6aFtOjhqkhjWaot7SrSFGKJpXTo0ifNnjduewF_umKO-VKG_GCnJE0ybYKxUn_wRW6m6t8RNTq95txhpqyi7Qiue7NvVpmMWcRjdiQTko54a7fReMqt7x25oUo-jXjap9loROroRJ0u2sKnifdtbwg7tVK_hGoBAb9bII6kpQZrjkyGrz8EGSUwlSvp8etnFXlVHrBLgxwPLLn7tdLZuJKm8khDlxCd3umNDiFZwLRRpvNsoe48_oX68g3YMHjqIrop8GHdC2w4I_96wanW0XTloyINU3jNzpXYCAKoWBWuZiByb6iLshqCu2ovSclJ8VOYocR-cJ0Mue86sC-3TgLBMwrqaegjFpgpaVkuFd22RzqgcS7SAVsbJI1SF0RTUkCGo7b7EW6pwWFSYCv80Fw-waGalL-wnTAX6-y9SzZ7X2bpm_SxAipfrm9bxHAQa7jNHRvUTVy77pCFTeJwOG_Pkc0x27HTl6WlGlQnFoTdBTACnYq9MeMKo68iFEZSAsN35im3lqXpEGAdjrRAoH0L0tbn682Y_p2RlZh4ZRJbjNTGaZrwKzcSHLBSlIh99-MxsW8G8NRo83kX3f_DMfG2NrogiJj3TB_-h-bSou6RHNJ2Ctnds2IS-pAB9yhnYtKlZYfmpTRUQMPeZKld9SFrF98DuARnBy4SZ9zfluU9RtVMs7D3l_g8oNoumcE9zr-cNuGtZw4_z8hdn6BhHvTg-SGgHZaFx1aCp6zlaKGTvX5zmTbVrHyCJkGQ9QyOXv9rNgICJ_RODTkcOpGXt964107Kg04MUP4lfSYkqQjVwFWT7NVxWietQZzIarAhmljM-OGrUmF0lahryDkTwD0_-lD5lO-tSwCQdvHuYBXugd7KjuTAx_5a0dU2akczCMPVh8A_qvzFbNKqTGS7yQEmL_1mt83-ca0nUFuMsNHPtrSsfRwUrhjI9DACu-q31LQ9zQlgh76zEY8tfVMQGiyto8If3DaGZOF4p4OQ5j54DcWREzpOH10olraVqtdL_ug8gMYbcnlMzHdIEVRePRB74wGiQU92WxrD8riScHhMvczr0Dm23D_z_ijOkLuv8l8PrNwS3N9pqsbYEGCowk-3sZ_5hVgvJN8sxN6PZmM-vLhrB9aeOYc8k6TBhhv89jFTIGIsXtLEY0sm86VpIEfJoWptNDd11VXVCoAoh72FUufuiNEY_o8LJ-kUTtBiQr43btq8F7nwajGe3nZuIhsKo8IwZKFYmZS54DXoctqBauUGJPy82_IINb8Fi_wugY5Z8w61KecfH0MPPCKartgLezhCRxNdfVoGeoKzyEMkoPJ-6zgsq9zfIkQ34DTW9X77LpvbprTT1qsYYOCUAjoLzYqFoUdhRMIB912ehd4hKPfwz4yC_cEOfp_-JtgusMfYV7-646CJPp0A9i38vncLVaKciqpOSn9hTE08WKt9EQpIb8Q5Ca3bNy3ARfOuDe7-4hiF-DZhJPQTbrPBRPAFpqBdzxCVjhdCNTbjbctq_vtEVx7iIscDk282UKtaZGdr6Q10hIEH3p62jbd_Yb2rwRGsAmVyBmGhK89diq9U3k3SK5dkzvq5MFObM2juhkWL2XXIUGbR98B4BbaJl30DS60GBv0aAIC6AiM9_7m6A1nmiC_Q-Arm4M65H890FIho7TNnfFGnm-trO7dyd33iQANEXXKG3ig6nT0dsmGSLqwBTuF7OqUtb12yrmt3nfpi4_FwUARoO_1JEoWF_Y7uMg0JRaS_lkor7ljYYcJGuVOm-mYHmCWrCBGSYxzxjl7z0TZJBl1X3CuG8KWVIOFbjah8VoLmHYR1BYLzGeUKb1DvHSGEHBvyzUjr6zWfTacyMhYuQLKeeQyxWPtge6T8sYaWD_IOT_6sDs14HfNTjD6Wjmr3JiGvyuwl0orgRGnMDnmi3vLMHmByBfyfMEAFAJGg_Hh-j6EsxB0B84WuU66H8DsSV_q-y4nTfa95MonJ-HeAqyRkL7gGRqomCBHAFQku4oR1UNXZ8nnwkqMFw1cQBTXvDeYYs_y1cFRWHB9SJWzVEv5VYm6g1Hdsk-52nOFLOddo3QCsd1myxbHX4PZmisISq3NvNh_e-vGsA5LDBadj-u8uH4TrtFETyOG9hXO3p0HYLYAt7mfDGWLM3D1USIMv7Nm3j6KYbmn9rBjggddxkbG0vmdpdr9aQm0nZAGGXwbfM0Ago9AKWzogeTVjYgxs9DVVX5-doPNmLJmh3oWdKVRh0D9Tz8&opi=122715837
+                    - img [ref=f8e25]
+                - img [ref=f8e28] [cursor=pointer]
+                - generic [ref=f8e39]:
+                  - img [ref=f8e42]
+                  - generic [ref=f8e45]:
+                    - text: Ads by
+                    - img [ref=f8e46]
+                  - generic [ref=f8e49]:
+                    - generic [ref=f8e52] [cursor=pointer]: Ad options
+                    - generic [ref=f8e55] [cursor=pointer]: Send feedback
+                    - link [ref=f8e57] [cursor=pointer]:
+                      - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU9iRt1OMwKH1QIYALgdiDGu4Hc5RYVvnv6nI3o60Q9iag4KUfe-PD55kZ1IOFp9pFUcft8I-pRbGmD4qN7VGMGAj7y59Nr5-piSLksnGPWg3yKXgzAx3XZfXiQrL4RJBAGzbQADkM2B3wmQdOlMr_YOQp35_METN5qXxlwLKWITUlVLJjNN66iY3kQEv4HWVA6dxLVY400er0F5W-jpgmw01By80KfNTa8XDjkH5j21y4GbKVhbpK-iprfuKuVG1q2TpMyxBJ2JgLIg_oLBRSxwTrrigTK201Epz4sJC5M0ETrXubW1C2TJzLw-CVyUCqIMgoPC90-fehGAdlg2cK-IALbmEawKNTMZRhnPbnj6Qv9q1KKB3yG9tcTd5vrNMKkIaJhTjo-xHLxSn5ZmAjzkiX6yG2aBU_pNIDd9bIEbVgCHdRQkplDXw7BDw1lAIvjkOiQfBVMIH2KmP6goSfT2HqnhaJGqjaeA3OlEEpVvfq5yBqi2CuVNhVs6pzymgqHqzmPe4BvMN07g-ayExuTsRZNJEY8eLa8G2vRZE8NMsxsZADCgsUCy_Iq90OfI0-rSMGwGwh2wi4VF1eIWrKI9Atd26gpaQmLRQ4XfPnZfN-TpO1Hmirsbbpt8SVYY3WQFrRN5cZq_TOmCmLp16NksHowTgmXpDtMtrU7W8y0Gdzqz8tv0w4viJUv0htUQm1d0URPLBGRLrlJv2sTLArlMBT100ThUB0JpkJ3f2cTc8yyeAxMcNYLLVUsKak0ZyvZv1MLrGRqnHBF4QWgB67YwlRVRMaY1nCR2uCs-KYyOuNpL-8IKrT8brd2d8cEgMWbzQgz2TDgIQVlG9vKnkPkKR5I0hhUyBEDToNyzzVrV5cJwG1twl6aFtOjhqkhjWaot7SrSFGKJpXTo0ifNnjduewF_umKO-VKG_GCnJE0ybYKxUn_wRW6m6t8RNTq95txhpqyi7Qiue7NvVpmMWcRjdiQTko54a7fReMqt7x25oUo-jXjap9loROroRJ0u2sKnifdtbwg7tVK_hGoBAb9bII6kpQZrjkyGrz8EGSUwlSvp8etnFXlVHrBLgxwPLLn7tdLZuJKm8khDlxCd3umNDiFZwLRRpvNsoe48_oX68g3YMHjqIrop8GHdC2w4I_96wanW0XTloyINU3jNzpXYCAKoWBWuZiByb6iLshqCu2ovSclJ8VOYocR-cJ0Mue86sC-3TgLBMwrqaegjFpgpaVkuFd22RzqgcS7SAVsbJI1SF0RTUkCGo7b7EW6pwWFSYCv80Fw-waGalL-wnTAX6-y9SzZ7X2bpm_SxAipfrm9bxHAQa7jNHRvUTVy77pCFTeJwOG_Pkc0x27HTl6WlGlQnFoTdBTACnYq9MeMKo68iFEZSAsN35im3lqXpEGAdjrRAoH0L0tbn682Y_p2RlZh4ZRJbjNTGaZrwKzcSHLBSlIh99-MxsW8G8NRo83kX3f_DMfG2NrogiJj3TB_-h-bSou6RHNJ2Ctnds2IS-pAB9yhnYtKlZYfmpTRUQMPeZKld9SFrF98DuARnBy4SZ9zfluU9RtVMs7D3l_g8oNoumcE9zr-cNuGtZw4_z8hdn6BhHvTg-SGgHZaFx1aCp6zlaKGTvX5zmTbVrHyCJkGQ9QyOXv9rNgICJ_RODTkcOpGXt964107Kg04MUP4lfSYkqQjVwFWT7NVxWietQZzIarAhmljM-OGrUmF0lahryDkTwD0_-lD5lO-tSwCQdvHuYBXugd7KjuTAx_5a0dU2akczCMPVh8A_qvzFbNKqTGS7yQEmL_1mt83-ca0nUFuMsNHPtrSsfRwUrhjI9DACu-q31LQ9zQlgh76zEY8tfVMQGiyto8If3DaGZOF4p4OQ5j54DcWREzpOH10olraVqtdL_ug8gMYbcnlMzHdIEVRePRB74wGiQU92WxrD8riScHhMvczr0Dm23D_z_ijOkLuv8l8PrNwS3N9pqsbYEGCowk-3sZ_5hVgvJN8sxN6PZmM-vLhrB9aeOYc8k6TBhhv89jFTIGIsXtLEY0sm86VpIEfJoWptNDd11VXVCoAoh72FUufuiNEY_o8LJ-kUTtBiQr43btq8F7nwajGe3nZuIhsKo8IwZKFYmZS54DXoctqBauUGJPy82_IINb8Fi_wugY5Z8w61KecfH0MPPCKartgLezhCRxNdfVoGeoKzyEMkoPJ-6zgsq9zfIkQ34DTW9X77LpvbprTT1qsYYOCUAjoLzYqFoUdhRMIB912ehd4hKPfwz4yC_cEOfp_-JtgusMfYV7-646CJPp0A9i38vncLVaKciqpOSn9hTE08WKt9EQpIb8Q5Ca3bNy3ARfOuDe7-4hiF-DZhJPQTbrPBRPAFpqBdzxCVjhdCNTbjbctq_vtEVx7iIscDk282UKtaZGdr6Q10hIEH3p62jbd_Yb2rwRGsAmVyBmGhK89diq9U3k3SK5dkzvq5MFObM2juhkWL2XXIUGbR98B4BbaJl30DS60GBv0aAIC6AiM9_7m6A1nmiC_Q-Arm4M65H890FIho7TNnfFGnm-trO7dyd33iQANEXXKG3ig6nT0dsmGSLqwBTuF7OqUtb12yrmt3nfpi4_FwUARoO_1JEoWF_Y7uMg0JRaS_lkor7ljYYcJGuVOm-mYHmCWrCBGSYxzxjl7z0TZJBl1X3CuG8KWVIOFbjah8VoLmHYR1BYLzGeUKb1DvHSGEHBvyzUjr6zWfTacyMhYuQLKeeQyxWPtge6T8sYaWD_IOT_6sDs14HfNTjD6Wjmr3JiGvyuwl0orgRGnMDnmi3vLMHmByBfyfMEAFAJGg_Hh-j6EsxB0B84WuU66H8DsSV_q-y4nTfa95MonJ-HeAqyRkL7gGRqomCBHAFQku4oR1UNXZ8nnwkqMFw1cQBTXvDeYYs_y1cFRWHB9SJWzVEv5VYm6g1Hdsk-52nOFLOddo3QCsd1myxbHX4PZmisISq3NvNh_e-vGsA5LDBadj-u8uH4TrtFETyOG9hXO3p0HYLYAt7mfDGWLM3D1USIMv7Nm3j6KYbmn9rBjggddxkbG0vmdpdr9aQm0nZAGGXwbfM0Ago9AKWzogeTVjYgxs9DVVX5-doPNmLJmh3oWdKVRh0D9Tz8&opi=122715837
+                      - generic [ref=f8e58]:
+                        - text: Why this ad?
+                        - img [ref=f8e59]
+                - generic [ref=f8e61]:
+                  - generic [ref=f8e64] [cursor=pointer]: Not interested in this ad
+                  - generic [ref=f8e67] [cursor=pointer]: Ad covered content
+                  - generic [ref=f8e70] [cursor=pointer]: Ad was inappropriate
+                  - generic [ref=f8e73] [cursor=pointer]: Seen this ad multiple times
+                - generic [ref=f8e79]: Thanks. Feedback improves Google ads
+                - generic [ref=f8e85]:
+                  - text: Ad closed by
+                  - img [ref=f8e86]
+                - generic [ref=f8e93]:
+                  - img [ref=f8e96]
+                  - generic [ref=f8e98]:
+                    - generic [ref=f8e100]: Personalize ads on this site
+                    - link [ref=f8e104] [cursor=pointer]:
+                      - /url: https://support.google.com/ads/answer/10923348
+                      - generic [ref=f8e105]:
+                        - text: Learn more
+                        - img [ref=f8e106]
+  - generic [ref=e210]:
+    - generic [ref=e211]: We are upgrading some of our systems
+    - generic [ref=e212]:
+      - link "Learn more" [ref=e213] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e215]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e219] [cursor=pointer]:
+        - img [ref=e221]
+        - text: Tell us what you think
+  - contentinfo [ref=e223]:
+    - generic [ref=e225]:
+      - generic [ref=e227]:
+        - generic [ref=e229]:
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - link "Home" [ref=e233] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e234]:
+                  - img "Trade Me" [ref=e235]
+          - list [ref=e236]:
+            - listitem [ref=e237]:
+              - generic [ref=e238]:
+                - img "Start a listing icon" [ref=e240]
+                - link "Start a listing" [ref=e242] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e243]:
+              - generic [ref=e244]:
+                - img "Watchlist icon" [ref=e246]
+                - link "Watchlist" [ref=e248] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e249]:
+              - generic [ref=e250]:
+                - img "Favourites icon" [ref=e252]
+                - link "Favourites" [ref=e254] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e255]:
+              - generic [ref=e257]:
+                - generic [ref=e258]:
+                  - img "Login icon" [ref=e260]
+                  - link "Log in" [ref=e263] [cursor=pointer]:
+                    - /url: (modal:login)
+                - generic [ref=e264]:
+                  - img "Sign up icon" [ref=e266]
+                  - link "Sign up" [ref=e268] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e270]:
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - generic [ref=e273]:
+                - img "Marketplace icon" [ref=e275]
+                - link "Marketplace" [ref=e277] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e278]:
+              - link "Latest deals" [ref=e280] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e281]:
+              - link "Stores" [ref=e283] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e284]:
+              - link "Closing soon" [ref=e286] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e287]:
+              - link "$1 reserve" [ref=e289] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e290]:
+              - link "Home & Living" [ref=e292] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e293]:
+            - listitem [ref=e294]:
+              - generic [ref=e295]:
+                - img "Property icon" [ref=e297]
+                - link "Property" [ref=e299] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e300]:
+              - link "International property" [ref=e302] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e303]:
+              - link "Property news & guides" [ref=e305] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e306]:
+              - link "Sold Properties" [ref=e308] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e309]:
+              - link "OneHub for agents" [ref=e311] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e312]:
+              - link "Find a Real Estate Agent" [ref=e314] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e315]:
+            - listitem [ref=e316]:
+              - generic [ref=e317]:
+                - img "Motors icon" [ref=e319]
+                - link "Motors" [ref=e321] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e322]:
+              - link "Cars for sale" [ref=e324] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e325]:
+              - link "Motorbikes for sale" [ref=e327] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e328]:
+              - link "Buying & selling advice" [ref=e330] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e331]:
+              - link "Dealer news & info" [ref=e333] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e334]:
+              - link "Sell my car" [ref=e336] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - generic [ref=e339]:
+                - img "Jobs icon" [ref=e341]
+                - link "Jobs" [ref=e344] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e345]:
+              - link "Browse job categories" [ref=e347] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e348]:
+              - link "Careers advice" [ref=e350] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e351]:
+              - link "JobSmart" [ref=e353] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e354]:
+              - link "Advertisers advice" [ref=e356] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e357]:
+              - link "Salary guide" [ref=e359] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e360]:
+            - listitem [ref=e361]:
+              - generic [ref=e362]:
+                - img "Services icon" [ref=e364]
+                - link "Services" [ref=e366] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e367]:
+              - link "Trades" [ref=e369] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e370]:
+              - link "Domestic services" [ref=e372] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e373]:
+              - link "Events & entertainment" [ref=e375] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e376]:
+              - link "Health & wellbeing" [ref=e378] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e379]:
+              - link "List my services" [ref=e381] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e382]:
+            - listitem [ref=e383]:
+              - generic [ref=e384]:
+                - img "Community icon" [ref=e386]
+                - link "Community" [ref=e390] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e391]:
+              - link "Help" [ref=e393] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e394]:
+              - link "Announcements" [ref=e396] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e397]:
+              - link "Trust & safety" [ref=e399] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e400]:
+              - link "Seller information" [ref=e402] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e403]:
+              - link "Help center community" [ref=e405] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e406]:
+        - group "Affiliate links" [ref=e409]:
+          - list [ref=e410]:
+            - listitem [ref=e411]:
+              - link "Trade Me Insurance" [ref=e412] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e413]:
+              - link "homes.co.nz" [ref=e414] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e415]:
+              - link "MotorWeb" [ref=e416] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e417]:
+              - link "CarExpert" [ref=e418] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e419]:
+              - link "Holiday Houses" [ref=e420] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e421]:
+              - link "FindSomeone" [ref=e422] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e423]:
+          - generic [ref=e424]: © 2026 Trade Me Limited
+          - list [ref=e427]:
+            - listitem [ref=e428]:
+              - link "Desktop site" [ref=e430] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e431]:
+              - link "About Us" [ref=e433] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e434]:
+              - link "Careers" [ref=e436] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e437]:
+              - link "News" [ref=e439] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e440]:
+              - link "Advertise" [ref=e442] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e443]:
+              - link "Privacy policy" [ref=e445] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e446]:
+              - link "Terms & conditions" [ref=e448] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e449]:
+              - link "Contact Us" [ref=e451] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e457]:
+            - listitem [ref=e458]:
+              - link "Follow Trade Me on Tiktok" [ref=e459] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e461]
+            - listitem [ref=e463]:
+              - link "Follow Trade Me on Instagram" [ref=e464] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e466]
+            - listitem [ref=e468]:
+              - link "Follow Trade Me on Facebook" [ref=e469] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e471]
+            - listitem [ref=e473]:
+              - link "Follow Trade Me on LinkedIn" [ref=e474] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e476]
+            - listitem [ref=e478]:
+              - link "Follow Trade Me on YouTube" [ref=e479] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e481]
+```
+
+# Test source
+
+```ts
+  175 |   });
+  176 | 
+  177 |   test('[TC-F-17] No results message should be displayed', async () => {
+  178 |     await searchPage.focusSearchBox();
+  179 |     await searchPage.typeInSearchBox('xyzabc123notreal');
+  180 |     await searchPage.searchByEnter();
+  181 | 
+  182 |     const noResultsVisible = await searchPage.isNoResultsDisplayed();
+  183 |     const resultsCount = await searchPage.getResultsCount();
+  184 | 
+  185 |     expect(noResultsVisible || resultsCount === 0).toBe(true);
+  186 |   });
+  187 | 
+  188 |   test('[TC-F-18] Search results should show correct count', async () => {
+  189 |     await searchPage.focusSearchBox();
+  190 |     await searchPage.typeInSearchBox('furniture');
+  191 |     await searchPage.searchByEnter();
+  192 | 
+  193 |     const countText = await searchPage.getResultCountText();
+  194 |     const displayedResults = await searchPage.getResultsCount();
+  195 | 
+  196 |     expect(countText.length > 0 || displayedResults > 0).toBe(true);
+  197 |   });
+  198 | 
+  199 |   // ==================== FUNCTIONAL TESTS: RESULT NAVIGATION ====================
+  200 | 
+  201 |   test('[TC-F-19] Search result listings should be clickable', async () => {
+  202 |     await searchPage.focusSearchBox();
+  203 |     await searchPage.typeInSearchBox('phone');
+  204 |     await searchPage.searchByEnter();
+  205 | 
+  206 |     const resultsCount = await searchPage.getResultsCount();
+  207 | 
+  208 |     if (resultsCount > 0) {
+  209 |       const originalUrl = page.url();
+  210 |       await searchPage.clickFirstResult();
+  211 |       const newUrl = page.url();
+  212 | 
+  213 |       expect(newUrl).not.toBe(originalUrl);
+  214 |     }
+  215 |   });
+  216 | 
+  217 |   test('[TC-F-20] Detail page should show correct item', async () => {
+  218 |     await searchPage.focusSearchBox();
+  219 |     await searchPage.typeInSearchBox('laptop');
+  220 |     await searchPage.searchByEnter();
+  221 | 
+  222 |     const resultsCount = await searchPage.getResultsCount();
+  223 | 
+  224 |     if (resultsCount > 0) {
+  225 |       const resultTitle = await searchPage.getFirstResultTitle();
+  226 |       await searchPage.clickFirstResult();
+  227 | 
+  228 |       const detailTitle = await page.locator('h1').textContent();
+  229 |       expect(detailTitle).toContain(resultTitle.substring(0, 10)); // Partial match
+  230 |     }
+  231 |   });
+  232 | 
+  233 |   test('[TC-F-21] Search should be refinable', async () => {
+  234 |     await searchPage.focusSearchBox();
+  235 |     await searchPage.typeInSearchBox('phone');
+  236 |     await searchPage.searchByEnter();
+  237 |     const count1 = await searchPage.getResultsCount();
+  238 | 
+  239 |     // Refine search
+  240 |     await searchPage.clearSearchBox();
+  241 |     await searchPage.typeInSearchBox('smartphone');
+  242 |     await searchPage.searchByEnter();
+  243 |     const count2 = await searchPage.getResultsCount();
+  244 | 
+  245 |     // Results should change
+  246 |     expect(count1 >= 0 && count2 >= 0).toBe(true);
+  247 |   });
+  248 | 
+  249 |   test('[TC-F-22] Pagination should work on results', async () => {
+  250 |     await searchPage.focusSearchBox();
+  251 |     await searchPage.typeInSearchBox('car');
+  252 |     await searchPage.searchByEnter();
+  253 | 
+  254 |     const paginationExists = await page.locator('button:has-text("Next"), a:has-text("Next")').isVisible().catch(() => false);
+  255 | 
+  256 |     if (paginationExists) {
+  257 |       const pageUrl1 = page.url();
+  258 |       await searchPage.goToNextPage();
+  259 |       const pageUrl2 = page.url();
+  260 | 
+  261 |       expect(pageUrl1).not.toBe(pageUrl2);
+  262 |     }
+  263 |   });
+  264 | 
+  265 |   // ==================== NON-FUNCTIONAL TESTS: PERFORMANCE ====================
+  266 | 
+  267 |   test('[TC-NF-01] Suggestions should load within acceptable time', async () => {
+  268 |     const startTime = Date.now();
+  269 | 
+  270 |     await searchPage.focusSearchBox();
+  271 |     await searchPage.typeInSearchBox('camera');
+  272 |     await searchPage.waitForSuggestions();
+  273 | 
+  274 |     const loadTime = Date.now() - startTime;
+> 275 |     expect(loadTime).toBeLessThan(2000); // 2 seconds max
+      |                      ^ Error: expect(received).toBeLessThan(expected)
+  276 |   });
+  277 | 
+  278 |   test('[TC-NF-02] Results page should load within acceptable time', async () => {
+  279 |     const startTime = Date.now();
+  280 | 
+  281 |     await searchPage.focusSearchBox();
+  282 |     await searchPage.typeInSearchBox('phone');
+  283 |     await searchPage.searchByEnter();
+  284 | 
+  285 |     const loadTime = Date.now() - startTime;
+  286 |     expect(loadTime).toBeLessThan(4000); // 4 seconds max
+  287 |   });
+  288 | 
+  289 |   // ==================== NON-FUNCTIONAL TESTS: USABILITY ====================
+  290 | 
+  291 |   test('[TC-NF-05] Search box should be prominent and easy to find', async () => {
+  292 |     const viewport = await searchPage.getViewportSize();
+  293 |     const searchBox = await searchPage.searchInput.boundingBox();
+  294 | 
+  295 |     expect(searchBox).toBeTruthy();
+  296 |     expect(searchBox!.y).toBeLessThan(viewport.height / 2); // Above fold on desktop
+  297 |   });
+  298 | 
+  299 |   test('[TC-NF-06] Clear button should exist when text is entered', async () => {
+  300 |     await searchPage.focusSearchBox();
+  301 |     await searchPage.typeInSearchBox('test');
+  302 | 
+  303 |     // Most browsers have native clear button, or custom implementation
+  304 |     const hasClearButton = await searchPage.isClearButtonVisible();
+  305 |     const inputValue = await searchPage.searchInput.inputValue();
+  306 | 
+  307 |     expect(hasClearButton || inputValue.length > 0).toBe(true);
+  308 |   });
+  309 | 
+  310 |   // ==================== NON-FUNCTIONAL TESTS: RESPONSIVE DESIGN ====================
+  311 | 
+  312 |   test('[TC-NF-09] Search box should be visible on mobile (320px)', async () => {
+  313 |     await searchPage.setViewport(320, 667);
+  314 | 
+  315 |     const isVisible = await searchPage.isSearchBoxVisible();
+  316 |     expect(isVisible).toBe(true);
+  317 |   });
+  318 | 
+  319 |   test('[TC-NF-10] Search suggestions on mobile should be readable', async () => {
+  320 |     await searchPage.setViewport(320, 667);
+  321 | 
+  322 |     await searchPage.focusSearchBox();
+  323 |     await searchPage.typeInSearchBox('camera');
+  324 |     const hasSuggestions = await searchPage.waitForSuggestions();
+  325 | 
+  326 |     expect(hasSuggestions).toBe(true);
+  327 |   });
+  328 | 
+  329 |   test('[TC-NF-11] Search results layout should adapt to tablet (768px)', async () => {
+  330 |     await searchPage.setViewport(768, 1024);
+  331 | 
+  332 |     await searchPage.focusSearchBox();
+  333 |     await searchPage.typeInSearchBox('phone');
+  334 |     await searchPage.searchByEnter();
+  335 | 
+  336 |     const resultsCount = await searchPage.getResultsCount();
+  337 |     expect(resultsCount).toBeGreaterThanOrEqual(0);
+  338 |   });
+  339 | 
+  340 |   test('[TC-NF-12] Search results layout should adapt to desktop (1920px)', async () => {
+  341 |     await searchPage.setViewport(1920, 1080);
+  342 | 
+  343 |     await searchPage.focusSearchBox();
+  344 |     await searchPage.typeInSearchBox('phone');
+  345 |     await searchPage.searchByEnter();
+  346 | 
+  347 |     const resultsCount = await searchPage.getResultsCount();
+  348 |     expect(resultsCount).toBeGreaterThanOrEqual(0);
+  349 |   });
+  350 | 
+  351 |   // ==================== NON-FUNCTIONAL TESTS: ACCESSIBILITY ====================
+  352 | 
+  353 |   test('[TC-NF-13] Search input should have proper ARIA labels', async () => {
+  354 |     const ariaLabel = await searchPage.getSearchBoxAriaLabel();
+  355 |     const labelElement = await page.locator('label[for*="search"]').count();
+  356 | 
+  357 |     expect(ariaLabel || labelElement > 0).toBe(true);
+  358 |   });
+  359 | 
+  360 |   test('[TC-NF-14] Search should be operable via keyboard', async () => {
+  361 |     // Tab to search box
+  362 |     await page.keyboard.press('Tab');
+  363 |     await page.keyboard.press('Tab');
+  364 | 
+  365 |     const isFocused = await page.evaluate(() => {
+  366 |       const searchInput = document.querySelector('input[type="search"], input[placeholder*="Search"]');
+  367 |       return searchInput === document.activeElement;
+  368 |     });
+  369 | 
+  370 |     if (isFocused) {
+  371 |       await page.keyboard.type('test');
+  372 |       const value = await searchPage.searchInput.inputValue();
+  373 |       expect(value).toBe('test');
+  374 |     }
+  375 |   });
+```

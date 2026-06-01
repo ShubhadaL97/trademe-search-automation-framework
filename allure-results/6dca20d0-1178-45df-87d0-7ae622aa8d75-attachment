@@ -1,0 +1,430 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-F-09] Keyboard navigation through suggestions
+- Location: tests\search.spec.ts:106:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - navigation "navigation bar" [ref=e8]:
+        - generic [ref=e12]:
+          - link "Trade Me" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e17]
+          - list [ref=e18]:
+            - listitem [ref=e19]:
+              - button "Categories" [ref=e24] [cursor=pointer]:
+                - generic [ref=e25]: Categories
+                - img [ref=e27]
+            - listitem
+            - listitem [ref=e30]:
+              - link "Watchlist" [ref=e31] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e32]: Watchlist
+                - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "Favourites" [ref=e37] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e38]: Favourites
+                - img [ref=e40]
+            - listitem [ref=e42]:
+              - link "Start a listing" [ref=e43] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e44]: Start a listing
+                - img [ref=e46]
+            - listitem [ref=e48]:
+              - generic [ref=e49]:
+                - link "Sign up" [ref=e50] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e52]
+                - link "Log in" [ref=e54] [cursor=pointer]:
+                  - /url: (modal:login)
+                  - text: Log in
+                  - img [ref=e56]
+      - navigation [ref=e59]
+  - main [ref=e62]:
+    - generic [ref=e63]: main content
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - heading "Trade Me Homepage" [level=1] [ref=e67]
+        - navigation "Search and Verticals" [ref=e68]:
+          - generic [ref=e72]:
+            - search [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: Search all of Trade Me
+                - generic [ref=e76]:
+                  - img [ref=e79]
+                  - searchbox "Search all of Trade Me Clear input" [ref=e82]: phone
+                  - button "Clear input" [ref=e84] [cursor=pointer]:
+                    - img "Clear input" [ref=e86]
+              - button "Search all of Trade Me" [ref=e88] [cursor=pointer]: Search
+            - generic [ref=e89]:
+              - alert [ref=e90]: Search suggestions
+              - heading "Search suggestions" [level=5] [ref=e91]: Suggestions
+              - list [ref=e92]:
+                - listitem [ref=e93]:
+                  - link "phones" [active] [ref=e94] [cursor=pointer]:
+                    - /url: /a/search?search_string=phones
+                - listitem [ref=e95]:
+                  - link "phones in Mobile phones" [ref=e96] [cursor=pointer]:
+                    - /url: /a/search?search_string=phones&category=422
+                    - text: phones
+                    - generic [ref=e97]: in Mobile phones
+                - listitem [ref=e98]:
+                  - link "phone" [ref=e99] [cursor=pointer]:
+                    - /url: /a/search?search_string=phone
+                - listitem [ref=e100]:
+                  - link "phone cases" [ref=e101] [cursor=pointer]:
+                    - /url: /a/search?search_string=phone%20cases
+              - heading "Search suggestions" [level=5] [ref=e102]: Categories
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Phonecards Antiques & collectables / Phonecards" [ref=e105] [cursor=pointer]:
+                    - /url: /a/search?category=453
+                    - text: Phonecards
+                    - text: Antiques & collectables / Phonecards
+                - listitem [ref=e106]:
+                  - link "Phone & fax Electronics & photography / Phone & fax" [ref=e107] [cursor=pointer]:
+                    - /url: /a/search?category=3368
+                    - text: Phone & fax
+                    - text: Electronics & photography / Phone & fax
+                - listitem [ref=e108]:
+                  - link "Other HTC phones Mobile phones / Mobile phones / HTC / Other HTC phones" [ref=e109] [cursor=pointer]:
+                    - /url: /a/search?category=444
+                    - text: Other HTC phones
+                    - text: Mobile phones / Mobile phones / HTC / Other HTC phones
+              - link "Browse all categories" [ref=e110] [cursor=pointer]:
+                - /url: /a/browse
+          - list [ref=e112]:
+            - listitem [ref=e113]:
+              - link "Marketplace" [ref=e114] [cursor=pointer]:
+                - /url: /a/marketplace
+                - img [ref=e116]
+                - text: Marketplace
+            - listitem [ref=e123]:
+              - link "Property" [ref=e124] [cursor=pointer]:
+                - /url: /a/property
+                - img [ref=e126]
+                - text: Property
+            - listitem [ref=e131]:
+              - link "Motors" [ref=e132] [cursor=pointer]:
+                - /url: /a/motors
+                - img [ref=e134]
+                - text: Motors
+            - listitem [ref=e139]:
+              - link "Jobs" [ref=e140] [cursor=pointer]:
+                - /url: /a/jobs
+                - img [ref=e142]
+                - text: Jobs
+            - listitem [ref=e148]:
+              - link "Services" [ref=e149] [cursor=pointer]:
+                - /url: /a/services
+                - img [ref=e151]
+                - text: Services
+      - region "Trade Me listings" [ref=e156]:
+        - heading "Trade Me listings" [level=2] [ref=e157]
+        - generic [ref=e158]:
+          - generic [ref=e160]:
+            - heading "Trending Categories" [level=3] [ref=e161]
+            - generic [ref=e162]:
+              - link "marketplace Listings In Concerts" [ref=e164] [cursor=pointer]:
+                - /url: /a/marketplace/travel-events-activities/event-tickets/concerts
+                - generic [ref=e165]:
+                  - img [ref=e167]
+                  - generic [ref=e174]:
+                    - generic [ref=e175]: marketplace Listings
+                    - generic [ref=e176]: In Concerts
+              - link "marketplace Listings In Warhammer 40,000" [ref=e178] [cursor=pointer]:
+                - /url: /a/marketplace/gaming/war-games/warhammer-40-000
+                - generic [ref=e179]:
+                  - img [ref=e181]
+                  - generic [ref=e188]:
+                    - generic [ref=e189]: marketplace Listings
+                    - generic [ref=e190]: In Warhammer 40,000
+              - link "marketplace Listings In Jackets" [ref=e192] [cursor=pointer]:
+                - /url: /a/marketplace/sports/ski-board/snow-ski-clothing/jackets
+                - generic [ref=e193]:
+                  - img [ref=e195]
+                  - generic [ref=e202]:
+                    - generic [ref=e203]: marketplace Listings
+                    - generic [ref=e204]: In Jackets
+          - generic [ref=e207]:
+            - text: Advertisement
+            - iframe [ref=e211]:
+              - generic [active]:
+                - generic [ref=f13e2]:
+                  - link "Advertisement" [ref=f13e4] [cursor=pointer]:
+                    - /url: https://ad.doubleclick.net/pcs/click?xai=AKAOjstypRH7r_Sg-hUTTRElBJEqHJzipV-CzuRjq6nD3gnlWM3vrqVEi86Ekkv3Vn9LkNNiTeQ6dwukejsu42FR-s_2jiJ8AfQVeMZfzJaOR90s7V0NrPGs9ap-aPwE1PrEdd3NnNsuJ7P9LCQvhdHLcO5ekkIdDEXMvkIe15X4ocrGHcMSQCBDtVLS7Z7eEyDVx3N7jFuk9mqvXBnnrWlUe1u4NLMUP-PvN6cls7zkvgJCAx17yGF1X_pj9fIAeOmJGGeP2___pJuNXRl2_9khfvyNVcjRgLKcbFwLnj2qd9dC62bbMSSf5hHB2GKMjnX7VtLtvqJT08XF5fusleCzKJoTHpxpxn19Apio952l9W-9jTHp3F6QFG7nv75Sr119SbLFpx__rZZs9JSzxuE91pxlMZ892p-JZYwpEQD7YSxsdHz8YnotwJzwY_Pica98PVfWLaXh5sL0_inHknCjm7z9atyih0--UpKTkq9s4-GnfKUr90Fh1unTMvSZ3FOa7di5T2SCDKbwFV91yYIkU_WcvXeQteGHLSm-JNte4JB2o17UaEau9bV5Y1yQ0KTQJrrMkj6k8bYnRMTAXwe1BxsrHJbel48c_DGAy-M9Dk5L4PW2yejbBPp4G5x5PtPWXrh_CRuR4dBu3G_YJ-Y_HjD9zQN-hol2asKtz3kvOLOeKy8BZLM9R06NEHefXYTmw3Wdq5WnevNWsBvIy_P1c7_BkOg-6oIbnzs1o_tVFLE1mSVJFyX7Pvokq5TzCU941sWjPf9vwCExxqDSCZCef_zUs4u0NvakdGFU6Rfsu-d-wfB1ulfWqibQ5dd7WZSMT5-IEeDVOWyzMGJ7qDQ7n0PrSiZkGDE7UuiYDx4rbhATom395q1S37f4Z-VzT9on0iwB0oebUuIrTTLg3uOtBW7_H9NhH5z0GMbmsFbcHo2DodC32EKDt9N1dwhl5PbEe-tj46ZH9t3UygdyQ_u9FkymAv_OVzX85_pAjkoBdxX2RGKUIo-UWi4vD9E_gbp9aJxN6aPaTFlyEpYf8zFjUaT3-T0aE4oa8EytAiNMrBZBz0b9Vv4QyOYG4GJFtkdciBh8ABSlRyk9y52LQwaQ11AIpW-IqM3XXpMqjImtSQMBu7mYQ4wHo53RxAx22KBrMT0L25dT908WS8og5H3ZdktswnfWUExkS0vJxf44VSh5uxTWwiTrcRmWqAx-P2REyJe5QqMc6GbvbfqoVs1pa47ooOS7SqE3E2W6QopywGp-hbNmSCGVaeNbt8VWphQSPxA3FFuJk6gO2VKjpVuGeEgyMguWoBfKvzZIt-S9unehrUYJiXLO0_6ESd6ZMlpVweWjIk_PAXYo981XozoD8AIMmtDsBY6cTstP4GaHIsH3EZ_Hq1geVmFKR8jt-h6bwyVWwQoiB4YgGxCJeiK0-tJYHB7e8TRR40aT_RLGu9cqqFIKKCIV2hQ6T1nN5PQ2gwO7Wdt5wopjLs-ogforcLOtWEMgUs5NE8clVvChKUCzd8GR0n-x3BubWoj4ADfmH3HwYKUUfGtNKgDJu82s2oTLxyMVxl1Eydz7auzOBxiiEaFrNWxh0lDbSG7Hz9G-h7LbEJ9UB9ZOkU_YIzpcKMgBNiiop8u9gNDnexr5tL8PW-DQpJcEYIPDuE4RWg0U-Ez0B7gHKR56MXwdI8XxRqsY2mWDqZzmFegWBVaubrYwh0eo4YbkXcv_0-AOots8mobmYbjplLgKdaDlA_xEJUJ14Oq56fyzwGyOkjVqCSP-c7iOLSi2ytn9vemWe4CjWF8eamZ46nqGnploemaet6SpeTu8DnkfeRSNrqD8tq6wdYrvoqz5xqfwxHcn3BpEwpXUtlvCFEfEEyUdbNG180qPD1q-9_Ifv80lKVsuoP-mVMplPbfV2r3dOspG1vW2lkiapZq8s7ddK1UY6gzAAI3BVFMQTQWkqu3JH9mB6pV5X9GezIH1xnO-iq7fPATKpy_im-4gbwthZZd28qehv3_9mVrykMhP5778RZVr8rEcEt0RerYT2BpIIMcZ37_NMy4nj_ZueeaC96Q4EI60HmUh7rRcle_iHjVzX5xpSzl3SR1aYYAqTSIuLR1qLSaCtll34xRtR4Noee8lg7On_WZDgUbUXoVN48Po9MuXznagbujUNL9mUM439z-VNqFVonLWQaE5BQ&sai=AMfl-YQwagOGJDMQodHpyNs9IgJJ8EG9V9mAR0mDd06xuJ6E2KfDlJR5OSc7huCWLrUa6YNpRbCB3Z7mOzoIblV1Ivf2BFnOsmqDny-80Q83yYFc_zq0unGMoE2AjqloCZrTzMp9QHEdTU-AabUXwXmUd9HAx1ukxynAB3nd_6ePIgzUpdF_BaMZSJBjyE4Zr97Ftmh4ij3XqkcGz3WAnH273RIDzaQlXnVHVnq7ynyhDK9shHKaxjplrbrmhRCj-WgxdqXv218DbgWnH9zXqbdu_yz1zXqBBDP6KADfTI2K955vNgqf7BSt0Y_KbvERpVctTyUnUpKp9xhbokPxSFDgBXaraImJXopajOdC-H5IqfPeC3-DHucxRMEqJ4fVJWqOJQpXb055n_PA0_PmC4iNLGS6Tqs8Rql2pMJc8EtxRaWhm0UZCP751msAZ8-UWum8qGKYd4B1kDUlo_D80KqtYvelaYmVS84eHjbp-wE6gXXT1QStH1GIoIcfSJFcAjwFSkzZgtUw0mY4Mh_QOMGQGEAk0-oeg2TOtRyulWTZzGcKYHuXjviB2UUZQGBqo0-5vBrfo9b6YnbC20EsIGVDTpkrkjN_nBxddkwzWZZC0toXVrCo_YpGIhPInbq88UAeIdejISC9QD8FazcH7cQt7Fx265oq0KikX026DHcXIuhjommYHO9AVI1WFN1sQLYrlsMOOyV7nKpDN7mn-RccZI681p-nA4Ym4pDq0GKhhWOk2PcVXj6NJfDssn0h_3ge1Hhl2koMkacFYp1k4vVZK2Pkw2DGlForApMXrVSJ0fucKFLGerzBkooaVfiIpInTeQz9yJyZWxCwcG4ckpPitlBTZU5yuy1pFfEkkrpx0h08-ATBxQaA-treru-yUMEV94SE7yUE0rByvhnGw2syZY5H5jx5-f6NdRZSF96id57ojHRty_6Z4QtnoWRH6fdrFFazOvktB9Vk9hEk5gi-Ehs1XVMVyPG8QM507ygOnVB-Rd-W_-hUZk67&sig=Cg0ArKJSzIQ7DiunTB-G&fbs_aeid=%5Bgw_fbsaeid%5D&crd=aHR0cHM6Ly9iYXJnYWluY2hlbWlzdC5jby5ueg&urlfix=1&adurl=https://www.bargainchemist.co.nz/%3Futm_source%3Ddv360%26utm_medium%3Dbanners%26utm_campaign%3Dkings_birthday_2026%26utm_content%3Dkings_birthday%26dclid%3D%25edclid!%26gad_source%3D7%26gad_campaignid%3D23857614902
+                    - img "Advertisement" [ref=f13e5]
+                  - generic [ref=f13e6]:
+                    - generic:
+                      - img [ref=f13e10] [cursor=pointer]
+                      - button [ref=f13e12] [cursor=pointer]:
+                        - img [ref=f13e13]
+                - iframe
+  - generic [ref=e214]:
+    - generic [ref=e215]: We are upgrading some of our systems
+    - generic [ref=e216]:
+      - link "Learn more" [ref=e217] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e219]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e223] [cursor=pointer]:
+        - img [ref=e225]
+        - text: Tell us what you think
+  - contentinfo [ref=e227]:
+    - generic [ref=e229]:
+      - generic [ref=e231]:
+        - generic [ref=e233]:
+          - list [ref=e234]:
+            - listitem [ref=e235]:
+              - link "Home" [ref=e237] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e238]:
+                  - img "Trade Me" [ref=e239]
+          - list [ref=e240]:
+            - listitem [ref=e241]:
+              - generic [ref=e242]:
+                - img "Start a listing icon" [ref=e244]
+                - link "Start a listing" [ref=e246] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e247]:
+              - generic [ref=e248]:
+                - img "Watchlist icon" [ref=e250]
+                - link "Watchlist" [ref=e252] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e253]:
+              - generic [ref=e254]:
+                - img "Favourites icon" [ref=e256]
+                - link "Favourites" [ref=e258] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e259]:
+              - generic [ref=e261]:
+                - generic [ref=e262]:
+                  - img "Login icon" [ref=e264]
+                  - link "Log in" [ref=e267] [cursor=pointer]:
+                    - /url: (modal:login)
+                - generic [ref=e268]:
+                  - img "Sign up icon" [ref=e270]
+                  - link "Sign up" [ref=e272] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e274]:
+          - list [ref=e275]:
+            - listitem [ref=e276]:
+              - generic [ref=e277]:
+                - img "Marketplace icon" [ref=e279]
+                - link "Marketplace" [ref=e281] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e282]:
+              - link "Latest deals" [ref=e284] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e285]:
+              - link "Stores" [ref=e287] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e288]:
+              - link "Closing soon" [ref=e290] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e291]:
+              - link "$1 reserve" [ref=e293] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e294]:
+              - link "Home & Living" [ref=e296] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e297]:
+            - listitem [ref=e298]:
+              - generic [ref=e299]:
+                - img "Property icon" [ref=e301]
+                - link "Property" [ref=e303] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e304]:
+              - link "International property" [ref=e306] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e307]:
+              - link "Property news & guides" [ref=e309] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e310]:
+              - link "Sold Properties" [ref=e312] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e313]:
+              - link "OneHub for agents" [ref=e315] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e316]:
+              - link "Find a Real Estate Agent" [ref=e318] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e319]:
+            - listitem [ref=e320]:
+              - generic [ref=e321]:
+                - img "Motors icon" [ref=e323]
+                - link "Motors" [ref=e325] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e326]:
+              - link "Cars for sale" [ref=e328] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e329]:
+              - link "Motorbikes for sale" [ref=e331] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e332]:
+              - link "Buying & selling advice" [ref=e334] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e335]:
+              - link "Dealer news & info" [ref=e337] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e338]:
+              - link "Sell my car" [ref=e340] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e341]:
+            - listitem [ref=e342]:
+              - generic [ref=e343]:
+                - img "Jobs icon" [ref=e345]
+                - link "Jobs" [ref=e348] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e349]:
+              - link "Browse job categories" [ref=e351] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e352]:
+              - link "Careers advice" [ref=e354] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e355]:
+              - link "JobSmart" [ref=e357] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e358]:
+              - link "Advertisers advice" [ref=e360] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e361]:
+              - link "Salary guide" [ref=e363] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e364]:
+            - listitem [ref=e365]:
+              - generic [ref=e366]:
+                - img "Services icon" [ref=e368]
+                - link "Services" [ref=e370] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e371]:
+              - link "Trades" [ref=e373] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e374]:
+              - link "Domestic services" [ref=e376] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e377]:
+              - link "Events & entertainment" [ref=e379] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e380]:
+              - link "Health & wellbeing" [ref=e382] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e383]:
+              - link "List my services" [ref=e385] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e386]:
+            - listitem [ref=e387]:
+              - generic [ref=e388]:
+                - img "Community icon" [ref=e390]
+                - link "Community" [ref=e394] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e395]:
+              - link "Help" [ref=e397] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e398]:
+              - link "Announcements" [ref=e400] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e401]:
+              - link "Trust & safety" [ref=e403] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e404]:
+              - link "Seller information" [ref=e406] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e407]:
+              - link "Help center community" [ref=e409] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e410]:
+        - group "Affiliate links" [ref=e413]:
+          - list [ref=e414]:
+            - listitem [ref=e415]:
+              - link "Trade Me Insurance" [ref=e416] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e417]:
+              - link "homes.co.nz" [ref=e418] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e419]:
+              - link "MotorWeb" [ref=e420] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e421]:
+              - link "CarExpert" [ref=e422] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e423]:
+              - link "Holiday Houses" [ref=e424] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e425]:
+              - link "FindSomeone" [ref=e426] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e427]:
+          - generic [ref=e428]: © 2026 Trade Me Limited
+          - list [ref=e431]:
+            - listitem [ref=e432]:
+              - link "Desktop site" [ref=e434] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e435]:
+              - link "About Us" [ref=e437] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e438]:
+              - link "Careers" [ref=e440] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e441]:
+              - link "News" [ref=e443] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e444]:
+              - link "Advertise" [ref=e446] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e447]:
+              - link "Privacy policy" [ref=e449] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e450]:
+              - link "Terms & conditions" [ref=e452] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e453]:
+              - link "Contact Us" [ref=e455] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e461]:
+            - listitem [ref=e462]:
+              - link "Follow Trade Me on Tiktok" [ref=e463] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e465]
+            - listitem [ref=e467]:
+              - link "Follow Trade Me on Instagram" [ref=e468] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e470]
+            - listitem [ref=e472]:
+              - link "Follow Trade Me on Facebook" [ref=e473] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e475]
+            - listitem [ref=e477]:
+              - link "Follow Trade Me on LinkedIn" [ref=e478] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e480]
+            - listitem [ref=e482]:
+              - link "Follow Trade Me on YouTube" [ref=e483] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e485]
+```

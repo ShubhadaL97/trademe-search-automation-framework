@@ -1,0 +1,628 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-F-18] Search results should show correct count
+- Location: tests\search.spec.ts:188:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary [ref=e7]:
+    - iframe [ref=e14]:
+      - generic [active] [ref=f17e1]:
+        - link "N'Shore Assembly Local Furniture Assembler OPEN" [ref=f17e4] [cursor=pointer]:
+          - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=C28QhEnMbaqT2G9-4k7QPxMqDoA_R8vrNhQHOnO3x6hXaj5i6jA4QASD68_0aYKvssYXgGKABjc2f9ELIAQGpArusEz_7F6Q-4AIAqAMByAMKqgSrAk_Qm_QfW0nbykQwSdE6scIUyTufOEYuAXo_-Nm775d0wN2vM4amOMjrfHizQdsJxbsYtP44c7QLruIbmcW2Ri1cpzhG8NljF6SPwfBEJTKsmCzQz_9gz0s6ZpmbUkY6v5PnY0l780XWlaGAJOazo_Eu2CzJTbIXlxR9xPYZGr_smKY5Y_-6Lr6AjcvUihsu3xPXSn8xWpRRWb0bcbYYa_8qrIBxqOTZrpVYLgpC5pbOXUpGUTuCzAGbiabW0mbjrn7FI8Rh_4KTGdSTyYiRbNlQFAO0RCApDcXcTE9xVsWunMhbuZjph5-JYK-vGifvxGr1YmzBLGPxSiGCo9qdIKIK4JAFUlxl5mMXQ7q7AG9PozOPxMj2ACCDlxQBN0JdhN0eRF68uDGyg3OfwASwosbd5gXgBAGIBf7z0vlXgAeNhfDTHagHp8yxAqgHpr4bqAfMzrECqAfz0RuoB5bYG6gHqpuxAqgHjs4bqAeT2BuoB_DgG6gH7paxAqgH_p6xAqgHr76xAqgH1ckbqAfZtrECqAeaBqgH_56xAqgH35-xAqgH-MKxAqgH-8KxAtgHAdIIMwiAYRABGJ0BMgiKgoCAgICACDoPgECAwICAgICogAKog4AQSL39wTpYxp7vxJXilANgAbEJP4_KYPa9w8eACgOYCwHICwGiDAwqCgoIjt-xApXisQKqDQJOWsgNAeINEwiP1O_EleKUAxVf3IQAHUTlAPTqDRMI_eHwxJXilAMVX9yEAB1E5QD08A0CiA7___________8B2BMK0BUByhYCCgD4FgGAFwGyFxAYASoKNDg2NTA0MjgzMFAGuhcCOAGqGBcJAAAAAIiECUESCjQ4NjUwNDI4MzAYAbIYCRICrVEYASIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIpMfxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJLwvD_BwE&num=1&cid=CAQSiwIABaugfe9h-ERO_fEEW-C9QQIvBglUzOiQaI2XJ-nglb6Hj6TLoK-VAAo6s77KwCBSGtTroAUcRuVONkUDQuneC1l5GC4H65FLDXu6yZTpMl1cLYL6T31MlQ9io-xzuovbUBiJhwHKygWdHlp-5X8XBPFcxJxtY3dmtJHnMCCbzKr6QQL5rGh93Pf3ofICXZOkc8gS6jqPijwLAZVbkL7BZcW5GevijV3OGdc1SHA2HpzOPRm5-MG-c3AAbHi9jIRBBrjXp6M3-IYIVdgRK9IeXSnf1vqUNxv1ZAJJhzMkhiv873L_7L8t0Nr58Dm4d9tG0Yq7RPaR_AyZdpv1fhYVAu4ceUQwpWf_edgYAQ&sig=AOD64_2_7X2v1byEnkNGP0kP6pqERuIhgw&client=ca-pub-4363339964316411&rf=4&nb=2&adurl=https://nshoreassembly.co.nz/%3Fgad_source%3D5%26gad_campaignid%3D23608998398%26gclid%3DEAIaIQobChMIpMfxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJLwvD_BwE
+          - generic [ref=f17e5]:
+            - generic [ref=f17e8]:
+              - generic "N'Shore Assembly" [ref=f17e9]:
+                - link "N'Shore Assembly" [ref=f17e10]
+              - generic "N'Shore Assembly" [ref=f17e11]:
+                - link "Local Furniture Assembler" [ref=f17e13]
+            - link "OPEN" [ref=f17e15]:
+              - generic [ref=f17e17]:
+                - generic [ref=f17e18]: OPEN
+                - img [ref=f17e19]
+        - generic [ref=f17e22]:
+          - link [ref=f17e24] [cursor=pointer]:
+            - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskUpncPOZXk2fV-w3cLa6qEKO2QU8g3sFWNSbpckrK2vrjKkouFbZ_bWErjZMXql7Kod9jOgs-UMDK_NbycyxQ-IH285BxSo9kLR5gFqU0lKdoSYnj-pV54fLOFiESMR7cRbLEUhX-2vDYB4nNyUW7GOVAMmsK2XveZAcawsgS1tSkMqhOT5t1kyYS1TV4tdPZqdZmqS74MWIPbh1yTrc7GDdBV7WUmkpsFsZX53u0sj2jHDMnkMdIwOut7A0q0ADpE2vcRH0s3yEreHvc1eUtbjKO48Pahugz37K-m-LGlfKUPNBD0NB7cOUxXIxqZnTTOJYUUrLqRvqckijVBennDFB0Ei6QIPETOCr8YumMec1LYd7oLZZYy9F9_iKNQN8lsCNZMT9Zm0dUzxgWc6nSBBEPh-Tc0CUWRU_b1zmsc_ETGYW6BE8ArV_xP80Txvzw0l9m0yNFEAHORF0Iwc2nBZwqXrOVUYkrdJImaX7vAjxJO3wBceoXpOzr_CT-RE5-x1c-fcAUDC0HcGx-8BEHtdVU1iWip1YvGYcYTL1DeiCBwS9rHsYWiYCvS0n8R6Mxf03rRP-snUnM-FWjI64K6GWyf1HxSGd8atG97SIi-KUzY6GDDf_NQOX470rvlMpcBpMp_Ccrgiwyc9-WzZ2NgkfDkiLPgez89uZo3nZRfTUOy6pb_WWfcKXFETLtQu1GK9PnPe4eQDvReYd53ga-p1JE8IWhDpMNUr6kkuoW8gGOoYPHtDMI1bdUTWyO9u1fk9iForarx0ZICg6v8K1OJRiJSDY-LgByOzKlOOeWYWu6LKEFBRoHm33dRqv7cTjXwQtyUXAO8BPzZHevaU_2j_vcx9z15tkXmMDxtNN20AEt7i9vJaxpZNBW0uXj3pxyC6LIICdGYzjzMfk1K3YKy-n01Hm916tNoMKzUYYhBZzeL-lqAEgy-3ofHb-MyiJzq787vJFXHfHWRU7_7JfFgwnQfhvV3XfaiXGYuD_ruvynf-lfUIBTfvPwO5IqIcCfWZmKalz1AwBlpbaBcxVdcGmbcBLVmslk61nLS6GnRfbgElyNouHSB9byDnZGYlK22sFTADFy47ow8MGVSUmPwfiNcJs7IPQZEqHoExZigxhKyGRAm8fN0GqNwHiwy7r94a9AUplcL3QfWgKEMFMgTEWibLn3WKNCwVHLbz8R-DSNbh4y4yPSK0KXi7owhKLtPt42le6Sp5YCg5GDEyZkp3WJDZxJOUDLyCIuqrubddenTbgJXreJDxExW8I_HcoXz_BCfU5LHBVnFqcMri5-l00L3jXBtehVPkMt0MMrEbI8bwNjpclPORoqq0zDZIVr6GBQ0Yf_oKKD6jjOIRpLvScWIXU7-JR4-5G5XS-Eh93GKVYdgEBAsky-3DY-CpT2Ty9rSlg_4zLD8CnFXqFZKn93hwAH8_tmQ9winTRzLvVKqN4-eOQNu4wz9RAUtL1yB_3-JD_4Yx9PTRMbPrsBXSEMtuHa8PG8sMlgAUUhFOBdf6Y53-_tb_Um5h7S6vRY74MUVJv1OQQ4cmxP48xnowyF28no1ysVW4omYkHAVBUIN43hzQ4hTQCg684IuVrax8pJNIxRK40PoItS7kjITL-mEmldFK77IGub5KJnnsUbDs4NVpuWOewfCF3hLe1NTyWxlYidBiaCHX0BKPi9T-R5m1JpLd_XUR8BPmPSD3gdMxaC8xqVVYk_1btm2cWKKH6iNzvI7xyujMH8wF8-QACxF4baDdPxXrZnYlsLBlasc_oGdtAJwUu6JdMVK0u3lzOBpNCiVcKqmJdPIeK_OpCbDQA9m4a7leGnjEhbKxJ2A53pGg8hS44ZgTWMCWD3FTcJklfTWPaR3Jt0-8b8cGZZ2lGsxlWTSUZ5lpMMHEyzlc4FALK6RGswNU_-I_j8EjDLtSsHy1puDChFrY2J1Pcp1zV2tE0HtlDSXA66NugCb3B6HbC6YvpYZrdEu2fX4Urifmu8Rsepn49qwaX5pFGgyth1-kmjklRs-LYMxyWpZwp_sfKh0WwI6FPjKg80MIi1vO2SCCy3HJDOE2gKqgrvTU4DsF42fPkSlKVktOkAdFjQ6Htkwi4p3T3LeAaH4G-Gm81AFi5tEAIQzBnxivhyFC2h5_L1keH3BlQaIanYbiBxL8WGg9vkog7rQxTnoLGpszz46MZZtTRTWnwpOoby3XMdjLDYrqBCfs-sr76rIyS5_jb9a3W2DwvvGonMFyr5-KBTpCSq9cI47Q06WzHLoNYizW-lQs6eIPZQimB6O3OJQ0ueY1vr3mbDaUaY5FVV_Zclz8-8xBNjoKahElPeWK3EcgxZwD8D8BX2eBV6r5u6tLlMJSplTP1C_Dt5lJi23MbdPjnV7dhwJ5-6rEhhmGg_NpTfyunDuRPSOtoSPMleNwiXKFJ1XIcl-narRQ7EsY9SHjdW23AhVtZCSXNuoqnxuKLIgmu39ANWtCT-BrwkX6pLwxmQrTH0I6YONON6NCk5wVEeIbBSGH-_7MREKmI45nhvVW-vew5SHllfD_5EXllxFh2iiRFE_P0EsFsB6y1IeHxLSdUQ8xdS2tQnhOgYQZ8GHSxYfEL54_sN8WUIoQ-hcWfRt3ZUYY-chBxpzdjqCfwb-hHjfutFYAEYFJNNfHy7rH5grxhrr8CF6ExUnig9mWNE9lh_kUpn27JDuN1bVTNAoGn831VrxE4ddvQTIa3gPm5CMNy_-55qTuzaybgsD4xmpi&opi=122715837
+            - img [ref=f17e26]
+          - link [ref=f17e28] [cursor=pointer]:
+            - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskUpncPOZXk2fV-w3cLa6qEKO2QU8g3sFWNSbpckrK2vrjKkouFbZ_bWErjZMXql7Kod9jOgs-UMDK_NbycyxQ-IH285BxSo9kLR5gFqU0lKdoSYnj-pV54fLOFiESMR7cRbLEUhX-2vDYB4nNyUW7GOVAMmsK2XveZAcawsgS1tSkMqhOT5t1kyYS1TV4tdPZqdZmqS74MWIPbh1yTrc7GDdBV7WUmkpsFsZX53u0sj2jHDMnkMdIwOut7A0q0ADpE2vcRH0s3yEreHvc1eUtbjKO48Pahugz37K-m-LGlfKUPNBD0NB7cOUxXIxqZnTTOJYUUrLqRvqckijVBennDFB0Ei6QIPETOCr8YumMec1LYd7oLZZYy9F9_iKNQN8lsCNZMT9Zm0dUzxgWc6nSBBEPh-Tc0CUWRU_b1zmsc_ETGYW6BE8ArV_xP80Txvzw0l9m0yNFEAHORF0Iwc2nBZwqXrOVUYkrdJImaX7vAjxJO3wBceoXpOzr_CT-RE5-x1c-fcAUDC0HcGx-8BEHtdVU1iWip1YvGYcYTL1DeiCBwS9rHsYWiYCvS0n8R6Mxf03rRP-snUnM-FWjI64K6GWyf1HxSGd8atG97SIi-KUzY6GDDf_NQOX470rvlMpcBpMp_Ccrgiwyc9-WzZ2NgkfDkiLPgez89uZo3nZRfTUOy6pb_WWfcKXFETLtQu1GK9PnPe4eQDvReYd53ga-p1JE8IWhDpMNUr6kkuoW8gGOoYPHtDMI1bdUTWyO9u1fk9iForarx0ZICg6v8K1OJRiJSDY-LgByOzKlOOeWYWu6LKEFBRoHm33dRqv7cTjXwQtyUXAO8BPzZHevaU_2j_vcx9z15tkXmMDxtNN20AEt7i9vJaxpZNBW0uXj3pxyC6LIICdGYzjzMfk1K3YKy-n01Hm916tNoMKzUYYhBZzeL-lqAEgy-3ofHb-MyiJzq787vJFXHfHWRU7_7JfFgwnQfhvV3XfaiXGYuD_ruvynf-lfUIBTfvPwO5IqIcCfWZmKalz1AwBlpbaBcxVdcGmbcBLVmslk61nLS6GnRfbgElyNouHSB9byDnZGYlK22sFTADFy47ow8MGVSUmPwfiNcJs7IPQZEqHoExZigxhKyGRAm8fN0GqNwHiwy7r94a9AUplcL3QfWgKEMFMgTEWibLn3WKNCwVHLbz8R-DSNbh4y4yPSK0KXi7owhKLtPt42le6Sp5YCg5GDEyZkp3WJDZxJOUDLyCIuqrubddenTbgJXreJDxExW8I_HcoXz_BCfU5LHBVnFqcMri5-l00L3jXBtehVPkMt0MMrEbI8bwNjpclPORoqq0zDZIVr6GBQ0Yf_oKKD6jjOIRpLvScWIXU7-JR4-5G5XS-Eh93GKVYdgEBAsky-3DY-CpT2Ty9rSlg_4zLD8CnFXqFZKn93hwAH8_tmQ9winTRzLvVKqN4-eOQNu4wz9RAUtL1yB_3-JD_4Yx9PTRMbPrsBXSEMtuHa8PG8sMlgAUUhFOBdf6Y53-_tb_Um5h7S6vRY74MUVJv1OQQ4cmxP48xnowyF28no1ysVW4omYkHAVBUIN43hzQ4hTQCg684IuVrax8pJNIxRK40PoItS7kjITL-mEmldFK77IGub5KJnnsUbDs4NVpuWOewfCF3hLe1NTyWxlYidBiaCHX0BKPi9T-R5m1JpLd_XUR8BPmPSD3gdMxaC8xqVVYk_1btm2cWKKH6iNzvI7xyujMH8wF8-QACxF4baDdPxXrZnYlsLBlasc_oGdtAJwUu6JdMVK0u3lzOBpNCiVcKqmJdPIeK_OpCbDQA9m4a7leGnjEhbKxJ2A53pGg8hS44ZgTWMCWD3FTcJklfTWPaR3Jt0-8b8cGZZ2lGsxlWTSUZ5lpMMHEyzlc4FALK6RGswNU_-I_j8EjDLtSsHy1puDChFrY2J1Pcp1zV2tE0HtlDSXA66NugCb3B6HbC6YvpYZrdEu2fX4Urifmu8Rsepn49qwaX5pFGgyth1-kmjklRs-LYMxyWpZwp_sfKh0WwI6FPjKg80MIi1vO2SCCy3HJDOE2gKqgrvTU4DsF42fPkSlKVktOkAdFjQ6Htkwi4p3T3LeAaH4G-Gm81AFi5tEAIQzBnxivhyFC2h5_L1keH3BlQaIanYbiBxL8WGg9vkog7rQxTnoLGpszz46MZZtTRTWnwpOoby3XMdjLDYrqBCfs-sr76rIyS5_jb9a3W2DwvvGonMFyr5-KBTpCSq9cI47Q06WzHLoNYizW-lQs6eIPZQimB6O3OJQ0ueY1vr3mbDaUaY5FVV_Zclz8-8xBNjoKahElPeWK3EcgxZwD8D8BX2eBV6r5u6tLlMJSplTP1C_Dt5lJi23MbdPjnV7dhwJ5-6rEhhmGg_NpTfyunDuRPSOtoSPMleNwiXKFJ1XIcl-narRQ7EsY9SHjdW23AhVtZCSXNuoqnxuKLIgmu39ANWtCT-BrwkX6pLwxmQrTH0I6YONON6NCk5wVEeIbBSGH-_7MREKmI45nhvVW-vew5SHllfD_5EXllxFh2iiRFE_P0EsFsB6y1IeHxLSdUQ8xdS2tQnhOgYQZ8GHSxYfEL54_sN8WUIoQ-hcWfRt3ZUYY-chBxpzdjqCfwb-hHjfutFYAEYFJNNfHy7rH5grxhrr8CF6ExUnig9mWNE9lh_kUpn27JDuN1bVTNAoGn831VrxE4ddvQTIa3gPm5CMNy_-55qTuzaybgsD4xmpi&opi=122715837
+            - img [ref=f17e30]
+        - img [ref=f17e33] [cursor=pointer]
+        - generic [ref=f17e44]:
+          - img [ref=f17e47]
+          - generic [ref=f17e50]:
+            - text: Ads by
+            - img [ref=f17e51]
+          - generic [ref=f17e54]:
+            - generic [ref=f17e57] [cursor=pointer]: Send feedback
+            - link [ref=f17e59] [cursor=pointer]:
+              - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskUpncPOZXk2fV-w3cLa6qEKO2QU8g3sFWNSbpckrK2vrjKkouFbZ_bWErjZMXql7Kod9jOgs-UMDK_NbycyxQ-IH285BxSo9kLR5gFqU0lKdoSYnj-pV54fLOFiESMR7cRbLEUhX-2vDYB4nNyUW7GOVAMmsK2XveZAcawsgS1tSkMqhOT5t1kyYS1TV4tdPZqdZmqS74MWIPbh1yTrc7GDdBV7WUmkpsFsZX53u0sj2jHDMnkMdIwOut7A0q0ADpE2vcRH0s3yEreHvc1eUtbjKO48Pahugz37K-m-LGlfKUPNBD0NB7cOUxXIxqZnTTOJYUUrLqRvqckijVBennDFB0Ei6QIPETOCr8YumMec1LYd7oLZZYy9F9_iKNQN8lsCNZMT9Zm0dUzxgWc6nSBBEPh-Tc0CUWRU_b1zmsc_ETGYW6BE8ArV_xP80Txvzw0l9m0yNFEAHORF0Iwc2nBZwqXrOVUYkrdJImaX7vAjxJO3wBceoXpOzr_CT-RE5-x1c-fcAUDC0HcGx-8BEHtdVU1iWip1YvGYcYTL1DeiCBwS9rHsYWiYCvS0n8R6Mxf03rRP-snUnM-FWjI64K6GWyf1HxSGd8atG97SIi-KUzY6GDDf_NQOX470rvlMpcBpMp_Ccrgiwyc9-WzZ2NgkfDkiLPgez89uZo3nZRfTUOy6pb_WWfcKXFETLtQu1GK9PnPe4eQDvReYd53ga-p1JE8IWhDpMNUr6kkuoW8gGOoYPHtDMI1bdUTWyO9u1fk9iForarx0ZICg6v8K1OJRiJSDY-LgByOzKlOOeWYWu6LKEFBRoHm33dRqv7cTjXwQtyUXAO8BPzZHevaU_2j_vcx9z15tkXmMDxtNN20AEt7i9vJaxpZNBW0uXj3pxyC6LIICdGYzjzMfk1K3YKy-n01Hm916tNoMKzUYYhBZzeL-lqAEgy-3ofHb-MyiJzq787vJFXHfHWRU7_7JfFgwnQfhvV3XfaiXGYuD_ruvynf-lfUIBTfvPwO5IqIcCfWZmKalz1AwBlpbaBcxVdcGmbcBLVmslk61nLS6GnRfbgElyNouHSB9byDnZGYlK22sFTADFy47ow8MGVSUmPwfiNcJs7IPQZEqHoExZigxhKyGRAm8fN0GqNwHiwy7r94a9AUplcL3QfWgKEMFMgTEWibLn3WKNCwVHLbz8R-DSNbh4y4yPSK0KXi7owhKLtPt42le6Sp5YCg5GDEyZkp3WJDZxJOUDLyCIuqrubddenTbgJXreJDxExW8I_HcoXz_BCfU5LHBVnFqcMri5-l00L3jXBtehVPkMt0MMrEbI8bwNjpclPORoqq0zDZIVr6GBQ0Yf_oKKD6jjOIRpLvScWIXU7-JR4-5G5XS-Eh93GKVYdgEBAsky-3DY-CpT2Ty9rSlg_4zLD8CnFXqFZKn93hwAH8_tmQ9winTRzLvVKqN4-eOQNu4wz9RAUtL1yB_3-JD_4Yx9PTRMbPrsBXSEMtuHa8PG8sMlgAUUhFOBdf6Y53-_tb_Um5h7S6vRY74MUVJv1OQQ4cmxP48xnowyF28no1ysVW4omYkHAVBUIN43hzQ4hTQCg684IuVrax8pJNIxRK40PoItS7kjITL-mEmldFK77IGub5KJnnsUbDs4NVpuWOewfCF3hLe1NTyWxlYidBiaCHX0BKPi9T-R5m1JpLd_XUR8BPmPSD3gdMxaC8xqVVYk_1btm2cWKKH6iNzvI7xyujMH8wF8-QACxF4baDdPxXrZnYlsLBlasc_oGdtAJwUu6JdMVK0u3lzOBpNCiVcKqmJdPIeK_OpCbDQA9m4a7leGnjEhbKxJ2A53pGg8hS44ZgTWMCWD3FTcJklfTWPaR3Jt0-8b8cGZZ2lGsxlWTSUZ5lpMMHEyzlc4FALK6RGswNU_-I_j8EjDLtSsHy1puDChFrY2J1Pcp1zV2tE0HtlDSXA66NugCb3B6HbC6YvpYZrdEu2fX4Urifmu8Rsepn49qwaX5pFGgyth1-kmjklRs-LYMxyWpZwp_sfKh0WwI6FPjKg80MIi1vO2SCCy3HJDOE2gKqgrvTU4DsF42fPkSlKVktOkAdFjQ6Htkwi4p3T3LeAaH4G-Gm81AFi5tEAIQzBnxivhyFC2h5_L1keH3BlQaIanYbiBxL8WGg9vkog7rQxTnoLGpszz46MZZtTRTWnwpOoby3XMdjLDYrqBCfs-sr76rIyS5_jb9a3W2DwvvGonMFyr5-KBTpCSq9cI47Q06WzHLoNYizW-lQs6eIPZQimB6O3OJQ0ueY1vr3mbDaUaY5FVV_Zclz8-8xBNjoKahElPeWK3EcgxZwD8D8BX2eBV6r5u6tLlMJSplTP1C_Dt5lJi23MbdPjnV7dhwJ5-6rEhhmGg_NpTfyunDuRPSOtoSPMleNwiXKFJ1XIcl-narRQ7EsY9SHjdW23AhVtZCSXNuoqnxuKLIgmu39ANWtCT-BrwkX6pLwxmQrTH0I6YONON6NCk5wVEeIbBSGH-_7MREKmI45nhvVW-vew5SHllfD_5EXllxFh2iiRFE_P0EsFsB6y1IeHxLSdUQ8xdS2tQnhOgYQZ8GHSxYfEL54_sN8WUIoQ-hcWfRt3ZUYY-chBxpzdjqCfwb-hHjfutFYAEYFJNNfHy7rH5grxhrr8CF6ExUnig9mWNE9lh_kUpn27JDuN1bVTNAoGn831VrxE4ddvQTIa3gPm5CMNy_-55qTuzaybgsD4xmpi&opi=122715837
+              - generic [ref=f17e60]:
+                - text: Why this ad?
+                - img [ref=f17e61]
+        - generic [ref=f17e63]:
+          - generic [ref=f17e66] [cursor=pointer]: Not interested in this ad
+          - generic [ref=f17e69] [cursor=pointer]: Seen this ad multiple times
+          - generic [ref=f17e72] [cursor=pointer]: Ad was inappropriate
+          - generic [ref=f17e75] [cursor=pointer]: Ad covered content
+        - generic [ref=f17e81]: Thanks. Feedback improves Google ads
+        - generic [ref=f17e87]:
+          - text: Ad closed by
+          - img [ref=f17e88]
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e15]:
+    - generic [ref=e16]:
+      - navigation "navigation bar" [ref=e17]:
+        - generic [ref=e21]:
+          - link "Trade Me" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e27]
+          - search [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Search all of Trade Me
+              - generic [ref=e34]:
+                - img [ref=e37]
+                - searchbox "Search all of Trade Me" [ref=e39]
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - button "Categories" [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]: Categories
+                - img [ref=e49]
+            - listitem
+            - listitem [ref=e52]:
+              - link "Watchlist" [ref=e53] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e54]: Watchlist
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Favourites" [ref=e59] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e60]: Favourites
+                - img [ref=e62]
+            - listitem [ref=e64]:
+              - link "Start a listing" [ref=e65] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e66]: Start a listing
+                - img [ref=e68]
+            - listitem [ref=e70]:
+              - generic [ref=e71]:
+                - link "Sign up" [ref=e72] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e74]
+                - link "Log in" [ref=e76] [cursor=pointer]:
+                  - /url: search(modal:login)?search_string=furniture
+                  - text: Log in
+                  - img [ref=e78]
+      - navigation [ref=e81]
+  - main [ref=e84]:
+    - generic [ref=e85]: main content
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e91]:
+          - list [ref=e93]:
+            - listitem [ref=e94]:
+              - link "Home" [ref=e95] [cursor=pointer]:
+                - /url: /a/
+              - text: /
+            - listitem [ref=e96]: All Categories
+          - heading "All Categories" [level=1] [ref=e98]
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e104]:
+                - generic [ref=e105]: Add Search keywords (optional)
+                - generic [ref=e106]:
+                  - img [ref=e109]
+                  - searchbox "Add Search keywords (optional) Clear input" [ref=e112]: furniture
+                  - button "Clear input" [ref=e114] [cursor=pointer]:
+                    - img "Clear input" [ref=e116]
+              - button "Save this search Save this search" [ref=e119] [cursor=pointer]:
+                - img "Save this search" [ref=e121]
+                - generic [ref=e123]: Save this search
+            - generic [ref=e125]:
+              - generic "Refine" [ref=e126]:
+                - button "Refine" [ref=e129] [cursor=pointer]:
+                  - img [ref=e131]
+                  - text: Refine
+                  - img [ref=e135]
+              - button "Category" [ref=e140] [cursor=pointer]:
+                - text: Category
+                - img [ref=e143]
+              - button "All Locations" [ref=e148] [cursor=pointer]:
+                - text: All Locations
+                - img [ref=e151]
+              - button "New & Used" [ref=e156] [cursor=pointer]:
+                - text: New & Used
+                - img [ref=e159]
+              - 'button "Shipping: All" [ref=e164] [cursor=pointer]':
+                - text: "Shipping: All"
+                - img [ref=e167]
+        - list [ref=e172]:
+          - listitem [ref=e173]:
+            - link "Trade Me Property (3)" [ref=e174] [cursor=pointer]:
+              - /url: /a/property/search?search_string=furniture
+        - generic [ref=e176]:
+          - heading "Showing 3 results for 'furniture'" [level=3] [ref=e178]
+          - generic [ref=e179]:
+            - generic [ref=e183]:
+              - generic [ref=e184]: Sort order
+              - generic [ref=e185]:
+                - combobox "Sort order" [ref=e186] [cursor=pointer]:
+                  - 'option "Sort: Best match" [selected]'
+                  - option "Featured first"
+                  - option "Lowest price"
+                  - option "Highest price"
+                  - option "Lowest Buy Now"
+                  - option "Highest Buy Now"
+                  - option "Most bids"
+                  - option "Latest listings"
+                  - option "Closing soon"
+                  - option "Title"
+                  - option "Largest discount"
+                - generic:
+                  - generic:
+                    - img
+            - radiogroup "Card display mode (optional)" [ref=e189]:
+              - generic [ref=e190]: Card display mode (optional)
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - radio "Switch to list view List" [ref=e193]
+                  - generic [ref=e194] [cursor=pointer]:
+                    - img "Switch to list view" [ref=e196]
+                    - generic [ref=e198]: List
+                - generic [ref=e199]:
+                  - radio "Switch to card view Gallery" [checked] [ref=e200]
+                  - generic [ref=e201]:
+                    - img "Switch to card view" [ref=e203]
+                    - generic [ref=e205]: Gallery
+      - heading "Search Results" [level=2] [ref=e206]
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - generic [ref=e219]:
+              - text: Advertisement
+              - iframe [ref=e223]:
+                - generic [active] [ref=f18e1]:
+                  - generic [ref=f18e3]:
+                    - link [ref=f18e4] [cursor=pointer]:
+                      - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CUIrHEnMbaqf2G9-4k7QPxMqDoA_R8vrNhQHOnO3x6hXaj5i6jA4QASD68_0aYKvssYXgGKABjc2f9ELIAQmpArusEz_7F6Q-4AIAqAMByAMKqgSzAk_Qs_-PaShrjQYMAfbAAZ7tPs0jDd0Lo0ogjHNUjzTfzyuPMIPziSvEMO7LToWflW2kW9teZqz4gUf_3mYo57SfZO6mrafCCG0RE50xAekcV0iucVnFf3_KWx-AWnEjXG8YkcblxmQnDeFB89XbveKQ8a5ziogqUjgZBUzCu1kgDU9siVy5VUOE77rNpm8MdyIzy2vIVvAGNqqdPk8wR9rekYhB1PRJikvbZD67M3a8ouhrQ-gvUB__TGqX8Ulgg3P-u4lQcKDlWiyOWGIjR6IQfLJELxRVYiy6NTJWtsdryw7auUS6-XeVPlgng8uMc5AXoVaFWTz41GuDI01b4Azc_VWgy4-Mt8nXZzoL6r-AnaEARVM8lW0OH5g0L9dqE_qKHAqqvQm93GS2_S2HOLrIV97ABLCixt3mBeAEAYgF_vPS-VegBi6AB42F8NMdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOljGnu_EleKUA2ABsQk_j8pg9r3Dx4AKA5gLAcgLAYAMAaIMDCoKCgiO37ECleKxAqoNAk5ayA0B4g0TCJDU78SV4pQDFV_chAAdROUA9OoNEwj-4fDEleKUAxVf3IQAHUTlAPTwDQKIDv___________wG4E-QD2BMK0BUByhYCCgD4FgGAFwGyFxAYASoKNDg2NTA0MjgzMFAGuhcCOAGqGBcJAAAAAKhlAkESCjQ4NjUwNDI4MzAYAbIYCRICrVEYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE&num=1&cid=CAQSiwIABaugfe9h-ERO_fEEW-C9QQIvBglUzOiQaI2XJ-nglb6Hj6TLoK-VAAo6s77KwCBSGtTroAUcRuVONkUDQuneC1l5GC4H65FLDXu6yZTpMl1cLYL6T31MlQ9io-xzuovbUBiJhwHKygWdHlp-5X8XBPFcxJxtY3dmtJHnMCCbzKr6QQL5rGh93Pf3ofICXZOkc8gS6jqPijwLAZVbkL7BZcW5GevijV3OGdc1SHA2HpzOPRm5-MG-c3AAbHi9jIRBBrjXp6M3-IYIVdgRK9IeXSnf1vqUNxv1ZAJJhzMkhiv873L_7L8t0Nr58Dm4d9tG0Yq7RPaR_AyZdpv1fhYVAu4ceUQwpWf_edgYAQ&sig=AOD64_0GAyCIK1KUsSCL8ErVBFeVPXGZaA&client=ca-pub-4363339964316411&rf=4&nb=9&adurl=https://nshoreassembly.co.nz/%3Fgad_source%3D5%26gad_campaignid%3D23608998398%26gclid%3DEAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE
+                      - img [ref=f18e5]
+                    - generic [ref=f18e6]:
+                      - generic [ref=f18e7]:
+                        - link "Local Furniture Assembler" [ref=f18e9] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CUIrHEnMbaqf2G9-4k7QPxMqDoA_R8vrNhQHOnO3x6hXaj5i6jA4QASD68_0aYKvssYXgGKABjc2f9ELIAQmpArusEz_7F6Q-4AIAqAMByAMKqgSzAk_Qs_-PaShrjQYMAfbAAZ7tPs0jDd0Lo0ogjHNUjzTfzyuPMIPziSvEMO7LToWflW2kW9teZqz4gUf_3mYo57SfZO6mrafCCG0RE50xAekcV0iucVnFf3_KWx-AWnEjXG8YkcblxmQnDeFB89XbveKQ8a5ziogqUjgZBUzCu1kgDU9siVy5VUOE77rNpm8MdyIzy2vIVvAGNqqdPk8wR9rekYhB1PRJikvbZD67M3a8ouhrQ-gvUB__TGqX8Ulgg3P-u4lQcKDlWiyOWGIjR6IQfLJELxRVYiy6NTJWtsdryw7auUS6-XeVPlgng8uMc5AXoVaFWTz41GuDI01b4Azc_VWgy4-Mt8nXZzoL6r-AnaEARVM8lW0OH5g0L9dqE_qKHAqqvQm93GS2_S2HOLrIV97ABLCixt3mBeAEAYgF_vPS-VegBi6AB42F8NMdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOljGnu_EleKUA2ABsQk_j8pg9r3Dx4AKA5gLAcgLAYAMAaIMDCoKCgiO37ECleKxAqoNAk5ayA0B4g0TCJDU78SV4pQDFV_chAAdROUA9OoNEwj-4fDEleKUAxVf3IQAHUTlAPTwDQKIDv___________wG4E-QD2BMK0BUByhYCCgD4FgGAFwGyFxAYASoKNDg2NTA0MjgzMFAGuhcCOAGqGBcJAAAAAKhlAkESCjQ4NjUwNDI4MzAYAbIYCRICrVEYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE&num=1&cid=CAQSiwIABaugfe9h-ERO_fEEW-C9QQIvBglUzOiQaI2XJ-nglb6Hj6TLoK-VAAo6s77KwCBSGtTroAUcRuVONkUDQuneC1l5GC4H65FLDXu6yZTpMl1cLYL6T31MlQ9io-xzuovbUBiJhwHKygWdHlp-5X8XBPFcxJxtY3dmtJHnMCCbzKr6QQL5rGh93Pf3ofICXZOkc8gS6jqPijwLAZVbkL7BZcW5GevijV3OGdc1SHA2HpzOPRm5-MG-c3AAbHi9jIRBBrjXp6M3-IYIVdgRK9IeXSnf1vqUNxv1ZAJJhzMkhiv873L_7L8t0Nr58Dm4d9tG0Yq7RPaR_AyZdpv1fhYVAu4ceUQwpWf_edgYAQ&sig=AOD64_0GAyCIK1KUsSCL8ErVBFeVPXGZaA&client=ca-pub-4363339964316411&rf=4&nb=0&adurl=https://nshoreassembly.co.nz/%3Fgad_source%3D5%26gad_campaignid%3D23608998398%26gclid%3DEAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE
+                          - text: Local Furniture
+                          - text: Assembler
+                        - link "N'Shore Assembly" [ref=f18e11] [cursor=pointer]:
+                          - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CUIrHEnMbaqf2G9-4k7QPxMqDoA_R8vrNhQHOnO3x6hXaj5i6jA4QASD68_0aYKvssYXgGKABjc2f9ELIAQmpArusEz_7F6Q-4AIAqAMByAMKqgSzAk_Qs_-PaShrjQYMAfbAAZ7tPs0jDd0Lo0ogjHNUjzTfzyuPMIPziSvEMO7LToWflW2kW9teZqz4gUf_3mYo57SfZO6mrafCCG0RE50xAekcV0iucVnFf3_KWx-AWnEjXG8YkcblxmQnDeFB89XbveKQ8a5ziogqUjgZBUzCu1kgDU9siVy5VUOE77rNpm8MdyIzy2vIVvAGNqqdPk8wR9rekYhB1PRJikvbZD67M3a8ouhrQ-gvUB__TGqX8Ulgg3P-u4lQcKDlWiyOWGIjR6IQfLJELxRVYiy6NTJWtsdryw7auUS6-XeVPlgng8uMc5AXoVaFWTz41GuDI01b4Azc_VWgy4-Mt8nXZzoL6r-AnaEARVM8lW0OH5g0L9dqE_qKHAqqvQm93GS2_S2HOLrIV97ABLCixt3mBeAEAYgF_vPS-VegBi6AB42F8NMdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOljGnu_EleKUA2ABsQk_j8pg9r3Dx4AKA5gLAcgLAYAMAaIMDCoKCgiO37ECleKxAqoNAk5ayA0B4g0TCJDU78SV4pQDFV_chAAdROUA9OoNEwj-4fDEleKUAxVf3IQAHUTlAPTwDQKIDv___________wG4E-QD2BMK0BUByhYCCgD4FgGAFwGyFxAYASoKNDg2NTA0MjgzMFAGuhcCOAGqGBcJAAAAAKhlAkESCjQ4NjUwNDI4MzAYAbIYCRICrVEYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE&num=1&cid=CAQSiwIABaugfe9h-ERO_fEEW-C9QQIvBglUzOiQaI2XJ-nglb6Hj6TLoK-VAAo6s77KwCBSGtTroAUcRuVONkUDQuneC1l5GC4H65FLDXu6yZTpMl1cLYL6T31MlQ9io-xzuovbUBiJhwHKygWdHlp-5X8XBPFcxJxtY3dmtJHnMCCbzKr6QQL5rGh93Pf3ofICXZOkc8gS6jqPijwLAZVbkL7BZcW5GevijV3OGdc1SHA2HpzOPRm5-MG-c3AAbHi9jIRBBrjXp6M3-IYIVdgRK9IeXSnf1vqUNxv1ZAJJhzMkhiv873L_7L8t0Nr58Dm4d9tG0Yq7RPaR_AyZdpv1fhYVAu4ceUQwpWf_edgYAQ&sig=AOD64_0GAyCIK1KUsSCL8ErVBFeVPXGZaA&client=ca-pub-4363339964316411&rf=4&nb=1&adurl=https://nshoreassembly.co.nz/%3Fgad_source%3D5%26gad_campaignid%3D23608998398%26gclid%3DEAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE
+                      - link [ref=f18e13] [cursor=pointer]:
+                        - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CUIrHEnMbaqf2G9-4k7QPxMqDoA_R8vrNhQHOnO3x6hXaj5i6jA4QASD68_0aYKvssYXgGKABjc2f9ELIAQmpArusEz_7F6Q-4AIAqAMByAMKqgSzAk_Qs_-PaShrjQYMAfbAAZ7tPs0jDd0Lo0ogjHNUjzTfzyuPMIPziSvEMO7LToWflW2kW9teZqz4gUf_3mYo57SfZO6mrafCCG0RE50xAekcV0iucVnFf3_KWx-AWnEjXG8YkcblxmQnDeFB89XbveKQ8a5ziogqUjgZBUzCu1kgDU9siVy5VUOE77rNpm8MdyIzy2vIVvAGNqqdPk8wR9rekYhB1PRJikvbZD67M3a8ouhrQ-gvUB__TGqX8Ulgg3P-u4lQcKDlWiyOWGIjR6IQfLJELxRVYiy6NTJWtsdryw7auUS6-XeVPlgng8uMc5AXoVaFWTz41GuDI01b4Azc_VWgy4-Mt8nXZzoL6r-AnaEARVM8lW0OH5g0L9dqE_qKHAqqvQm93GS2_S2HOLrIV97ABLCixt3mBeAEAYgF_vPS-VegBi6AB42F8NMdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcA0ggzCIBhEAEYnQEyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOljGnu_EleKUA2ABsQk_j8pg9r3Dx4AKA5gLAcgLAYAMAaIMDCoKCgiO37ECleKxAqoNAk5ayA0B4g0TCJDU78SV4pQDFV_chAAdROUA9OoNEwj-4fDEleKUAxVf3IQAHUTlAPTwDQKIDv___________wG4E-QD2BMK0BUByhYCCgD4FgGAFwGyFxAYASoKNDg2NTA0MjgzMFAGuhcCOAGqGBcJAAAAAKhlAkESCjQ4NjUwNDI4MzAYAbIYCRICrVEYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE&num=1&cid=CAQSiwIABaugfe9h-ERO_fEEW-C9QQIvBglUzOiQaI2XJ-nglb6Hj6TLoK-VAAo6s77KwCBSGtTroAUcRuVONkUDQuneC1l5GC4H65FLDXu6yZTpMl1cLYL6T31MlQ9io-xzuovbUBiJhwHKygWdHlp-5X8XBPFcxJxtY3dmtJHnMCCbzKr6QQL5rGh93Pf3ofICXZOkc8gS6jqPijwLAZVbkL7BZcW5GevijV3OGdc1SHA2HpzOPRm5-MG-c3AAbHi9jIRBBrjXp6M3-IYIVdgRK9IeXSnf1vqUNxv1ZAJJhzMkhiv873L_7L8t0Nr58Dm4d9tG0Yq7RPaR_AyZdpv1fhYVAu4ceUQwpWf_edgYAQ&sig=AOD64_0GAyCIK1KUsSCL8ErVBFeVPXGZaA&client=ca-pub-4363339964316411&rf=4&nb=8&adurl=https://nshoreassembly.co.nz/%3Fgad_source%3D5%26gad_campaignid%3D23608998398%26gclid%3DEAIaIQobChMIp8fxxJXilAMVX9yEAB1E5QD0EAEYASAAEgJB2fD_BwE
+                        - img [ref=f18e14]
+                  - generic [ref=f18e17]:
+                    - link [ref=f18e19] [cursor=pointer]:
+                      - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU1FIPfTgxxK7G3zkDfQ7Uh9KeDm6KKyc3EE89e-dH2Y3OaWlSG3PKdfFkr8oEmZTd8osfNVUe0myYwOOu3iKjd7wk8yh3jI8sSLKQ9GHuy1OA9SZxoHULY177z9Mb6P6pkinweFQpmkNrzhjudyfUdA5axZ_PepXBE8-mhcKswTjbEj3xHUiib_7_mL9USU-WgOtVg06iYevyesjUQoM-52ViE9P_9DSgKiyg2MdZQTCNyNwb6t3hEbSKPCoNyMi5K9Nu8DfYvQ68cIqRffcRx63VCoUwmYvgmNB_DcTc_hjbJcNq4FgGOB_ZFmZ_SsznyE5zEXZ4HoN3oCQGhn4DKGHIlZwV3RuZOI66JCFjbtMF1SzYhd1v9rjs_YFtH0uYG7DEaVv5CBEKkl_5xPCbSb6a9RXVPGk3Bdjb790du6lKsCtY8cj7Z-jkfl0AhPWELCbJ2lvnJqSmsB7c_guwf2tj_Vsx2Tf6PuyE8ojLWxlXjdCWX4b3gYQ9-3A4oJBC-S7AVFQ5lAxwfhOepPAMGUedEj2y0FKIEBnn543NHXzq0W1AZJ8983dUJyO042ArH7IwMQ66MkI779uNf2YKP_llRsKZMbEvBn71wZAn6msERVYzYjWVNn6iRs2zCGWzIj6aL58IzZuX3hKXRd06cCL55y1oAr53gIvNgRNNsPROyPkwFggoDjnEegRVi26WOM-vtGFQX8yzIYntCUzRiLCjz4TCcu-K02j0U9rujPJvZpb_QgOnzjU7czcvPtqChV28hQbm3ZpM1ugq-aZoY_IV5iBQiPGZNc03iMEIwCoN7nFwYwzNT0SFAkUD-FEl7_brShoswCt5QhK6ACkU0J3aF9lC2i2O3SSmcrccCoDkR4LopimFULs921P46Q-Foj_XGwiU4WdxMpoftqo9Ttj93li8t1DNZqacQ0vZ6G_d8AI6WqGpvaRUVoA32LKLeU4P7X31FoZhk9fbMu80jcmhmDWXp3JbqjRTG5593P4zxu5mZ23UgNwVjYwkciFpd2qY6bIFo1a7ip4Aqv1n3zf2i_AHcd5dMDr62sqTIn-z418cR7Zh6nr0M_kfOkFAB69D7IuT_hQxrYtzHc4V4JVYJJPTxUk8gd-cF6e5YzHlqJmikomzWGkRJiBtvo4XBcFaO_QNvvhHKhIqVKPJVEBqkuAdtdI02Ngc3ZF2sszI_cGuRvn6ZYfL4IifBamQjX5soXaweZ8MhaR0Mtidm68fdnu_Jr21aYsCVgifD9lKGww-BCJCrSmG9lTyrtDHq91cYKtCONC-SmEwnnnd1AyjPTxYF_tW3eptw8AtqWygT8rej-69exdse1bbffyFNCnQ4u8_OszbmhCiZwPPoOVayRiafhNOoooiaiJqoQdjIO8XQvUcHrxH9B8X0gqxM0xMMAri60E02XBfuYkbkBT6mJ1zf2JO5wTcUdpT2RwdQkDCegc6QqQkJFicnVR0BDZ75AHn0gVahAy4z7U23YcUBl6EBLO5BCuZl3sG0kE8wOXJ8NaemuXYHeZj9v95_u0eJBEmYorKiTvlTEWlg0nlpvGozb3bVqi13uxrZASTT3BFAcmI0IaLpP9G0LmDHuliTFTTtOG0ODMbUC2vDS2gWCil9DcndsXCcrsOlT-JqmY2fHGKoYll9n9sAlUuSoJY0YWIfymDC48FexSOrSnpkwPmJboqjn5tYnO26p72bdhFtBMFlgE9qAYf12oh53iJvLZkMzNFUEXOBJatrob1OvGN7TXQLHhizrCp3EOqsLH8D0LRC_dkLsXsy5DqJEtThh27AIoqSTzkscYsRdafJ5YbT9pjK05YNpMpeHDA8HJKAkGU0jQzdCwFGIMji3uBYZIYkd6IvzkfL_APYGqecKkABKT0EKF9SP9CHS9Xzdbvv_mO98OmGsuozhecQy_180LR4xZtvLTlbPECpeT8r6kOh5wWFIGAzYzeJJq8PUY5VBCLMGRgVZb5zJWt-kJdkNhMzXipe_X7sLjaWF_hckFNaSGN8M8BJs2WlJKIHACrmfwNys_rgI2ME4ltTaC3XlqiwO4ZeyCbFFofoVGoCaz9iLfA8f0pdznvDlpAiP4jgOYq6QiMi-0SlhWbxbjsJX2ppTfSPpzzEgoc2WgMpalEuUfrqyfOH4XAnfqTKDwsiEMSTnUCA1sAhMilXGoynA_w4pIYEKaDRKI2NJkneFFRi_9Ce2ktnXftWb1ustO9C5GCibezgMIKnafCh9rPGeVgf-BFGeSlVuheQPop1Ay3glrt_TXUeOwfHBBkJQi0tlTcFpwzRabEQVneJQhyRrh8_PqGTTeKt9yNpbozmgMhjNUjk8Nua6hj2wmyjPLZRAqrfLXrmyhvaerD03X4aHt-lXEW5AVy_6NXMq5pNs9yLpzxwG6DZlR4EfjTWwi1MLunHmnVGwBNVpRZ5KkB_MgZNMA37h6ywETqPSSxPAlMrE9YBhau__vHT23W-6xnAjuPV17DC563OxRsHLVe-UJJ7AtCAsgcZe1BNqisvigUFnda_5nuBVqa9IZsy5hnvV_4E2n5NcLmiEaXDprXIjgB5JjTrTFMiEMs6RlC-XFavtfUEDuJhK4h51jwsTKlmUO8-nAEcFeOBqCUVE4g3bTZV5YiI-NwH6dBcr3Ws_M3s11LDSMl9RvI9JWzw1fUgNySqlTRBByJXB9gLu9U80rSlVeRHGnH2aqFdjglBwXcCGMuQIqx8NS_1120B_eHlk2LEQ2NliVgFTRjIXeSIVihE5H21nMTkNk_Thx1TEFv1MAo&opi=122715837
+                      - img [ref=f18e21]
+                    - link [ref=f18e23] [cursor=pointer]:
+                      - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU1FIPfTgxxK7G3zkDfQ7Uh9KeDm6KKyc3EE89e-dH2Y3OaWlSG3PKdfFkr8oEmZTd8osfNVUe0myYwOOu3iKjd7wk8yh3jI8sSLKQ9GHuy1OA9SZxoHULY177z9Mb6P6pkinweFQpmkNrzhjudyfUdA5axZ_PepXBE8-mhcKswTjbEj3xHUiib_7_mL9USU-WgOtVg06iYevyesjUQoM-52ViE9P_9DSgKiyg2MdZQTCNyNwb6t3hEbSKPCoNyMi5K9Nu8DfYvQ68cIqRffcRx63VCoUwmYvgmNB_DcTc_hjbJcNq4FgGOB_ZFmZ_SsznyE5zEXZ4HoN3oCQGhn4DKGHIlZwV3RuZOI66JCFjbtMF1SzYhd1v9rjs_YFtH0uYG7DEaVv5CBEKkl_5xPCbSb6a9RXVPGk3Bdjb790du6lKsCtY8cj7Z-jkfl0AhPWELCbJ2lvnJqSmsB7c_guwf2tj_Vsx2Tf6PuyE8ojLWxlXjdCWX4b3gYQ9-3A4oJBC-S7AVFQ5lAxwfhOepPAMGUedEj2y0FKIEBnn543NHXzq0W1AZJ8983dUJyO042ArH7IwMQ66MkI779uNf2YKP_llRsKZMbEvBn71wZAn6msERVYzYjWVNn6iRs2zCGWzIj6aL58IzZuX3hKXRd06cCL55y1oAr53gIvNgRNNsPROyPkwFggoDjnEegRVi26WOM-vtGFQX8yzIYntCUzRiLCjz4TCcu-K02j0U9rujPJvZpb_QgOnzjU7czcvPtqChV28hQbm3ZpM1ugq-aZoY_IV5iBQiPGZNc03iMEIwCoN7nFwYwzNT0SFAkUD-FEl7_brShoswCt5QhK6ACkU0J3aF9lC2i2O3SSmcrccCoDkR4LopimFULs921P46Q-Foj_XGwiU4WdxMpoftqo9Ttj93li8t1DNZqacQ0vZ6G_d8AI6WqGpvaRUVoA32LKLeU4P7X31FoZhk9fbMu80jcmhmDWXp3JbqjRTG5593P4zxu5mZ23UgNwVjYwkciFpd2qY6bIFo1a7ip4Aqv1n3zf2i_AHcd5dMDr62sqTIn-z418cR7Zh6nr0M_kfOkFAB69D7IuT_hQxrYtzHc4V4JVYJJPTxUk8gd-cF6e5YzHlqJmikomzWGkRJiBtvo4XBcFaO_QNvvhHKhIqVKPJVEBqkuAdtdI02Ngc3ZF2sszI_cGuRvn6ZYfL4IifBamQjX5soXaweZ8MhaR0Mtidm68fdnu_Jr21aYsCVgifD9lKGww-BCJCrSmG9lTyrtDHq91cYKtCONC-SmEwnnnd1AyjPTxYF_tW3eptw8AtqWygT8rej-69exdse1bbffyFNCnQ4u8_OszbmhCiZwPPoOVayRiafhNOoooiaiJqoQdjIO8XQvUcHrxH9B8X0gqxM0xMMAri60E02XBfuYkbkBT6mJ1zf2JO5wTcUdpT2RwdQkDCegc6QqQkJFicnVR0BDZ75AHn0gVahAy4z7U23YcUBl6EBLO5BCuZl3sG0kE8wOXJ8NaemuXYHeZj9v95_u0eJBEmYorKiTvlTEWlg0nlpvGozb3bVqi13uxrZASTT3BFAcmI0IaLpP9G0LmDHuliTFTTtOG0ODMbUC2vDS2gWCil9DcndsXCcrsOlT-JqmY2fHGKoYll9n9sAlUuSoJY0YWIfymDC48FexSOrSnpkwPmJboqjn5tYnO26p72bdhFtBMFlgE9qAYf12oh53iJvLZkMzNFUEXOBJatrob1OvGN7TXQLHhizrCp3EOqsLH8D0LRC_dkLsXsy5DqJEtThh27AIoqSTzkscYsRdafJ5YbT9pjK05YNpMpeHDA8HJKAkGU0jQzdCwFGIMji3uBYZIYkd6IvzkfL_APYGqecKkABKT0EKF9SP9CHS9Xzdbvv_mO98OmGsuozhecQy_180LR4xZtvLTlbPECpeT8r6kOh5wWFIGAzYzeJJq8PUY5VBCLMGRgVZb5zJWt-kJdkNhMzXipe_X7sLjaWF_hckFNaSGN8M8BJs2WlJKIHACrmfwNys_rgI2ME4ltTaC3XlqiwO4ZeyCbFFofoVGoCaz9iLfA8f0pdznvDlpAiP4jgOYq6QiMi-0SlhWbxbjsJX2ppTfSPpzzEgoc2WgMpalEuUfrqyfOH4XAnfqTKDwsiEMSTnUCA1sAhMilXGoynA_w4pIYEKaDRKI2NJkneFFRi_9Ce2ktnXftWb1ustO9C5GCibezgMIKnafCh9rPGeVgf-BFGeSlVuheQPop1Ay3glrt_TXUeOwfHBBkJQi0tlTcFpwzRabEQVneJQhyRrh8_PqGTTeKt9yNpbozmgMhjNUjk8Nua6hj2wmyjPLZRAqrfLXrmyhvaerD03X4aHt-lXEW5AVy_6NXMq5pNs9yLpzxwG6DZlR4EfjTWwi1MLunHmnVGwBNVpRZ5KkB_MgZNMA37h6ywETqPSSxPAlMrE9YBhau__vHT23W-6xnAjuPV17DC563OxRsHLVe-UJJ7AtCAsgcZe1BNqisvigUFnda_5nuBVqa9IZsy5hnvV_4E2n5NcLmiEaXDprXIjgB5JjTrTFMiEMs6RlC-XFavtfUEDuJhK4h51jwsTKlmUO8-nAEcFeOBqCUVE4g3bTZV5YiI-NwH6dBcr3Ws_M3s11LDSMl9RvI9JWzw1fUgNySqlTRBByJXB9gLu9U80rSlVeRHGnH2aqFdjglBwXcCGMuQIqx8NS_1120B_eHlk2LEQ2NliVgFTRjIXeSIVihE5H21nMTkNk_Thx1TEFv1MAo&opi=122715837
+                      - img [ref=f18e25]
+                  - img [ref=f18e28] [cursor=pointer]
+                  - generic [ref=f18e39]:
+                    - img [ref=f18e42]
+                    - generic [ref=f18e45]:
+                      - text: Ads by
+                      - img [ref=f18e46]
+                    - generic [ref=f18e49]:
+                      - generic [ref=f18e52] [cursor=pointer]: Send feedback
+                      - link [ref=f18e54] [cursor=pointer]:
+                        - /url: https://adssettings.google.com/whythisad?source=display&reasons=AZwrskU1FIPfTgxxK7G3zkDfQ7Uh9KeDm6KKyc3EE89e-dH2Y3OaWlSG3PKdfFkr8oEmZTd8osfNVUe0myYwOOu3iKjd7wk8yh3jI8sSLKQ9GHuy1OA9SZxoHULY177z9Mb6P6pkinweFQpmkNrzhjudyfUdA5axZ_PepXBE8-mhcKswTjbEj3xHUiib_7_mL9USU-WgOtVg06iYevyesjUQoM-52ViE9P_9DSgKiyg2MdZQTCNyNwb6t3hEbSKPCoNyMi5K9Nu8DfYvQ68cIqRffcRx63VCoUwmYvgmNB_DcTc_hjbJcNq4FgGOB_ZFmZ_SsznyE5zEXZ4HoN3oCQGhn4DKGHIlZwV3RuZOI66JCFjbtMF1SzYhd1v9rjs_YFtH0uYG7DEaVv5CBEKkl_5xPCbSb6a9RXVPGk3Bdjb790du6lKsCtY8cj7Z-jkfl0AhPWELCbJ2lvnJqSmsB7c_guwf2tj_Vsx2Tf6PuyE8ojLWxlXjdCWX4b3gYQ9-3A4oJBC-S7AVFQ5lAxwfhOepPAMGUedEj2y0FKIEBnn543NHXzq0W1AZJ8983dUJyO042ArH7IwMQ66MkI779uNf2YKP_llRsKZMbEvBn71wZAn6msERVYzYjWVNn6iRs2zCGWzIj6aL58IzZuX3hKXRd06cCL55y1oAr53gIvNgRNNsPROyPkwFggoDjnEegRVi26WOM-vtGFQX8yzIYntCUzRiLCjz4TCcu-K02j0U9rujPJvZpb_QgOnzjU7czcvPtqChV28hQbm3ZpM1ugq-aZoY_IV5iBQiPGZNc03iMEIwCoN7nFwYwzNT0SFAkUD-FEl7_brShoswCt5QhK6ACkU0J3aF9lC2i2O3SSmcrccCoDkR4LopimFULs921P46Q-Foj_XGwiU4WdxMpoftqo9Ttj93li8t1DNZqacQ0vZ6G_d8AI6WqGpvaRUVoA32LKLeU4P7X31FoZhk9fbMu80jcmhmDWXp3JbqjRTG5593P4zxu5mZ23UgNwVjYwkciFpd2qY6bIFo1a7ip4Aqv1n3zf2i_AHcd5dMDr62sqTIn-z418cR7Zh6nr0M_kfOkFAB69D7IuT_hQxrYtzHc4V4JVYJJPTxUk8gd-cF6e5YzHlqJmikomzWGkRJiBtvo4XBcFaO_QNvvhHKhIqVKPJVEBqkuAdtdI02Ngc3ZF2sszI_cGuRvn6ZYfL4IifBamQjX5soXaweZ8MhaR0Mtidm68fdnu_Jr21aYsCVgifD9lKGww-BCJCrSmG9lTyrtDHq91cYKtCONC-SmEwnnnd1AyjPTxYF_tW3eptw8AtqWygT8rej-69exdse1bbffyFNCnQ4u8_OszbmhCiZwPPoOVayRiafhNOoooiaiJqoQdjIO8XQvUcHrxH9B8X0gqxM0xMMAri60E02XBfuYkbkBT6mJ1zf2JO5wTcUdpT2RwdQkDCegc6QqQkJFicnVR0BDZ75AHn0gVahAy4z7U23YcUBl6EBLO5BCuZl3sG0kE8wOXJ8NaemuXYHeZj9v95_u0eJBEmYorKiTvlTEWlg0nlpvGozb3bVqi13uxrZASTT3BFAcmI0IaLpP9G0LmDHuliTFTTtOG0ODMbUC2vDS2gWCil9DcndsXCcrsOlT-JqmY2fHGKoYll9n9sAlUuSoJY0YWIfymDC48FexSOrSnpkwPmJboqjn5tYnO26p72bdhFtBMFlgE9qAYf12oh53iJvLZkMzNFUEXOBJatrob1OvGN7TXQLHhizrCp3EOqsLH8D0LRC_dkLsXsy5DqJEtThh27AIoqSTzkscYsRdafJ5YbT9pjK05YNpMpeHDA8HJKAkGU0jQzdCwFGIMji3uBYZIYkd6IvzkfL_APYGqecKkABKT0EKF9SP9CHS9Xzdbvv_mO98OmGsuozhecQy_180LR4xZtvLTlbPECpeT8r6kOh5wWFIGAzYzeJJq8PUY5VBCLMGRgVZb5zJWt-kJdkNhMzXipe_X7sLjaWF_hckFNaSGN8M8BJs2WlJKIHACrmfwNys_rgI2ME4ltTaC3XlqiwO4ZeyCbFFofoVGoCaz9iLfA8f0pdznvDlpAiP4jgOYq6QiMi-0SlhWbxbjsJX2ppTfSPpzzEgoc2WgMpalEuUfrqyfOH4XAnfqTKDwsiEMSTnUCA1sAhMilXGoynA_w4pIYEKaDRKI2NJkneFFRi_9Ce2ktnXftWb1ustO9C5GCibezgMIKnafCh9rPGeVgf-BFGeSlVuheQPop1Ay3glrt_TXUeOwfHBBkJQi0tlTcFpwzRabEQVneJQhyRrh8_PqGTTeKt9yNpbozmgMhjNUjk8Nua6hj2wmyjPLZRAqrfLXrmyhvaerD03X4aHt-lXEW5AVy_6NXMq5pNs9yLpzxwG6DZlR4EfjTWwi1MLunHmnVGwBNVpRZ5KkB_MgZNMA37h6ywETqPSSxPAlMrE9YBhau__vHT23W-6xnAjuPV17DC563OxRsHLVe-UJJ7AtCAsgcZe1BNqisvigUFnda_5nuBVqa9IZsy5hnvV_4E2n5NcLmiEaXDprXIjgB5JjTrTFMiEMs6RlC-XFavtfUEDuJhK4h51jwsTKlmUO8-nAEcFeOBqCUVE4g3bTZV5YiI-NwH6dBcr3Ws_M3s11LDSMl9RvI9JWzw1fUgNySqlTRBByJXB9gLu9U80rSlVeRHGnH2aqFdjglBwXcCGMuQIqx8NS_1120B_eHlk2LEQ2NliVgFTRjIXeSIVihE5H21nMTkNk_Thx1TEFv1MAo&opi=122715837
+                        - generic [ref=f18e55]:
+                          - text: Why this ad?
+                          - img [ref=f18e56]
+                  - generic [ref=f18e58]:
+                    - generic [ref=f18e61] [cursor=pointer]: Not interested in this ad
+                    - generic [ref=f18e64] [cursor=pointer]: Seen this ad multiple times
+                    - generic [ref=f18e67] [cursor=pointer]: Ad was inappropriate
+                    - generic [ref=f18e70] [cursor=pointer]: Ad covered content
+                  - generic [ref=f18e76]: Thanks. Feedback improves Google ads
+                  - generic [ref=f18e82]:
+                    - text: Ad closed by
+                    - img [ref=f18e83]
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - 'link "City Centre, Auckland. Listed: Fri, 9 Dec NOT STAGED. FURNITURE INCLUDED!. Asking price $630,000" [ref=e229] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149480589?rsqid=6babab08197346719adee8cfe569b358-001
+                  - generic [ref=e230]:
+                    - generic [ref=e231]:
+                      - generic [ref=e232]:
+                        - generic "City Centre, Auckland." [ref=e233]: Auckland
+                        - generic [ref=e234]: "Listed: Fri, 9 Dec"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e235]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e238]: Asking price $630,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e239] [cursor=pointer]:
+                            - img "Previous image" [ref=e242]
+                          - button "Next image" [ref=e244] [cursor=pointer]:
+                            - img "Next image" [ref=e247]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e249] [cursor=pointer]:
+                - img [ref=e253]
+            - generic [ref=e258]:
+              - generic [ref=e259]:
+                - 'link "City Centre, Auckland. Listed: Fri, 13 Jan NOT STAGED. FURNITURE INCLUDED!. Asking price $630,000" [ref=e260] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149484650?rsqid=6babab08197346719adee8cfe569b358-001
+                  - generic [ref=e261]:
+                    - generic [ref=e262]:
+                      - generic [ref=e263]:
+                        - generic "City Centre, Auckland." [ref=e264]: Auckland
+                        - generic [ref=e265]: "Listed: Fri, 13 Jan"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e266]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e269]: Asking price $630,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e270] [cursor=pointer]:
+                            - img "Previous image" [ref=e273]
+                          - button "Next image" [ref=e275] [cursor=pointer]:
+                            - img "Next image" [ref=e278]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e280] [cursor=pointer]:
+                - img [ref=e284]
+            - generic [ref=e289]:
+              - generic [ref=e290]:
+                - 'link "City Centre, Auckland. Listed: Wed, 8 Feb NOT STAGED. FURNITURE INCLUDED!. Asking price $610,000" [ref=e291] [cursor=pointer]':
+                  - /url: /a/property/residential/sale/auckland/auckland-city/city-centre/listing/2149497189?rsqid=6babab08197346719adee8cfe569b358-001
+                  - generic [ref=e292]:
+                    - generic [ref=e293]:
+                      - generic [ref=e294]:
+                        - generic "City Centre, Auckland." [ref=e295]: Auckland
+                        - generic [ref=e296]: "Listed: Wed, 8 Feb"
+                      - generic "NOT STAGED. FURNITURE INCLUDED!." [ref=e297]: NOT STAGED. FURNITURE INCLUDED!
+                    - generic [ref=e300]: Asking price $610,000
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e301] [cursor=pointer]:
+                            - img "Previous image" [ref=e304]
+                          - button "Next image" [ref=e306] [cursor=pointer]:
+                            - img "Next image" [ref=e309]
+              - button "Add NOT STAGED. FURNITURE INCLUDED! to your watchlist" [ref=e311] [cursor=pointer]:
+                - img [ref=e315]
+          - navigation "Pagination" [ref=e318]:
+            - list [ref=e319]:
+              - listitem [ref=e320]
+              - listitem [ref=e321]:
+                - link "Current page, page 1" [ref=e323] [cursor=pointer]:
+                  - /url: /a/search?search_string=furniture
+                  - text: "1"
+              - listitem [ref=e324]
+          - button "Back to top" [ref=e326] [cursor=pointer]:
+            - img [ref=e328]
+            - text: Back to top
+        - generic:
+          - complementary
+  - generic [ref=e331]:
+    - generic [ref=e332]: We are upgrading some of our systems
+    - generic [ref=e333]:
+      - link "Learn more" [ref=e334] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e336]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e340] [cursor=pointer]:
+        - img [ref=e342]
+        - text: Tell us what you think
+  - contentinfo [ref=e344]:
+    - generic [ref=e346]:
+      - generic [ref=e348]:
+        - generic [ref=e350]:
+          - list [ref=e351]:
+            - listitem [ref=e352]:
+              - link "Home" [ref=e354] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e355]:
+                  - img "Trade Me" [ref=e356]
+          - list [ref=e357]:
+            - listitem [ref=e358]:
+              - generic [ref=e359]:
+                - img "Start a listing icon" [ref=e361]
+                - link "Start a listing" [ref=e363] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e364]:
+              - generic [ref=e365]:
+                - img "Watchlist icon" [ref=e367]
+                - link "Watchlist" [ref=e369] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e370]:
+              - generic [ref=e371]:
+                - img "Favourites icon" [ref=e373]
+                - link "Favourites" [ref=e375] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e376]:
+              - generic [ref=e378]:
+                - generic [ref=e379]:
+                  - img "Login icon" [ref=e381]
+                  - link "Log in" [ref=e384] [cursor=pointer]:
+                    - /url: search(modal:login)?search_string=furniture
+                - generic [ref=e385]:
+                  - img "Sign up icon" [ref=e387]
+                  - link "Sign up" [ref=e389] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e391]:
+          - list [ref=e392]:
+            - listitem [ref=e393]:
+              - generic [ref=e394]:
+                - img "Marketplace icon" [ref=e396]
+                - link "Marketplace" [ref=e398] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e399]:
+              - link "Latest deals" [ref=e401] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e402]:
+              - link "Stores" [ref=e404] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e405]:
+              - link "Closing soon" [ref=e407] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e408]:
+              - link "$1 reserve" [ref=e410] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e411]:
+              - link "Home & Living" [ref=e413] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e414]:
+            - listitem [ref=e415]:
+              - generic [ref=e416]:
+                - img "Property icon" [ref=e418]
+                - link "Property" [ref=e420] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e421]:
+              - link "International property" [ref=e423] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e424]:
+              - link "Property news & guides" [ref=e426] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e427]:
+              - link "Sold Properties" [ref=e429] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e430]:
+              - link "OneHub for agents" [ref=e432] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e433]:
+              - link "Find a Real Estate Agent" [ref=e435] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e436]:
+            - listitem [ref=e437]:
+              - generic [ref=e438]:
+                - img "Motors icon" [ref=e440]
+                - link "Motors" [ref=e442] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e443]:
+              - link "Cars for sale" [ref=e445] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e446]:
+              - link "Motorbikes for sale" [ref=e448] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e449]:
+              - link "Buying & selling advice" [ref=e451] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e452]:
+              - link "Dealer news & info" [ref=e454] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e455]:
+              - link "Sell my car" [ref=e457] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e458]:
+            - listitem [ref=e459]:
+              - generic [ref=e460]:
+                - img "Jobs icon" [ref=e462]
+                - link "Jobs" [ref=e465] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e466]:
+              - link "Browse job categories" [ref=e468] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e469]:
+              - link "Careers advice" [ref=e471] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e472]:
+              - link "JobSmart" [ref=e474] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e475]:
+              - link "Advertisers advice" [ref=e477] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e478]:
+              - link "Salary guide" [ref=e480] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e481]:
+            - listitem [ref=e482]:
+              - generic [ref=e483]:
+                - img "Services icon" [ref=e485]
+                - link "Services" [ref=e487] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e488]:
+              - link "Trades" [ref=e490] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e491]:
+              - link "Domestic services" [ref=e493] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e494]:
+              - link "Events & entertainment" [ref=e496] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e497]:
+              - link "Health & wellbeing" [ref=e499] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e500]:
+              - link "List my services" [ref=e502] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e503]:
+            - listitem [ref=e504]:
+              - generic [ref=e505]:
+                - img "Community icon" [ref=e507]
+                - link "Community" [ref=e511] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e512]:
+              - link "Help" [ref=e514] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e515]:
+              - link "Announcements" [ref=e517] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e518]:
+              - link "Trust & safety" [ref=e520] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e521]:
+              - link "Seller information" [ref=e523] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e524]:
+              - link "Help center community" [ref=e526] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e527]:
+        - group "Affiliate links" [ref=e530]:
+          - list [ref=e531]:
+            - listitem [ref=e532]:
+              - link "Trade Me Insurance" [ref=e533] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e534]:
+              - link "homes.co.nz" [ref=e535] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e536]:
+              - link "MotorWeb" [ref=e537] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e538]:
+              - link "CarExpert" [ref=e539] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e540]:
+              - link "Holiday Houses" [ref=e541] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e542]:
+              - link "FindSomeone" [ref=e543] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e544]:
+          - generic [ref=e545]: © 2026 Trade Me Limited
+          - list [ref=e548]:
+            - listitem [ref=e549]:
+              - link "Desktop site" [ref=e551] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e552]:
+              - link "About Us" [ref=e554] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e555]:
+              - link "Careers" [ref=e557] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e558]:
+              - link "News" [ref=e560] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e561]:
+              - link "Advertise" [ref=e563] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e564]:
+              - link "Privacy policy" [ref=e566] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e567]:
+              - link "Terms & conditions" [ref=e569] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e570]:
+              - link "Contact Us" [ref=e572] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e578]:
+            - listitem [ref=e579]:
+              - link "Follow Trade Me on Tiktok" [ref=e580] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e582]
+            - listitem [ref=e584]:
+              - link "Follow Trade Me on Instagram" [ref=e585] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e587]
+            - listitem [ref=e589]:
+              - link "Follow Trade Me on Facebook" [ref=e590] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e592]
+            - listitem [ref=e594]:
+              - link "Follow Trade Me on LinkedIn" [ref=e595] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e597]
+            - listitem [ref=e599]:
+              - link "Follow Trade Me on YouTube" [ref=e600] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e602]
+```

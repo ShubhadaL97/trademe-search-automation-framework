@@ -1,0 +1,1133 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-NF-25] Unicode and international characters should be supported
+- Location: tests\search.spec.ts:390:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForLoadState: Target page, context or browser has been closed
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary [ref=e7]:
+    - iframe [ref=e14]:
+      - iframe [ref=f18e2]:
+        - generic [active] [ref=f24e1]:
+          - generic [ref=f24e2]:
+            - link "How Drivers Are Removing Car Scratches Without Visiting a Body Shop How Drivers Are Removing Car Scratches Without Visiting a Body Shop TRK. OPEN" [ref=f24e3] [cursor=pointer]:
+              - /url: "https://trace-jp.mediago.io/ju/ic?tn=b9f6c6810e2148000cc17f9e98410921&trackingid=14f7e2d0849ce8a20db9cb1ff50a93af&acid=30449&data=gmle8sYGcbBEY98Uwk3hsK3egbLK5wLXDdZ4-e20Uk3GZjzOdtOyT_lx0HDlw-x_h-3xbzomY9xkSZvocI2w7VXBaKX163DBHKLCNqqR-S7zNZudFpfPXM5z6a-WOvTttKQ29Uz5Ti6IMVzU_XmAEnXoryF5MbWCDD1kpWuJ7aGFbjcS8NtccWV4Bopby5NtddCa4sJ4eZEhbhFTO0bDEFKeixvT5KQhX-VN8QiuekkKTRe_zYWwKRivTL09G1ndulbdJuZI_qVw51_DB4E2uBuEqVB-P9e6pAq_A5Epf7DW3r_HomXPQqK3GLL8RHwpqdIiQQfjTZWOuRNZhbAsIo0pgr0i18VA7UIo8YGs77quY9bzRnP7OuXHV6C_WvjeGT2fNn9cyCHRheMQfjr3_3KdkzkHva8ipz_CnKxEkeRb7qAKbjcQJDV71_4nfsS-MlpdsiyKkBvXyQ0eI0XEZ1vBtX9rJYSJxDoEr2m5EKBdgUFopdFQxMm35MoW7b7ULZdrDsZ7Q2EOp5qdOJXZzYvxXsMG36svYni-oVS4wPguYahENQVr5NXpw62fLf_lVpz0lViCnnNtfPdtUB9IgEyoky7DrkfUygJCW-wH2il9Cp1f7VYZsU-93Zi104FiiIdKq7QMJHh3K54cheb4a9UjyV7zOLTOlndw-rYrc2YiAEmY7wPA6wqDltpYTYjpPbInbLQxMV-WRMLvE-B5JQ2RxPNHqrpeb69P6uTyuy1Q24OhNrtBcDzO2jaLzODUGB1zFxcsjBqo-Z1PtKNQWo74dDVQTY1naDkeyHnQC2V06CnebNV8Xpmyy_YmdxzHijQGT-9i9Vhbbt-jnav33ghmwZIUv0P-wDHFs4_mXu00qCffSANS4ywyseRzDVHhPFAXo9F3vkmbmABEVKtj1bMO5OFinH2Kaj1tINFAoHqiNFFL-tz7mlFS07k5tfdIPRaIY-q2h1m3O5zZMtb0vStQD7_9Nby4MhlFGOzzyVayncx4tWjRH29VpkUVSnicriL9308xNNr5hsErY7E9VCt-QZC4D4Bb2-8olY04bB1NjV4KSCBcxsuNjp9WuuDbKW21LIyZwYODunCXgAmJEXbVVsw4u5dPSD_nS48DxsHyob5oG4i3p_5xFQD1SNYfQmvegcfB37elVATgNaM2o3EOgBnSiuXwoEBG7gIGHl2OK0IDbdpEFy9kJvzZc8ugwaktC5sXxR2jVmCKWlW1YiZcJyTMK0amY3dmY_wG2H97yNIwMrJoQp9jVcOIT1BSQnrBwvrDSQcw2UmSTuA6hJpXAiG-4clxbiLmtzuienBXGLRNvoUfIjqI8C6p0LiD6eXTXC3YUG7NGbk9vighU0K9ea8TALaSYUYcqY9TGaCs31awk1wtWthIvOn8pko2fbe6x2kHtgtFI3Jz1E0DZVDBYrTLFh8aviqGEyNoT-y26-w0_m7bNU7YN77t8fttgpUz_F2lcTupI_2ZyNEDaHQxjjSGimlDUpbunLZ_dgHe9UiQGrZi31XmLBcWTuhhZcAy2hfE0CxnjzcaZuf7z4W2ZbNG47m2jinAZWcKN2svQD4-SyFAHyho7ixdqa1OuT7BLicDt_drfSdiE1KJhdGufOAqtCkqbNTyQ9ucIam9ZuCnukpBuLU2jsbK1ipZZj1yUpKypij96GbZPFcQnRWeerfU787ntIhpwwUUY4AErxt7ExqjQbtoa5InbYd7t_0ruvM4R7ZcI-WrqIciQpYCSi9Dql_QYlQh0rr6qZDAD-Xdh_FEBNDugYOfXDuJL79LLHV4rmDgEzAwmxHDU4_IUUQgYL0m2IhtMYqVTUo8PlY1FmlQ-hKeXPWu-t-kmG85CzOyXGHKiyE2_X2ecjyQEz3c6HDCPtvfQ0STcj4cPDqe8wtzbgQE8Joh36uPThkm1o0krwm_1d8Dv6vextYaE8soicIu6OPk_FgC-vujgGCWFdPNRFS3iU64ta60JKGJb0nUcxyxcLVe1ceE3WRN099HRrtnc_-eVq4-ZZj90w_dpDVI4dkLoM9fo5viFe0preCL4UxWAeUJOdbOAsSVlkHn7x4ZKc-exty9RsWegbbTa0wwmmaf2rrCZDzVdjFot4YbLpRADHttspTdPiHiBlVHGcpX0C1dcJUy0cUqFShwng11ZQk3ZIkXAqst683AxlLuVHiu4wIjBtcKPnK4qxN-xuroAJRwMeFc9GES3VpbS-pKTXWQKiLj1JZqXK3TAiIccmpx_3X96y4vXlfRkRGc3jUn97LfCXqW0dZvqPffhwt8jPhxEzIzzabn62MY_yZPTpKnIe4yIc2pMN9ST3w7ldl62o99BGXai8mvGA8X4zdmO62wplSquuFD2Mmha3T4QWvHLSebuDbmPp0whuRAFK2voRMRFUX533S0ubsl1SxL4aZCIEdnVXP6beelQ-AQH-wuc8ZYtFhUeyUAO59d7WE_NLMwPnkAe4Q&uid=2712329374221161811&mguid=&ap={AUCTION_PRICE}&tid=106&gprice=P9iGEej_c29-aqswEJpnAKSgNPfbEztK7zWf_wTxWaY&campaignid=5138294&c_sync=1"
+              - img "How Drivers Are Removing Car Scratches Without Visiting a Body Shop" [ref=f24e4]
+              - generic [ref=f24e5]:
+                - generic [ref=f24e6]:
+                  - generic [ref=f24e7]: How Drivers Are Removing Car Scratches Without Visiting a Body Shop
+                  - generic [ref=f24e8]: TRK.
+                - generic [ref=f24e10]: OPEN
+            - link "ad" [ref=f24e11] [cursor=pointer]:
+              - /url: //cdn.mediago.io/js/officialWebsite/privacy.html
+              - img [ref=f24e12]
+          - iframe [ref=f24e14]:
+            
+          - img
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e15]:
+    - generic [ref=e16]:
+      - navigation "navigation bar" [ref=e17]:
+        - generic [ref=e21]:
+          - link "Trade Me" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e27]
+          - search [ref=e31]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Search all of Trade Me
+              - generic [ref=e34]:
+                - img [ref=e37]
+                - searchbox "Search all of Trade Me" [ref=e39]
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - button "Categories" [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]: Categories
+                - img [ref=e49]
+            - listitem
+            - listitem [ref=e52]:
+              - link "Watchlist" [ref=e53] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e54]: Watchlist
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Favourites" [ref=e59] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e60]: Favourites
+                - img [ref=e62]
+            - listitem [ref=e64]:
+              - link "Start a listing" [ref=e65] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e66]: Start a listing
+                - img [ref=e68]
+            - listitem [ref=e70]:
+              - generic [ref=e71]:
+                - link "Sign up" [ref=e72] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e74]
+                - link "Log in" [ref=e76] [cursor=pointer]:
+                  - /url: search(modal:login)?search_string=caf%C3%A9
+                  - text: Log in
+                  - img [ref=e78]
+      - navigation [ref=e81]
+  - main [ref=e84]:
+    - generic [ref=e85]: main content
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e91]:
+          - list [ref=e93]:
+            - listitem [ref=e94]:
+              - link "Home" [ref=e95] [cursor=pointer]:
+                - /url: /a/
+              - text: /
+            - listitem [ref=e96]: All Categories
+          - heading "All Categories" [level=1] [ref=e98]
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e104]:
+                - generic [ref=e105]: Add Search keywords (optional)
+                - generic [ref=e106]:
+                  - img [ref=e109]
+                  - searchbox "Add Search keywords (optional) Clear input" [ref=e112]: café
+                  - button "Clear input" [ref=e114] [cursor=pointer]:
+                    - img "Clear input" [ref=e116]
+              - button "Save this search Save this search" [ref=e119] [cursor=pointer]:
+                - img "Save this search" [ref=e121]
+                - generic [ref=e123]: Save this search
+            - generic [ref=e125]:
+              - generic "Refine" [ref=e126]:
+                - button "Refine" [ref=e129] [cursor=pointer]:
+                  - img [ref=e131]
+                  - text: Refine
+                  - img [ref=e135]
+              - button "Category" [ref=e140] [cursor=pointer]:
+                - text: Category
+                - img [ref=e143]
+              - button "All Locations" [ref=e148] [cursor=pointer]:
+                - text: All Locations
+                - img [ref=e151]
+              - button "New & Used" [ref=e156] [cursor=pointer]:
+                - text: New & Used
+                - img [ref=e159]
+              - 'button "Shipping: All" [ref=e164] [cursor=pointer]':
+                - text: "Shipping: All"
+                - img [ref=e167]
+        - list [ref=e172]:
+          - listitem [ref=e173]:
+            - link "Business, farming & industry (531)" [ref=e174] [cursor=pointer]:
+              - /url: /a/marketplace/business-farming-industry/search?search_string=caf%C3%A9
+          - listitem [ref=e175]:
+            - link "Trade Me Property (18)" [ref=e176] [cursor=pointer]:
+              - /url: /a/property/search?search_string=caf%C3%A9
+        - generic [ref=e178]:
+          - heading "Showing 549 results for 'café'" [level=3] [ref=e180]
+          - generic [ref=e181]:
+            - generic [ref=e185]:
+              - generic [ref=e186]: Sort order
+              - generic [ref=e187]:
+                - combobox "Sort order" [ref=e188] [cursor=pointer]:
+                  - 'option "Sort: Best match" [selected]'
+                  - option "Featured first"
+                  - option "Lowest price"
+                  - option "Highest price"
+                  - option "Lowest Buy Now"
+                  - option "Highest Buy Now"
+                  - option "Most bids"
+                  - option "Latest listings"
+                  - option "Closing soon"
+                  - option "Title"
+                  - option "Largest discount"
+                - generic:
+                  - generic:
+                    - img
+            - radiogroup "Card display mode (optional)" [ref=e191]:
+              - generic [ref=e192]: Card display mode (optional)
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - radio "Switch to list view List" [ref=e195]
+                  - generic [ref=e196] [cursor=pointer]:
+                    - img "Switch to list view" [ref=e198]
+                    - generic [ref=e200]: List
+                - generic [ref=e201]:
+                  - radio "Switch to card view Gallery" [checked] [ref=e202]
+                  - generic [ref=e203]:
+                    - img "Switch to card view" [ref=e205]
+                    - generic [ref=e207]: Gallery
+      - heading "Search Results" [level=2] [ref=e208]
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - generic [ref=e221]:
+              - text: Advertisement
+              - iframe [ref=e225]:
+                - iframe [ref=f19e2]:
+                  - generic [active] [ref=f25e1]:
+                    - generic [ref=f25e2]:
+                      - link "ad" [ref=f25e3] [cursor=pointer]:
+                        - /url: //cdn.mediago.io/js/officialWebsite/privacy.html
+                        - img [ref=f25e4]
+                      - link [ref=f25e6] [cursor=pointer]:
+                        - /url: "https://trace-jp.mediago.io/ju/ic?tn=b9f6c6810e2148000cc17f9e98410921&trackingid=f14e9206c31ed21937d9056f3b73d7cf&acid=35157&data=sZqcVuHUbS0wv6vxskjQkm4ulQiPaDSaSq2etYvQOYzEOKinyyELIF_uGo0HanlzmQA5L37Xkg49VpXjNLqXzmWyclJqTcfOJ4NdpdvXR5ZIFjO2QoUApJiCLS5a6lPVQk1QeFk50fgrRSDidAqeXd7VyGvXq83RPOrHiNwufYPNCTXB4blQVdb0WMNL_7U58OkwzEJ6xWhUQtn5vpKUdWowfSFVzWoVhIwEg5lNgyHijjhSh1jmMZWT9LMXrVQ954FG34cN4FHPJm8Jvz_ComOWNdOsTgEhiG65O1zE8gH--yxkiZj3ipiFvliq4h3RN1E8l8KKf62CHvW7RLk3lIXIZXhzpaz16EACJuH9xmdsy6HasW3dhV5ITOmezvFnRmNQ4eY85yMph-E-7GwzJ-fm8mui2oBk1hS4m4VDOFXaHOuvmfOvXX8O07g2fWrchFKk8UbXvvE7ZyE8tyB7dZj6pTNsrWiy2t3OvGug2UXhlPeOBYEjjdRmyRGbBnORzDT4P1HDt3L_WC1WbjE7af_0Su6PDhKyBZKPgaop70JZ5jHgNLX9I-Jw5REr7OYgTZEEl6JSV-9IXaOH9QVxw3p7G0Y_uuftoQBk03JW_j6ksr7R9olP1emqhHuYo0CUvlpntfgDk79uVgs4fn79dq5oAz3X8qLvZgq4r-_piKN3aU6BlcQUCOagz7hjkykjs-jMB7m2dOchFHlLJvYKdCrtId9ZIa_stjXhwbb3oCIsHxvKOviStjCNXXDQsvS76I50av2IEnQxNz-iFUoIU_J0g7TkFNw89nxvHAU4w4AIfKVNFncZMdVXP-H3KOUqtWaIYWwiY092Xvpq34Rw-h3HuyQ7cUDf38Lwbl-ipZysvwPM2mU90iPz-IO7L2fagT0Xyb5X_fcPaOkKDZwcRE7BB7Nam-YKL2Ph5zeFWdPI8KZaorKuRE1-OG7mOMCJJpThomqtSbXp708T2NQg5HPlL59wJSg_x1PLSkWag4Hu66i_AUsBWbQCFp-OEXRWjJPlRbrmuaVSrofbZkgVgj8A2vvdWzKBLfAFEIZ1SgOetHf7i_5HXGRi2GmaajFG89fmQXiNQIBaqfsm-UTLVPfIeMl1bSXNusuMpbdEt5a0R6UkB07CxLlqyECbOjj3DSxtJsCJa_jlwsHKsVvimuAjRlETjAOGZJ4DHIvXDLP2XrOHtnDwVtvnHbcmH4ouvSYNhUJXahRYgJeNwxgqasWV5Hj9LdpPNkoOfSPTCNjWa_nfCA6nDUHKXmjyg7mLHKxKZFZeZqEUcP_Kzmcs245sibCkRd3PUfZ9NJ4-spJL2XrdfSJ0wtEThg0CbNYIcX7H8p-17vWauqGM2e-dS_Ogp7zkn6mtJQLcmnRLXqj_zw1YBSGBNP0fCK8p5WujRoCpo8NzvomkBJsAc6yIzVMK_uYdrLqm-MwBgQNHT3vYKF7U8vWQY2a310Nfs9afRZlX4xHx-2tjlAad4ejwgtQHZgCp7AGsJtVdMADtv6BLk1eZUmHPKCQz44I0R5yXienopDDZF8R5sGHPnJTk5x4P6bwD5fopYpNnOu9dkIKb8PmiLh2h1_pDvO2rDMlHpVwU4jw-KUqf55NmgTA01TtOkbH94WHSwkCaHN-JWymNvy-ubWpZ4m-L3GhNPD5QJe6Nuq-xy-9aPSzSDgmxDddSF28kP_VL5VuK7J2_b8Iyx3gHS40-PZlKD4uMBhTv-bo9vCWU_ISYTRnqfW6GZiZpTDKtbb1PP-5Dl3_3kDFOxAAt0xerLzs9SKWD8giTeuAcSBWEu1UmOl2TwqM8OFNHqnqHvrKmmxjQgLd3CLrq8eC2MWDannrJMjFF9sejjdPvmkVq6fLqO4ySLNIwhOQv4goBXA0JN1sAagFp1TrbLLiad25sLB8rSQALmQKqxuIp_GACP-qitK8rdI5ZOg&uid=2712329374221161811&mguid=&ap={AUCTION_PRICE}&tid=30&gprice=bkG2lRtfL1pQVJV7sa2DABk2WCKNOSL6JuNS3hOV2ho&campaignid=5161291&c_sync=1"
+                        - img [ref=f25e7]
+                    - iframe [ref=f25e8]:
+                      
+                    - img
+            - generic [ref=e228]:
+              - text: Advertisement
+              - iframe [ref=e232]:
+                - iframe [ref=f20e2]:
+                  - generic [active] [ref=f26e1]:
+                    - generic [ref=f26e2]:
+                      - link [ref=f26e3] [cursor=pointer]:
+                        - /url: //cdn.mediago.io/js/officialWebsite/privacy.html
+                        - img [ref=f26e4]
+                      - link "Most over-65s don't know they may qualify for these hearing solutions Most over-65s don't know they may qualify for these hearing solutions hearclear nz" [ref=f26e6] [cursor=pointer]:
+                        - /url: "https://trace-jp.mediago.io/ju/ic?tn=b9f6c6810e2148000cc17f9e98410921&trackingid=8caefd9f901d06841e893b316a7a0df7&acid=617&data=wUvjtZrcCTnoVMqWZAV2RlTd93O287vqPC1qhUApRJYANhI9qPfB9sKmKPTT_QrcVpby6V35lrBLM_L0pzIfekeP-qHN17judp_-NfwOq9bAQ_kIAs5-U25cV4YzJQkwQs9LMsFDKDWbF8R0P67dTAcRGl_sNwRgODC9A4ouDmft3qoo9yITaCTd2wJqvi7_6ohAteYA2m7g60ta6J8l2jPO9XokeaC3tv3cysDRRHLmbmFkAJwOfLDXXnANEsmvgF6GpFN2gpbcrgk5btoOhs-moJdvetWOn0oGf-1DNZEgUPhA7L5KcYOC-5Tq79tJtIoPE_RxFJQ3s_ddgi7AboQhYLz9Gd3PIvr8pmqR-W_qa4COKgfTsTXVbcQ8UI6TpIZImvdYXKvq2rEl8aHhA8ekDBOV9ZRhFmwV_ut_L0aAtD4O1jHTmMlgdRAf-MAqyNBwIvx-pSN_cEBBFuAVsNc6rV51H9u_EDv6VwxJ8W0-5g_eYx8QqwskqA984TwpZ1I3_Lp8QI8YFX-HkBET9If0-tSGzveuC82-Y0YGxz0xYG_G3x7kSyDCHNhEYYW1L5Lcb-uBxJeXsI0P_OOfoymhz-yIPmzWQxQVbnxnVDFSm0-BQ6GW-NyVvaVNCUwLZUMwsk_TAI_sjJxLmfdyn5xy7zpv7LNJRrIfMBkPbbPBzMVUPY9yBUTfTKopl5epVyT0VGcqqtKlezEpu0iVWYfm98WB4Sx6_p-RmYS36RjnImkocY4F9N-5X7LcLpYHnHJSzvULI6GAA6nuO5aEV5_sm6Hb1pZu8MINFaZITCD_7kYNiZDVd1QNo8C6kfWrUX23VU_raSARt9olDG3i8a3XqIKw_3adWiKhLWeQxEYETqjOjpQ5W01fNbLRxDpsmMpuSYY9V0sVQ3LGXMLMYleCOanIznRB7ZjMWGuzq5TyGE13aUaE_IyttqpNkTsWYjOBvHdzGX0hMevT6n8laAr7_6ch3TpeSVITRA-LW3zXun2bTxCJVvWub0NTFGg-TojAy4J57QLMFLnr1Q9VvOfptdQetD0lhFnEChdQgX2ldqS7dQChC5-thfZfoxtLvJP3ZIvVZxYvAk0Ov4WGd5f_5rcwDxYd7kjiRYAgpdDq9MUS3WomDmNc1IbP4dQUDr0q_YSic0SGwwVgkeK48idPV3NOSeBg3TyIfAWgT_gE0rzht0aR7fSvoV769NEIhHkgnWXfHuXK136zaShndhoBg9OqqMXPbLl6mdgF4WxtAgO-1dUy1iiz3DLn0dzkj-sCPNBOa8Tw63G1VT0gMgqmmLc_M8za3s2ZcjPVBFsGsQfpTClAVX8w4Q81ilMSUHQUOxIMvOc4XRs17y97r9VOssm4_G5iVp7AMx8ikB3gEPhBEy2w3gpsQZIfu8tkcLPWCJ404N1jIpJFqXWOFHBiIrI29MIUK1YID_6Q5kWPXE3VHfTH4HX7TtC7e3nvrGT_jeco4P9DMWIOGGZwy4OvMAP1iiTJkj2uFuJvA2w7shgu7oNUOHXM1_bcF4Rk0ovcBQgwd1OLL3JPVpvBrvfRZOT-XKV7MdZceyv7ZDGI7dZh1rzTtcBBqO6R8V_3pSQXUaB_VuK4wRjd8DPZqmVRv_rHL43QqKYCfirwkrKmT9ac_LG9E0myu-bGG_wSnpIP-FEH8Gqjhnp8rJmEnV9cEzLlQnwcXY9RTubKv77tmUDFrBfS83VusmpNCbmRZQMQtoFLIzoAI1BqaQ0YyRxmEploU0ADsfyzP0qMdKw_xGwQvOZG76l1Uv0tYGogfyrUCTbsMjKekeWa8Eu9gTQMyc4CZ3G9yJx98uKBQus1mXvKUlYFrH3m2o6KFXwyHjiGTDVXSm_p9S1WAN8kRmd-i7bTi4OTDZBmMG3FEU_Pu5h2JIxFJqMPZdNZ6dN1Nkb1XQZxY3AmvcpksCfX9Hk0LmTcHsNt6yssRlLsNa3XMpj1ob_SLPSuE8OxLfZ1CKOfISxzTYffyXvItaUdU3rg9aw3oGZ2VUM49kRKgIoTrfiyZ3S0t_KPJoEWBhbGyI12Q4Glx7-iujyzOF236lhjIsjMFI3jrxBZRa4nBr8JNIHSkjWHQrmSEDFLvIXM1xpzEntpoVRcFKO7sCyrT_7hNGgY7gS0Yqf7TC94KTzDv3HJ7Vr2dd-ckK0Xel3Jy3fBY_7M-NANA6QFcclwF0zf7EMIVQv55oozT13mWCoYBCHwAbEuoWfen-EZzP1MrRlyqiqYbevl4abcZXJqzPIyPkATxJ8ycOT3RnsoP-GdBvWwoJKEf05prcOOIohyrSh_PGXeq1ZzVJxp4h4Hai7KnTIrq77vFLkq5xhsy-BFNRFLk_E63nn2YiLOfB4O_7xHEaHW-BzFyFzhgxInIH5gPha9kJXCjZpPNjkgpmA&uid=2712329374221161811&mguid=&ap={AUCTION_PRICE}&tid=72&gprice=QggfNxeOaDq250K9uOdFS4b0RthW_qLdxnHaIBKujCc&campaignid=4174532&c_sync=1"
+                        - img "Most over-65s don't know they may qualify for these hearing solutions" [ref=f26e7]
+                        - heading "Most over-65s don't know they may qualify for these hearing solutions" [level=3] [ref=f26e8]
+                        - generic [ref=f26e9]: hearclear nz
+                    - iframe [ref=f26e10]:
+                      
+                    - img
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - 'link "Blenheim, Marlborough. Listed: Fri, 11 Apr Cafe le Cupp. Asking price: $400,000" [ref=e238] [cursor=pointer]':
+                  - /url: /a/marketplace/business-farming-industry/businesses-for-sale/tourism-hospitality/restaurants-bars-cafes/listing/1892780?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e239]:
+                    - generic [ref=e240]:
+                      - generic [ref=e241]:
+                        - generic "Blenheim, Marlborough." [ref=e242]: Marlborough
+                        - generic [ref=e243]: "Listed: Fri, 11 Apr"
+                      - generic "Cafe le Cupp." [ref=e244]: Cafe le Cupp
+                    - generic [ref=e247]: "Asking price: $400,000"
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 8"
+                                    - generic:
+                                      - img "Image 1 of 8"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 8"
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 8 of 8"
+                          - button "Previous image" [ref=e248] [cursor=pointer]:
+                            - img "Previous image" [ref=e251]
+                          - button "Next image" [ref=e253] [cursor=pointer]:
+                            - img "Next image" [ref=e256]
+              - button "Add Cafe le Cupp to your watchlist" [ref=e258] [cursor=pointer]:
+                - img [ref=e262]
+            - generic [ref=e267]:
+              - generic [ref=e268]:
+                - 'link "Remuera, Auckland. Listed: Mon, 3 Jul CAFÉ - TURNKEY. $25,000 per annum" [ref=e269] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/auckland/auckland-city/remuera/listing/2149540903?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e270]:
+                    - generic [ref=e271]:
+                      - generic [ref=e272]:
+                        - generic "Remuera, Auckland." [ref=e273]: Auckland
+                        - generic [ref=e274]: "Listed: Mon, 3 Jul"
+                      - generic "CAFÉ - TURNKEY." [ref=e275]: CAFÉ - TURNKEY
+                    - generic [ref=e278]: $25,000 per annum
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e279] [cursor=pointer]:
+                            - img "Previous image" [ref=e282]
+                          - button "Next image" [ref=e284] [cursor=pointer]:
+                            - img "Next image" [ref=e287]
+              - button "Add CAFÉ - TURNKEY to your watchlist" [ref=e289] [cursor=pointer]:
+                - img [ref=e293]
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - 'link "Remuera, Auckland. Listed: Tue, 12 Mar CAFÉ - TURNKEY. $25,000 per annum" [ref=e300] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/auckland/auckland-city/remuera/listing/2149594765?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e301]:
+                    - generic [ref=e302]:
+                      - generic [ref=e303]:
+                        - generic "Remuera, Auckland." [ref=e304]: Auckland
+                        - generic [ref=e305]: "Listed: Tue, 12 Mar"
+                      - generic "CAFÉ - TURNKEY." [ref=e306]: CAFÉ - TURNKEY
+                    - generic [ref=e309]: $25,000 per annum
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 9"
+                                    - generic:
+                                      - img "Image 1 of 9"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 9"
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 9 of 9"
+                          - button "Previous image" [ref=e310] [cursor=pointer]:
+                            - img "Previous image" [ref=e313]
+                          - button "Next image" [ref=e315] [cursor=pointer]:
+                            - img "Next image" [ref=e318]
+              - button "Add CAFÉ - TURNKEY to your watchlist" [ref=e320] [cursor=pointer]:
+                - img [ref=e324]
+            - generic [ref=e329]:
+              - generic [ref=e330]:
+                - 'link "Albany, Auckland. Listed: Thu, 30 Apr CAFE'' ON ROSEDALE, PINEHILL. Price by negotiation" [ref=e331] [cursor=pointer]':
+                  - /url: /a/property/commercial/sale/auckland/north-shore-city/albany/listing/4109722?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e332]:
+                    - generic [ref=e333]:
+                      - generic [ref=e334]:
+                        - generic "Albany, Auckland." [ref=e335]: Auckland
+                        - generic [ref=e336]: "Listed: Thu, 30 Apr"
+                      - generic "CAFE' ON ROSEDALE, PINEHILL." [ref=e337]: CAFE' ON ROSEDALE, PINEHILL
+                    - generic [ref=e340]: Price by negotiation
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 8"
+                                    - generic:
+                                      - img "Image 1 of 8"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 8"
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 8 of 8"
+                          - button "Previous image" [ref=e341] [cursor=pointer]:
+                            - img "Previous image" [ref=e344]
+                          - button "Next image" [ref=e346] [cursor=pointer]:
+                            - img "Next image" [ref=e349]
+              - button "Add CAFE' ON ROSEDALE, PINEHILL to your watchlist" [ref=e351] [cursor=pointer]:
+                - img [ref=e355]
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - 'link "Timaru, Canterbury. Listed: Tue, 1 Sep CAFE / RESTAURANT OPPORTUNITY. Price by negotiation" [ref=e362] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/canterbury/timaru/timaru/listing/4261338?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e363]:
+                    - generic [ref=e364]:
+                      - generic [ref=e365]:
+                        - generic "Timaru, Canterbury." [ref=e366]: Canterbury
+                        - generic [ref=e367]: "Listed: Tue, 1 Sep"
+                      - generic "CAFE / RESTAURANT OPPORTUNITY." [ref=e368]: CAFE / RESTAURANT OPPORTUNITY
+                    - generic [ref=e371]: Price by negotiation
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 6"
+                                    - generic:
+                                      - img "Image 1 of 6"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 6"
+                              - listitem
+                              - listitem
+                              - listitem
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 6 of 6"
+                          - button "Previous image" [ref=e372] [cursor=pointer]:
+                            - img "Previous image" [ref=e375]
+                          - button "Next image" [ref=e377] [cursor=pointer]:
+                            - img "Next image" [ref=e380]
+              - button "Add CAFE / RESTAURANT OPPORTUNITY to your watchlist" [ref=e382] [cursor=pointer]:
+                - img [ref=e386]
+            - generic [ref=e391]:
+              - generic [ref=e392]:
+                - 'link "Albany, Auckland. Listed: Thu, 30 Apr SHOWPIECE CAFE - MAKE A STATEMENT. Price by negotiation" [ref=e393] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/4109910?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e394]:
+                    - generic [ref=e395]:
+                      - generic [ref=e396]:
+                        - generic "Albany, Auckland." [ref=e397]: Auckland
+                        - generic [ref=e398]: "Listed: Thu, 30 Apr"
+                      - generic "SHOWPIECE CAFE - MAKE A STATEMENT." [ref=e399]: SHOWPIECE CAFE - MAKE A STATEMENT
+                    - generic [ref=e402]: Price by negotiation
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 4"
+                                    - generic:
+                                      - img "Image 1 of 4"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 4"
+                              - listitem
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 4 of 4"
+                          - button "Previous image" [ref=e403] [cursor=pointer]:
+                            - img "Previous image" [ref=e406]
+                          - button "Next image" [ref=e408] [cursor=pointer]:
+                            - img "Next image" [ref=e411]
+              - button "Add SHOWPIECE CAFE - MAKE A STATEMENT to your watchlist" [ref=e413] [cursor=pointer]:
+                - img [ref=e417]
+            - generic [ref=e422]:
+              - generic [ref=e423]:
+                - 'link "Albany, Auckland. Listed: Mon, 15 Sep HOMEZONE RETAIL / CAFE OPPORTUNITY. Price by negotiation" [ref=e424] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/2149714601?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e425]:
+                    - generic [ref=e426]:
+                      - generic [ref=e427]:
+                        - generic "Albany, Auckland." [ref=e428]: Auckland
+                        - generic [ref=e429]: "Listed: Mon, 15 Sep"
+                      - generic "HOMEZONE RETAIL / CAFE OPPORTUNITY." [ref=e430]: HOMEZONE RETAIL / CAFE OPPORTUNITY
+                    - generic [ref=e433]: Price by negotiation
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e434] [cursor=pointer]:
+                            - img "Previous image" [ref=e437]
+                          - button "Next image" [ref=e439] [cursor=pointer]:
+                            - img "Next image" [ref=e442]
+              - button "Add HOMEZONE RETAIL / CAFE OPPORTUNITY to your watchlist" [ref=e444] [cursor=pointer]:
+                - img [ref=e448]
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - 'link "Albany, Auckland. Listed: Thu, 11 Dec HOMEZONE RETAIL / CAFE OPPORTUNITY. Price by negotiation" [ref=e455] [cursor=pointer]':
+                  - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/2149718238?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                  - generic [ref=e456]:
+                    - generic [ref=e457]:
+                      - generic [ref=e458]:
+                        - generic "Albany, Auckland." [ref=e459]: Auckland
+                        - generic [ref=e460]: "Listed: Thu, 11 Dec"
+                      - generic "HOMEZONE RETAIL / CAFE OPPORTUNITY." [ref=e461]: HOMEZONE RETAIL / CAFE OPPORTUNITY
+                    - generic [ref=e464]: Price by negotiation
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - list:
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 1 of 3"
+                                    - generic:
+                                      - img "Image 1 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 2 of 3"
+                              - listitem:
+                                - generic:
+                                  - generic:
+                                    - generic:
+                                      - img "Loading Image 3 of 3"
+                          - button "Previous image" [ref=e465] [cursor=pointer]:
+                            - img "Previous image" [ref=e468]
+                          - button "Next image" [ref=e470] [cursor=pointer]:
+                            - img "Next image" [ref=e473]
+              - button "Add HOMEZONE RETAIL / CAFE OPPORTUNITY to your watchlist" [ref=e475] [cursor=pointer]:
+                - img [ref=e479]
+            - generic [ref=e484]:
+              - 'link "Kaeo, Northland. Listed: Thu, 21 May Kiwi Classic – Café, Pub, Backpackers. Price by negotiation" [ref=e486] [cursor=pointer]':
+                - /url: /a/property/residential/sale/northland/far-north/kaeo/listing/4131583?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - generic [ref=e489]:
+                      - generic "Kaeo, Northland." [ref=e490]: Northland
+                      - generic [ref=e491]: "Listed: Thu, 21 May"
+                    - generic "Kiwi Classic – Café, Pub, Backpackers." [ref=e492]: Kiwi Classic – Café, Pub, Backpackers
+                  - generic [ref=e495]: Price by negotiation
+              - button "Add Kiwi Classic – Café, Pub, Backpackers to your watchlist" [ref=e496] [cursor=pointer]:
+                - img [ref=e500]
+            - generic [ref=e505]:
+              - 'link "Pukekohe, Auckland. Listed: Mon, 8 Sep 175M² RETAIL / CAFE ON EDINBURGH. Price by negotiation" [ref=e507] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/franklin/pukekohe/listing/2149714156?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e508]:
+                  - generic [ref=e509]:
+                    - generic [ref=e510]:
+                      - generic "Pukekohe, Auckland." [ref=e511]: Auckland
+                      - generic [ref=e512]: "Listed: Mon, 8 Sep"
+                    - generic "175M² RETAIL / CAFE ON EDINBURGH." [ref=e513]: 175M² RETAIL / CAFE ON EDINBURGH
+                  - generic [ref=e516]: Price by negotiation
+              - button "Add 175M² RETAIL / CAFE ON EDINBURGH to your watchlist" [ref=e517] [cursor=pointer]:
+                - img [ref=e521]
+            - generic [ref=e526]:
+              - 'link "Ponsonby, Auckland. Listed: Fri, 17 Jun GUARANTEED CUSTOMERS CAFE - PONSONBY CENTRAL. Price by negotiation" [ref=e528] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/auckland-city/ponsonby/listing/2149427862?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e529]:
+                  - generic [ref=e530]:
+                    - generic [ref=e531]:
+                      - generic "Ponsonby, Auckland." [ref=e532]: Auckland
+                      - generic [ref=e533]: "Listed: Fri, 17 Jun"
+                    - generic "GUARANTEED CUSTOMERS CAFE - PONSONBY CENTRAL." [ref=e534]: GUARANTEED CUSTOMERS CAFE - PONSONBY CENTRAL
+                  - generic [ref=e537]: Price by negotiation
+              - button "Add GUARANTEED CUSTOMERS CAFE - PONSONBY CENTRAL to your watchlist" [ref=e538] [cursor=pointer]:
+                - img [ref=e542]
+            - generic [ref=e547]:
+              - 'link "Albany, Auckland. Listed: Thu, 30 Apr DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY. Price by negotiation" [ref=e549] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/4110107?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e550]:
+                  - generic [ref=e551]:
+                    - generic [ref=e552]:
+                      - generic "Albany, Auckland." [ref=e553]: Auckland
+                      - generic [ref=e554]: "Listed: Thu, 30 Apr"
+                    - generic "DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY." [ref=e555]: DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY
+                  - generic [ref=e558]: Price by negotiation
+              - button "Add DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY to your watchlist" [ref=e559] [cursor=pointer]:
+                - img [ref=e563]
+            - generic [ref=e568]:
+              - 'link "Albany, Auckland. Listed: Thu, 30 Apr PRIME LOCATION FOR NEW CAFE - FULLY FITTED OUT. $62,000 per annum" [ref=e570] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/4109734?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e571]:
+                  - generic [ref=e572]:
+                    - generic [ref=e573]:
+                      - generic "Albany, Auckland." [ref=e574]: Auckland
+                      - generic [ref=e575]: "Listed: Thu, 30 Apr"
+                    - generic "PRIME LOCATION FOR NEW CAFE - FULLY FITTED OUT." [ref=e576]: PRIME LOCATION FOR NEW CAFE - FULLY FITTED OUT
+                  - generic [ref=e579]: $62,000 per annum
+              - button "Add PRIME LOCATION FOR NEW CAFE - FULLY FITTED OUT to your watchlist" [ref=e580] [cursor=pointer]:
+                - img [ref=e584]
+            - generic [ref=e589]:
+              - 'link "Albany, Auckland. Listed: Thu, 30 Apr DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY. Price by negotiation" [ref=e591] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/4110108?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e592]:
+                  - generic [ref=e593]:
+                    - generic [ref=e594]:
+                      - generic "Albany, Auckland." [ref=e595]: Auckland
+                      - generic [ref=e596]: "Listed: Thu, 30 Apr"
+                    - generic "DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY." [ref=e597]: DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY
+                  - generic [ref=e600]: Price by negotiation
+              - button "Add DESIGN BUILD - OFFICE PLUS CAFE OPPORTUNITY to your watchlist" [ref=e601] [cursor=pointer]:
+                - img [ref=e605]
+            - generic [ref=e610]:
+              - 'link "New Lynn, Auckland. Listed: Wed, 27 Sep CALLING ALL CAFE, BAKERY AND RESTAURANT OWNERS. Price by negotiation" [ref=e612] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/waitakere-city/new-lynn/listing/2149568070?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e613]:
+                  - generic [ref=e614]:
+                    - generic [ref=e615]:
+                      - generic "New Lynn, Auckland." [ref=e616]: Auckland
+                      - generic [ref=e617]: "Listed: Wed, 27 Sep"
+                    - generic "CALLING ALL CAFE, BAKERY AND RESTAURANT OWNERS." [ref=e618]: CALLING ALL CAFE, BAKERY AND RESTAURANT OWNERS
+                  - generic [ref=e621]: Price by negotiation
+              - button "Add CALLING ALL CAFE, BAKERY AND RESTAURANT OWNERS to your watchlist" [ref=e622] [cursor=pointer]:
+                - img [ref=e626]
+            - generic [ref=e631]:
+              - 'link "Albany, Auckland. Listed: Thu, 30 Apr OPPORTUNITY TO LEASE ROSEDALE ROADS BEST CAFE SITE. Price by negotiation" [ref=e633] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/north-shore-city/albany/listing/4109937?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e634]:
+                  - generic [ref=e635]:
+                    - generic [ref=e636]:
+                      - generic "Albany, Auckland." [ref=e637]: Auckland
+                      - generic [ref=e638]: "Listed: Thu, 30 Apr"
+                    - generic "OPPORTUNITY TO LEASE ROSEDALE ROADS BEST CAFE SITE." [ref=e639]: OPPORTUNITY TO LEASE ROSEDALE ROADS BEST CAFE SITE
+                  - generic [ref=e642]: Price by negotiation
+              - button "Add OPPORTUNITY TO LEASE ROSEDALE ROADS BEST CAFE SITE to your watchlist" [ref=e643] [cursor=pointer]:
+                - img [ref=e647]
+            - generic [ref=e652]:
+              - 'link "Silverdale, Auckland. Listed: Mon, 4 May SILVERDALE RETAIL - F4 TENANTED INVESTMENT CAFE. Price by negotiation" [ref=e654] [cursor=pointer]':
+                - /url: /a/property/commercial/sale/auckland/rodney/silverdale/listing/4113737?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e655]:
+                  - generic [ref=e656]:
+                    - generic [ref=e657]:
+                      - generic "Silverdale, Auckland." [ref=e658]: Auckland
+                      - generic [ref=e659]: "Listed: Mon, 4 May"
+                    - generic "SILVERDALE RETAIL - F4 TENANTED INVESTMENT CAFE." [ref=e660]: SILVERDALE RETAIL - F4 TENANTED INVESTMENT CAFE
+                  - generic [ref=e663]: Price by negotiation
+              - button "Add SILVERDALE RETAIL - F4 TENANTED INVESTMENT CAFE to your watchlist" [ref=e664] [cursor=pointer]:
+                - img [ref=e668]
+            - generic [ref=e673]:
+              - 'link "City Centre, Auckland. Listed: Wed, 27 Nov SAVE ON SET UP - TURNKEY RESTAURANT/BAR/CAFE. Price by negotiation" [ref=e675] [cursor=pointer]':
+                - /url: /a/property/commercial/lease/auckland/auckland-city/city-centre/listing/2149685497?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e676]:
+                  - generic [ref=e677]:
+                    - generic [ref=e678]:
+                      - generic "City Centre, Auckland." [ref=e679]: Auckland
+                      - generic [ref=e680]: "Listed: Wed, 27 Nov"
+                    - generic "SAVE ON SET UP - TURNKEY RESTAURANT/BAR/CAFE." [ref=e681]: SAVE ON SET UP - TURNKEY RESTAURANT/BAR/CAFE
+                  - generic [ref=e684]: Price by negotiation
+              - button "Add SAVE ON SET UP - TURNKEY RESTAURANT/BAR/CAFE to your watchlist" [ref=e685] [cursor=pointer]:
+                - img [ref=e689]
+            - generic [ref=e694]:
+              - 'link "Whitianga, Waikato. Listed: Mon, 24 Nov Close to Bar, Beach, Cafes. Asking price $198,500" [ref=e696] [cursor=pointer]':
+                - /url: /a/property/residential/sale/waikato/thames-coromandel/whitianga/listing/3928298?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e697]:
+                  - generic [ref=e698]:
+                    - generic [ref=e699]:
+                      - generic "Whitianga, Waikato." [ref=e700]: Waikato
+                      - generic [ref=e701]: "Listed: Mon, 24 Nov"
+                    - generic "Close to Bar, Beach, Cafes." [ref=e702]: Close to Bar, Beach, Cafes
+                  - generic [ref=e705]: Asking price $198,500
+              - button "Add Close to Bar, Beach, Cafes to your watchlist" [ref=e706] [cursor=pointer]:
+                - img [ref=e710]
+            - generic [ref=e715]:
+              - 'link "Auckland City, Auckland. Listed: Fri, 15 Jul 9Z4509SYYQOW6CK16YFP. Asking price: $95,000" [ref=e717] [cursor=pointer]':
+                - /url: /a/marketplace/business-farming-industry/businesses-for-sale/tourism-hospitality/restaurants-bars-cafes/listing/2149436495?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e718]:
+                  - generic [ref=e719]:
+                    - generic [ref=e720]:
+                      - generic "Auckland City, Auckland." [ref=e721]: Auckland
+                      - generic [ref=e722]: "Listed: Fri, 15 Jul"
+                    - generic "9Z4509SYYQOW6CK16YFP." [ref=e723]: 9Z4509SYYQOW6CK16YFP
+                  - generic [ref=e726]: "Asking price: $95,000"
+              - button "Add 9Z4509SYYQOW6CK16YFP to your watchlist" [ref=e727] [cursor=pointer]:
+                - img [ref=e731]
+            - generic [ref=e736]:
+              - 'link "Far North, Northland. Listed: Wed, 13 Jan DA95V4ZV6P138GYMEVUF. Asking price: $2,800,000" [ref=e738] [cursor=pointer]':
+                - /url: /a/marketplace/business-farming-industry/businesses-for-sale/tourism-hospitality/restaurants-bars-cafes/listing/2149239116?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e739]:
+                  - generic [ref=e740]:
+                    - generic [ref=e741]:
+                      - generic "Far North, Northland." [ref=e742]: Northland
+                      - generic [ref=e743]: "Listed: Wed, 13 Jan"
+                    - generic "DA95V4ZV6P138GYMEVUF." [ref=e744]: DA95V4ZV6P138GYMEVUF
+                  - generic [ref=e747]: "Asking price: $2,800,000"
+              - button "Add DA95V4ZV6P138GYMEVUF to your watchlist" [ref=e748] [cursor=pointer]:
+                - img [ref=e752]
+            - generic [ref=e757]:
+              - 'link "North Shore City, Auckland. Listed: Wed, 2 Jul I8FQOBIEHKV3G7GLAPZH. Asking price: $200,000" [ref=e759] [cursor=pointer]':
+                - /url: /a/marketplace/business-farming-industry/businesses-for-sale/tourism-hospitality/restaurants-bars-cafes/listing/2149710462?rsqid=6e8ad12d030d4f9fa19918c657505f45-001
+                - generic [ref=e760]:
+                  - generic [ref=e761]:
+                    - generic [ref=e762]:
+                      - generic "North Shore City, Auckland." [ref=e763]: Auckland
+                      - generic [ref=e764]: "Listed: Wed, 2 Jul"
+                    - generic "I8FQOBIEHKV3G7GLAPZH." [ref=e765]: I8FQOBIEHKV3G7GLAPZH
+                  - generic [ref=e768]: "Asking price: $200,000"
+              - button "Add I8FQOBIEHKV3G7GLAPZH to your watchlist" [ref=e769] [cursor=pointer]:
+                - img [ref=e773]
+          - navigation "Pagination" [ref=e776]:
+            - list [ref=e777]:
+              - listitem [ref=e778]
+              - listitem [ref=e779]:
+                - link "Current page, page 1" [ref=e781] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9
+                  - text: "1"
+              - listitem [ref=e782]:
+                - link "Page 2" [ref=e784] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=2
+                  - text: "2"
+              - listitem [ref=e785]:
+                - link "Page 3" [ref=e787] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=3
+                  - text: "3"
+              - listitem [ref=e788]:
+                - link "Page 4" [ref=e790] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=4
+                  - text: "4"
+              - listitem [ref=e791]:
+                - link "Page 5" [ref=e793] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=5
+                  - text: "5"
+              - listitem [ref=e794]:
+                - link "Page 6" [ref=e796] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=6
+                  - text: "6"
+              - listitem [ref=e797]:
+                - link "Page 7" [ref=e799] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=7
+                  - text: "7"
+              - listitem [ref=e800]: …
+              - listitem [ref=e801]:
+                - link "Last page, page 25" [ref=e803] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=25
+                  - text: "25"
+              - listitem [ref=e804]:
+                - link "Next page, page 2" [ref=e806] [cursor=pointer]:
+                  - /url: /a/search?search_string=caf%C3%A9&page=2
+                  - text: Next
+          - button "Back to top" [ref=e808] [cursor=pointer]:
+            - img [ref=e810]
+            - text: Back to top
+        - generic:
+          - complementary
+  - generic [ref=e813]:
+    - generic [ref=e814]: We are upgrading some of our systems
+    - generic [ref=e815]:
+      - link "Learn more" [ref=e816] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e818]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e822] [cursor=pointer]:
+        - img [ref=e824]
+        - text: Tell us what you think
+  - contentinfo [ref=e826]:
+    - generic [ref=e828]:
+      - generic [ref=e830]:
+        - generic [ref=e832]:
+          - list [ref=e833]:
+            - listitem [ref=e834]:
+              - link "Home" [ref=e836] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e837]:
+                  - img "Trade Me" [ref=e838]
+          - list [ref=e839]:
+            - listitem [ref=e840]:
+              - generic [ref=e841]:
+                - img "Start a listing icon" [ref=e843]
+                - link "Start a listing" [ref=e845] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e846]:
+              - generic [ref=e847]:
+                - img "Watchlist icon" [ref=e849]
+                - link "Watchlist" [ref=e851] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e852]:
+              - generic [ref=e853]:
+                - img "Favourites icon" [ref=e855]
+                - link "Favourites" [ref=e857] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e858]:
+              - generic [ref=e860]:
+                - generic [ref=e861]:
+                  - img "Login icon" [ref=e863]
+                  - link "Log in" [ref=e866] [cursor=pointer]:
+                    - /url: search(modal:login)?search_string=caf%C3%A9
+                - generic [ref=e867]:
+                  - img "Sign up icon" [ref=e869]
+                  - link "Sign up" [ref=e871] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e873]:
+          - list [ref=e874]:
+            - listitem [ref=e875]:
+              - generic [ref=e876]:
+                - img "Marketplace icon" [ref=e878]
+                - link "Marketplace" [ref=e880] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e881]:
+              - link "Latest deals" [ref=e883] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e884]:
+              - link "Stores" [ref=e886] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e887]:
+              - link "Closing soon" [ref=e889] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e890]:
+              - link "$1 reserve" [ref=e892] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e893]:
+              - link "Home & Living" [ref=e895] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e896]:
+            - listitem [ref=e897]:
+              - generic [ref=e898]:
+                - img "Property icon" [ref=e900]
+                - link "Property" [ref=e902] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e903]:
+              - link "International property" [ref=e905] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e906]:
+              - link "Property news & guides" [ref=e908] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e909]:
+              - link "Sold Properties" [ref=e911] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e912]:
+              - link "OneHub for agents" [ref=e914] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e915]:
+              - link "Find a Real Estate Agent" [ref=e917] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e918]:
+            - listitem [ref=e919]:
+              - generic [ref=e920]:
+                - img "Motors icon" [ref=e922]
+                - link "Motors" [ref=e924] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e925]:
+              - link "Cars for sale" [ref=e927] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e928]:
+              - link "Motorbikes for sale" [ref=e930] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e931]:
+              - link "Buying & selling advice" [ref=e933] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e934]:
+              - link "Dealer news & info" [ref=e936] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e937]:
+              - link "Sell my car" [ref=e939] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e940]:
+            - listitem [ref=e941]:
+              - generic [ref=e942]:
+                - img "Jobs icon" [ref=e944]
+                - link "Jobs" [ref=e947] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e948]:
+              - link "Browse job categories" [ref=e950] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e951]:
+              - link "Careers advice" [ref=e953] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e954]:
+              - link "JobSmart" [ref=e956] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e957]:
+              - link "Advertisers advice" [ref=e959] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e960]:
+              - link "Salary guide" [ref=e962] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e963]:
+            - listitem [ref=e964]:
+              - generic [ref=e965]:
+                - img "Services icon" [ref=e967]
+                - link "Services" [ref=e969] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e970]:
+              - link "Trades" [ref=e972] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e973]:
+              - link "Domestic services" [ref=e975] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e976]:
+              - link "Events & entertainment" [ref=e978] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e979]:
+              - link "Health & wellbeing" [ref=e981] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e982]:
+              - link "List my services" [ref=e984] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e985]:
+            - listitem [ref=e986]:
+              - generic [ref=e987]:
+                - img "Community icon" [ref=e989]
+                - link "Community" [ref=e993] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e994]:
+              - link "Help" [ref=e996] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e997]:
+              - link "Announcements" [ref=e999] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e1000]:
+              - link "Trust & safety" [ref=e1002] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e1003]:
+              - link "Seller information" [ref=e1005] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e1006]:
+              - link "Help center community" [ref=e1008] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e1009]:
+        - group "Affiliate links" [ref=e1012]:
+          - list [ref=e1013]:
+            - listitem [ref=e1014]:
+              - link "Trade Me Insurance" [ref=e1015] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e1016]:
+              - link "homes.co.nz" [ref=e1017] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e1018]:
+              - link "MotorWeb" [ref=e1019] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e1020]:
+              - link "CarExpert" [ref=e1021] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e1022]:
+              - link "Holiday Houses" [ref=e1023] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e1024]:
+              - link "FindSomeone" [ref=e1025] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e1026]:
+          - generic [ref=e1027]: © 2026 Trade Me Limited
+          - list [ref=e1030]:
+            - listitem [ref=e1031]:
+              - link "Desktop site" [ref=e1033] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e1034]:
+              - link "About Us" [ref=e1036] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e1037]:
+              - link "Careers" [ref=e1039] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e1040]:
+              - link "News" [ref=e1042] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e1043]:
+              - link "Advertise" [ref=e1045] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e1046]:
+              - link "Privacy policy" [ref=e1048] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e1049]:
+              - link "Terms & conditions" [ref=e1051] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e1052]:
+              - link "Contact Us" [ref=e1054] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e1060]:
+            - listitem [ref=e1061]:
+              - link "Follow Trade Me on Tiktok" [ref=e1062] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e1064]
+            - listitem [ref=e1066]:
+              - link "Follow Trade Me on Instagram" [ref=e1067] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e1069]
+            - listitem [ref=e1071]:
+              - link "Follow Trade Me on Facebook" [ref=e1072] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e1074]
+            - listitem [ref=e1076]:
+              - link "Follow Trade Me on LinkedIn" [ref=e1077] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e1079]
+            - listitem [ref=e1081]:
+              - link "Follow Trade Me on YouTube" [ref=e1082] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e1084]
+```
+
+# Test source
+
+```ts
+  127 |     return text || '';
+  128 |   }
+  129 | 
+  130 |   async getFirstResultTitle(): Promise<string> {
+  131 |     const text = await this.resultListings.first().locator('h2, a:first-of-type').textContent().catch(() => null);
+  132 |     return text || '';
+  133 |   }
+  134 | 
+  135 |   async clickFirstResult() {
+  136 |     await this.resultListings.first().click();
+  137 |     await this.page.waitForLoadState('domcontentloaded');
+  138 |   }
+  139 | 
+  140 |   async clickResultByTitle(title: string) {
+  141 |     const result = this.page.locator(`text=${title}`).first();
+  142 |     await result.click();
+  143 |     await this.page.waitForLoadState('domcontentloaded');
+  144 |   }
+  145 | 
+  146 |   async goToNextPage() {
+  147 |     const nextButton = this.page.locator('a:has-text("Next"), button:has-text("Next")');
+  148 |     await nextButton.click();
+  149 |     await this.page.waitForLoadState('networkidle');
+  150 |   }
+  151 | 
+  152 |   async goToPreviousPage() {
+  153 |     const prevButton = this.page.locator('a:has-text("Previous"), button:has-text("Previous")');
+  154 |     await prevButton.click();
+  155 |     await this.page.waitForLoadState('networkidle');
+  156 |   }
+  157 | 
+  158 |   async applyPriceFilter(minPrice: number, maxPrice: number) {
+  159 |     const minInput = this.page.locator('input[name*="min"], input[placeholder*="Min"]');
+  160 |     const maxInput = this.page.locator('input[name*="max"], input[placeholder*="Max"]');
+  161 | 
+  162 |     await minInput.fill(String(minPrice));
+  163 |     await maxInput.fill(String(maxPrice));
+  164 |     await this.page.locator('button:has-text("Apply"), button:has-text("Filter")').click();
+  165 |     await this.page.waitForLoadState('networkidle');
+  166 |   }
+  167 | 
+  168 |   async applyCategoryFilter(category: string) {
+  169 |     const select = this.page.locator('select, [role="combobox"]');
+  170 |     await select.selectOption(category);
+  171 |     await this.page.waitForLoadState('networkidle');
+  172 |   }
+  173 | 
+  174 |   async applyConditionFilter(condition: string) {
+  175 |     const conditionInput = this.page.locator(`input[value="${condition}"]`);
+  176 |     await conditionInput.check();
+  177 |     await this.page.waitForLoadState('networkidle');
+  178 |   }
+  179 | 
+  180 |   async getPageLoadTime(): Promise<number> {
+  181 |     const navigationTiming = await this.page.evaluate(() => {
+  182 |       const timing = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+  183 |       return timing.loadEventEnd - timing.fetchStart;
+  184 |     });
+  185 |     return navigationTiming;
+  186 |   }
+  187 | 
+  188 |   async getSuggestionsLoadTime(): Promise<number> {
+  189 |     const before = Date.now();
+  190 |     await this.waitForSuggestions();
+  191 |     return Date.now() - before;
+  192 |   }
+  193 | 
+  194 |   async isClearButtonVisible(): Promise<boolean> {
+  195 |     return await this.clearButton.isVisible().catch(() => false);
+  196 |   }
+  197 | 
+  198 |   async getSearchBoxAriaLabel(): Promise<string | null> {
+  199 |     return await this.searchInput.getAttribute('aria-label');
+  200 |   }
+  201 | 
+  202 |   async isKeyboardAccessible(): Promise<boolean> {
+  203 |     await this.page.keyboard.press('Tab');
+  204 |     const focused = await this.searchInput.evaluate((el) => el === document.activeElement);
+  205 |     return focused;
+  206 |   }
+  207 | 
+  208 |   async getViewportSize(): Promise<{ width: number; height: number }> {
+  209 |     return this.page.viewportSize() || { width: 1920, height: 1080 };
+  210 |   }
+  211 | 
+  212 |   async setViewport(width: number, height: number) {
+  213 |     await this.page.setViewportSize({ width, height });
+  214 |   }
+  215 | 
+  216 |   async searchWithSpecialCharacters(text: string) {
+  217 |     await this.focusSearchBox();
+  218 |     await this.typeInSearchBox(text);
+  219 |     await this.searchByEnter();
+  220 |     await this.page.waitForLoadState('networkidle');
+  221 |   }
+  222 | 
+  223 |   async searchWithUnicode(text: string) {
+  224 |     await this.focusSearchBox();
+  225 |     await this.typeInSearchBox(text);
+  226 |     await this.searchByEnter();
+> 227 |     await this.page.waitForLoadState('networkidle');
+      |                     ^ Error: page.waitForLoadState: Target page, context or browser has been closed
+  228 |   }
+  229 | 
+  230 |   async getResultListingTexts(): Promise<string[]> {
+  231 |     return await this.resultListings.allTextContents();
+  232 |   }
+  233 | }
+  234 | 
+```

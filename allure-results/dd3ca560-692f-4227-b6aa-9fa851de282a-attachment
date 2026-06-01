@@ -1,0 +1,177 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API\categories.spec.ts >> TradeMe Retrieve Categories API >> [API-CAT-04] Category numbers should be unique
+- Location: tests\API\categories.spec.ts:51:7
+
+# Error details
+
+```
+TypeError: categories.map is not a function
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect, APIRequestContext } from '@playwright/test';
+  2   | import { ApiHelper } from '../../utils/apiHelper';
+  3   | 
+  4   | let apiHelper: ApiHelper;
+  5   | 
+  6   | test.describe('TradeMe Retrieve Categories API', () => {
+  7   |   test.beforeEach(async ({ request }) => {
+  8   |     apiHelper = new ApiHelper(request);
+  9   |   });
+  10  | 
+  11  |   // ==================== POSITIVE TESTS ====================
+  12  | 
+  13  |   test('[API-CAT-01] Should retrieve all categories successfully', async () => {
+  14  |     const response = await apiHelper.get('/v1/Categories.json');
+  15  | 
+  16  |     expect(response.status).toBe(200);
+  17  |     expect(response.isSuccess).toBe(true);
+  18  |     expect(Array.isArray(response.body)).toBe(true);
+  19  |   });
+  20  | 
+  21  |   test('[API-CAT-02] Response should contain valid category structure', async () => {
+  22  |     const response = await apiHelper.get('/v1/Categories.json');
+  23  | 
+  24  |     const categories = response.body as unknown[];
+  25  |     expect(categories.length).toBeGreaterThan(0);
+  26  | 
+  27  |     const firstCategory = categories[0] as Record<string, unknown>;
+  28  | 
+  29  |     // Validate required fields exist
+  30  |     expect(firstCategory).toHaveProperty('Number');
+  31  |     expect(firstCategory).toHaveProperty('Name');
+  32  |     expect(firstCategory).toHaveProperty('Path');
+  33  |   });
+  34  | 
+  35  |   test('[API-CAT-03] Each category should have correct data types', async () => {
+  36  |     const response = await apiHelper.get('/v1/Categories.json');
+  37  |     const categories = response.body as unknown[];
+  38  | 
+  39  |     categories.forEach((cat, index) => {
+  40  |       const category = cat as Record<string, unknown>;
+  41  |       expect(typeof category.Number).toBe('number');
+  42  |       expect(typeof category.Name).toBe('string');
+  43  |       expect(typeof category.Path).toBe('string');
+  44  | 
+  45  |       if (category.Subcategories) {
+  46  |         expect(Array.isArray(category.Subcategories)).toBe(true);
+  47  |       }
+  48  |     });
+  49  |   });
+  50  | 
+  51  |   test('[API-CAT-04] Category numbers should be unique', async () => {
+  52  |     const response = await apiHelper.get('/v1/Categories.json');
+  53  |     const categories = response.body as Record<string, unknown>[];
+  54  | 
+> 55  |     const numbers = categories.map(cat => cat.Number);
+      |                                ^ TypeError: categories.map is not a function
+  56  |     const uniqueNumbers = new Set(numbers);
+  57  | 
+  58  |     expect(uniqueNumbers.size).toBe(categories.length);
+  59  |   });
+  60  | 
+  61  |   test('[API-CAT-05] Category names should not be empty', async () => {
+  62  |     const response = await apiHelper.get('/v1/Categories.json');
+  63  |     const categories = response.body as Record<string, unknown>[];
+  64  | 
+  65  |     categories.forEach((cat, index) => {
+  66  |       const name = cat.Name as string;
+  67  |       expect(name).toBeTruthy();
+  68  |       expect(name.length).toBeGreaterThan(0);
+  69  |     });
+  70  |   });
+  71  | 
+  72  |   test('[API-CAT-06] Category paths should follow expected format', async () => {
+  73  |     const response = await apiHelper.get('/v1/Categories.json');
+  74  |     const categories = response.body as Record<string, unknown>[];
+  75  | 
+  76  |     categories.forEach((cat) => {
+  77  |       const path = cat.Path as string;
+  78  |       // Path should start with a digit or letter
+  79  |       expect(/^[0-9a-zA-Z]/.test(path)).toBe(true);
+  80  |     });
+  81  |   });
+  82  | 
+  83  |   test('[API-CAT-07] Subcategories should have same structure as categories', async () => {
+  84  |     const response = await apiHelper.get('/v1/Categories.json');
+  85  |     const categories = response.body as Record<string, unknown>[];
+  86  | 
+  87  |     const categoryWithSubs = categories.find(
+  88  |       cat => Array.isArray((cat as Record<string, unknown>).Subcategories)
+  89  |     ) as Record<string, unknown>;
+  90  | 
+  91  |     if (categoryWithSubs && categoryWithSubs.Subcategories) {
+  92  |       const subcats = categoryWithSubs.Subcategories as Record<string, unknown>[];
+  93  | 
+  94  |       subcats.forEach((subcat) => {
+  95  |         expect(subcat).toHaveProperty('Number');
+  96  |         expect(subcat).toHaveProperty('Name');
+  97  |         expect(subcat).toHaveProperty('Path');
+  98  |         expect(typeof subcat.Number).toBe('number');
+  99  |         expect(typeof subcat.Name).toBe('string');
+  100 |       });
+  101 |     }
+  102 |   });
+  103 | 
+  104 |   test('[API-CAT-08] Response headers should include content type', async () => {
+  105 |     const response = await apiHelper.get('/v1/Categories.json');
+  106 | 
+  107 |     const contentType = response.headers['content-type'] || '';
+  108 |     expect(contentType.toLowerCase()).toContain('application/json');
+  109 |   });
+  110 | 
+  111 |   test('[API-CAT-09] Response should include cache control headers', async () => {
+  112 |     const response = await apiHelper.get('/v1/Categories.json');
+  113 | 
+  114 |     expect(response.headers['cache-control']).toBeDefined();
+  115 |   });
+  116 | 
+  117 |   test('[API-CAT-10] Categories count should be consistent across requests', async () => {
+  118 |     const response1 = await apiHelper.get('/v1/Categories.json');
+  119 |     const response2 = await apiHelper.get('/v1/Categories.json');
+  120 | 
+  121 |     const cats1 = response1.body as unknown[];
+  122 |     const cats2 = response2.body as unknown[];
+  123 | 
+  124 |     expect(cats1.length).toBe(cats2.length);
+  125 |   });
+  126 | 
+  127 |   // ==================== NEGATIVE TESTS ====================
+  128 | 
+  129 |   test('[API-CAT-11] Should handle invalid endpoint gracefully', async () => {
+  130 |     const response = await apiHelper.get('/v1/InvalidCategories.json');
+  131 | 
+  132 |     expect(response.status).toBe(404);
+  133 |     expect(response.isClientError).toBe(true);
+  134 |   });
+  135 | 
+  136 |   test('[API-CAT-12] Should reject unsupported HTTP methods', async () => {
+  137 |     const response = await apiHelper.post('/v1/Categories.json', {
+  138 |       name: 'test',
+  139 |     });
+  140 | 
+  141 |     // POST might not be allowed on read-only endpoint
+  142 |     expect([404, 405, 400]).toContain(response.status);
+  143 |   });
+  144 | 
+  145 |   test('[API-CAT-13] Should handle malformed query parameters gracefully', async () => {
+  146 |     const response = await apiHelper.get('/v1/Categories.json?invalid=<script>');
+  147 | 
+  148 |     // Should either return 200 (ignoring param) or 400 (invalid param)
+  149 |     expect([200, 400]).toContain(response.status);
+  150 |   });
+  151 | 
+  152 |   // ==================== EDGE CASES ====================
+  153 | 
+  154 |   test('[API-CAT-14] Should handle rapid successive requests', async () => {
+  155 |     const requests = Array(5)
+```

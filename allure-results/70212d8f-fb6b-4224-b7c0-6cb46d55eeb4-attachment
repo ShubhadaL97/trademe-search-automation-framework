@@ -1,0 +1,615 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-F-21] Search should be refinable
+- Location: tests\search.spec.ts:233:7
+
+# Error details
+
+```
+Error: locator.press: Error: strict mode violation: locator('input[type="search"], input[placeholder*="Search"]') resolved to 2 elements:
+    1) <input id="search" name="search" type="search" tgtextinput="" autocomplete="off" placeholder="Search all of Trade Me" class="tm-global-search__search-input-box ng-untouched ng-pristine ng-valid o-input__body-input-element"/> aka getByRole('searchbox', { name: 'Search all of Trade Me' })
+    2) <input id="tg-6371" name="search" type="search" tgtextinput="" autocomplete="off" _ngcontent-frend-c3314847973="" placeholder="Search within all categories" class="tm-refine-keywords__search-input-box ng-untouched ng-pristine ng-valid o-input__body-input-element"/> aka getByRole('searchbox', { name: 'Add Search keywords (optional' })
+
+Call log:
+  - waiting for locator('input[type="search"], input[placeholder*="Search"]')
+    - locator resolved to <input value="" id="search" name="search" type="search" tgtextinput="" placeholder="" autocomplete="off" jsaction="input:;blur:;compositionstart:;compositionend:;focus:;change:;mousedown:;" class="tm-global-search__search-input-box ng-valid o-input__body-input-element ng-dirty ng-touched"/>
+  - elementHandle.press("Enter")
+  - element was detached from the DOM, retrying
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4] [cursor=pointer]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5] [cursor=pointer]:
+    - /url: ""
+  - complementary [ref=e7]
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - navigation "navigation bar" [ref=e12]:
+        - generic [ref=e16]:
+          - link "Trade Me" [ref=e19] [cursor=pointer]:
+            - /url: /
+            - img "Trade Me" [ref=e22]
+          - search [ref=e26]:
+            - generic [ref=e27]:
+              - generic [ref=e28]: Search all of Trade Me
+              - generic [ref=e29]:
+                - img [ref=e32]
+                - searchbox "Search all of Trade Me" [ref=e35]
+          - list [ref=e36]:
+            - listitem [ref=e37]:
+              - button "Categories" [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]: Categories
+                - img [ref=e45]
+            - listitem
+            - listitem [ref=e48]:
+              - link "Watchlist" [ref=e49] [cursor=pointer]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e50]: Watchlist
+                - img [ref=e52]
+            - listitem [ref=e54]:
+              - link "Favourites" [ref=e55] [cursor=pointer]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e56]: Favourites
+                - img [ref=e58]
+            - listitem [ref=e60]:
+              - link "Start a listing" [ref=e61] [cursor=pointer]:
+                - /url: /a/list
+                - generic [ref=e62]: Start a listing
+                - img [ref=e64]
+            - listitem [ref=e66]:
+              - generic [ref=e67]:
+                - link "Sign up" [ref=e68] [cursor=pointer]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e70]
+                - link "Log in" [ref=e72] [cursor=pointer]:
+                  - /url: search(modal:login)?search_string=phone
+                  - text: Log in
+                  - img [ref=e74]
+      - navigation [ref=e77]
+  - main [ref=e80]:
+    - generic [ref=e81]: main content
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e87]:
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - link "Home" [ref=e91] [cursor=pointer]:
+                - /url: /a/
+              - text: /
+            - listitem [ref=e92]: All Categories
+          - heading "All Categories" [level=1] [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e100]:
+                - generic [ref=e101]: Add Search keywords (optional)
+                - generic [ref=e102]:
+                  - img [ref=e105]
+                  - searchbox "Add Search keywords (optional) Clear input" [ref=e108]: phone
+                  - button "Clear input" [ref=e110] [cursor=pointer]:
+                    - img "Clear input" [ref=e112]
+              - button "Save this search Save this search" [ref=e115] [cursor=pointer]:
+                - img "Save this search" [ref=e117]
+                - generic [ref=e119]: Save this search
+            - generic [ref=e121]:
+              - generic "Refine" [ref=e122]:
+                - button "Refine" [ref=e125] [cursor=pointer]:
+                  - img [ref=e127]
+                  - text: Refine
+                  - img [ref=e131]
+              - button "Category" [ref=e136] [cursor=pointer]:
+                - text: Category
+                - img [ref=e139]
+              - button "All Locations" [ref=e144] [cursor=pointer]:
+                - text: All Locations
+                - img [ref=e147]
+              - button "New & Used" [ref=e152] [cursor=pointer]:
+                - text: New & Used
+                - img [ref=e155]
+              - 'button "Shipping: All" [ref=e160] [cursor=pointer]':
+                - text: "Shipping: All"
+                - img [ref=e163]
+        - generic [ref=e166]:
+          - heading "Showing 0 results for 'phone'" [level=3] [ref=e168]
+          - generic [ref=e169]:
+            - generic [ref=e173]:
+              - generic [ref=e174]: Sort order
+              - generic [ref=e175]:
+                - combobox "Sort order" [ref=e176] [cursor=pointer]:
+                  - 'option "Sort: Best match" [selected]'
+                  - option "Featured first"
+                  - option "Lowest price"
+                  - option "Highest price"
+                  - option "Lowest Buy Now"
+                  - option "Highest Buy Now"
+                  - option "Most bids"
+                  - option "Latest listings"
+                  - option "Closing soon"
+                  - option "Title"
+                  - option "Largest discount"
+                - generic:
+                  - generic:
+                    - img
+            - radiogroup "Card display mode (optional)" [ref=e179]:
+              - generic [ref=e180]: Card display mode (optional)
+              - generic [ref=e181]:
+                - generic [ref=e182]:
+                  - radio "Switch to list view List" [ref=e183]
+                  - generic [ref=e184] [cursor=pointer]:
+                    - img "Switch to list view" [ref=e186]
+                    - generic [ref=e188]: List
+                - generic [ref=e189]:
+                  - radio "Switch to card view Gallery" [checked] [ref=e190]
+                  - generic [ref=e191]:
+                    - img "Switch to card view" [ref=e193]
+                    - generic [ref=e195]: Gallery
+      - heading "Search Results" [level=2] [ref=e196]
+      - generic [ref=e204]:
+        - generic [ref=e207]:
+          - img [ref=e210]
+          - heading "No results found" [level=2] [ref=e221]
+          - paragraph [ref=e222]: We couldn't find anything matching your search. Have another go – you could try a broader search, or double check the keywords you entered.
+        - generic:
+          - complementary
+  - generic [ref=e224]:
+    - generic [ref=e225]: We are upgrading some of our systems
+    - generic [ref=e226]:
+      - link "Learn more" [ref=e227] [cursor=pointer]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e229]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e233] [cursor=pointer]:
+        - img [ref=e235]
+        - text: Tell us what you think
+  - contentinfo [ref=e237]:
+    - generic [ref=e239]:
+      - generic [ref=e241]:
+        - generic [ref=e243]:
+          - list [ref=e244]:
+            - listitem [ref=e245]:
+              - link "Home" [ref=e247] [cursor=pointer]:
+                - /url: /
+                - generic "Home" [ref=e248]:
+                  - img "Trade Me" [ref=e249]
+          - list [ref=e250]:
+            - listitem [ref=e251]:
+              - generic [ref=e252]:
+                - img "Start a listing icon" [ref=e254]
+                - link "Start a listing" [ref=e256] [cursor=pointer]:
+                  - /url: /a/list
+            - listitem [ref=e257]:
+              - generic [ref=e258]:
+                - img "Watchlist icon" [ref=e260]
+                - link "Watchlist" [ref=e262] [cursor=pointer]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e263]:
+              - generic [ref=e264]:
+                - img "Favourites icon" [ref=e266]
+                - link "Favourites" [ref=e268] [cursor=pointer]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e269]:
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - img "Login icon" [ref=e274]
+                  - link "Log in" [ref=e277] [cursor=pointer]:
+                    - /url: search(modal:login)?search_string=phone
+                - generic [ref=e278]:
+                  - img "Sign up icon" [ref=e280]
+                  - link "Sign up" [ref=e282] [cursor=pointer]:
+                    - /url: /a/register
+        - generic [ref=e284]:
+          - list [ref=e285]:
+            - listitem [ref=e286]:
+              - generic [ref=e287]:
+                - img "Marketplace icon" [ref=e289]
+                - link "Marketplace" [ref=e291] [cursor=pointer]:
+                  - /url: /a/marketplace
+            - listitem [ref=e292]:
+              - link "Latest deals" [ref=e294] [cursor=pointer]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e295]:
+              - link "Stores" [ref=e297] [cursor=pointer]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e298]:
+              - link "Closing soon" [ref=e300] [cursor=pointer]:
+                - /url: /a/closing-soon
+            - listitem [ref=e301]:
+              - link "$1 reserve" [ref=e303] [cursor=pointer]:
+                - /url: /a/one-dollar
+            - listitem [ref=e304]:
+              - link "Home & Living" [ref=e306] [cursor=pointer]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e307]:
+            - listitem [ref=e308]:
+              - generic [ref=e309]:
+                - img "Property icon" [ref=e311]
+                - link "Property" [ref=e313] [cursor=pointer]:
+                  - /url: /a/property
+            - listitem [ref=e314]:
+              - link "International property" [ref=e316] [cursor=pointer]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e317]:
+              - link "Property news & guides" [ref=e319] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e320]:
+              - link "Sold Properties" [ref=e322] [cursor=pointer]:
+                - /url: /a/property/insights
+            - listitem [ref=e323]:
+              - link "OneHub for agents" [ref=e325] [cursor=pointer]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e326]:
+              - link "Find a Real Estate Agent" [ref=e328] [cursor=pointer]:
+                - /url: /a/property/agent
+          - list [ref=e329]:
+            - listitem [ref=e330]:
+              - generic [ref=e331]:
+                - img "Motors icon" [ref=e333]
+                - link "Motors" [ref=e335] [cursor=pointer]:
+                  - /url: /a/motors
+            - listitem [ref=e336]:
+              - link "Cars for sale" [ref=e338] [cursor=pointer]:
+                - /url: /a/motors/cars
+            - listitem [ref=e339]:
+              - link "Motorbikes for sale" [ref=e341] [cursor=pointer]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e342]:
+              - link "Buying & selling advice" [ref=e344] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e345]:
+              - link "Dealer news & info" [ref=e347] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e348]:
+              - link "Sell my car" [ref=e350] [cursor=pointer]:
+                - /url: /a/sell-my-car
+          - list [ref=e351]:
+            - listitem [ref=e352]:
+              - generic [ref=e353]:
+                - img "Jobs icon" [ref=e355]
+                - link "Jobs" [ref=e358] [cursor=pointer]:
+                  - /url: /a/jobs
+            - listitem [ref=e359]:
+              - link "Browse job categories" [ref=e361] [cursor=pointer]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e362]:
+              - link "Careers advice" [ref=e364] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e365]:
+              - link "JobSmart" [ref=e367] [cursor=pointer]:
+                - /url: /jobs/smart/
+            - listitem [ref=e368]:
+              - link "Advertisers advice" [ref=e370] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e371]:
+              - link "Salary guide" [ref=e373] [cursor=pointer]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e374]:
+            - listitem [ref=e375]:
+              - generic [ref=e376]:
+                - img "Services icon" [ref=e378]
+                - link "Services" [ref=e380] [cursor=pointer]:
+                  - /url: /a/services
+            - listitem [ref=e381]:
+              - link "Trades" [ref=e383] [cursor=pointer]:
+                - /url: /a/services/trades
+            - listitem [ref=e384]:
+              - link "Domestic services" [ref=e386] [cursor=pointer]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e387]:
+              - link "Events & entertainment" [ref=e389] [cursor=pointer]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e390]:
+              - link "Health & wellbeing" [ref=e392] [cursor=pointer]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e393]:
+              - link "List my services" [ref=e395] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e396]:
+            - listitem [ref=e397]:
+              - generic [ref=e398]:
+                - img "Community icon" [ref=e400]
+                - link "Community" [ref=e404] [cursor=pointer]:
+                  - /url: /a/community
+            - listitem [ref=e405]:
+              - link "Help" [ref=e407] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e408]:
+              - link "Announcements" [ref=e410] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e411]:
+              - link "Trust & safety" [ref=e413] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e414]:
+              - link "Seller information" [ref=e416] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e417]:
+              - link "Help center community" [ref=e419] [cursor=pointer]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e420]:
+        - group "Affiliate links" [ref=e423]:
+          - list [ref=e424]:
+            - listitem [ref=e425]:
+              - link "Trade Me Insurance" [ref=e426] [cursor=pointer]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e427]:
+              - link "homes.co.nz" [ref=e428] [cursor=pointer]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e429]:
+              - link "MotorWeb" [ref=e430] [cursor=pointer]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e431]:
+              - link "CarExpert" [ref=e432] [cursor=pointer]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e433]:
+              - link "Holiday Houses" [ref=e434] [cursor=pointer]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e435]:
+              - link "FindSomeone" [ref=e436] [cursor=pointer]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e437]:
+          - generic [ref=e438]: © 2026 Trade Me Limited
+          - list [ref=e441]:
+            - listitem [ref=e442]:
+              - link "Desktop site" [ref=e444] [cursor=pointer]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e445]:
+              - link "About Us" [ref=e447] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e448]:
+              - link "Careers" [ref=e450] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e451]:
+              - link "News" [ref=e453] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e454]:
+              - link "Advertise" [ref=e456] [cursor=pointer]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e457]:
+              - link "Privacy policy" [ref=e459] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e460]:
+              - link "Terms & conditions" [ref=e462] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e463]:
+              - link "Contact Us" [ref=e465] [cursor=pointer]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e471]:
+            - listitem [ref=e472]:
+              - link "Follow Trade Me on Tiktok" [ref=e473] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e475]
+            - listitem [ref=e477]:
+              - link "Follow Trade Me on Instagram" [ref=e478] [cursor=pointer]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e480]
+            - listitem [ref=e482]:
+              - link "Follow Trade Me on Facebook" [ref=e483] [cursor=pointer]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e485]
+            - listitem [ref=e487]:
+              - link "Follow Trade Me on LinkedIn" [ref=e488] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e490]
+            - listitem [ref=e492]:
+              - link "Follow Trade Me on YouTube" [ref=e493] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e495]
+```
+
+# Test source
+
+```ts
+  1   | import { Page, Locator } from '@playwright/test';
+  2   | 
+  3   | export class SearchPage {
+  4   |   readonly page: Page;
+  5   |   readonly searchInput: Locator;
+  6   |   readonly searchButton: Locator;
+  7   |   readonly suggestionsDropdown: Locator;
+  8   |   readonly suggestionItems: Locator;
+  9   |   readonly clearButton: Locator;
+  10  |   readonly noResultsMessage: Locator;
+  11  |   readonly resultCount: Locator;
+  12  |   readonly resultListings: Locator;
+  13  |   readonly resultTitle: Locator;
+  14  |   readonly pagination: Locator;
+  15  |   readonly categoryFilter: Locator;
+  16  |   readonly priceFilter: Locator;
+  17  |   readonly conditionFilter: Locator;
+  18  | 
+  19  |   constructor(page: Page) {
+  20  |     this.page = page;
+  21  | 
+  22  |     // Search box locators
+  23  |     this.searchInput = page.locator('input[type="search"], input[placeholder*="Search"]');
+  24  |     this.searchButton = page.locator('button:has-text("Search"), [aria-label*="Search"]');
+  25  |     this.clearButton = page.locator('button:has-text("Clear"), [aria-label*="Clear"]');
+  26  | 
+  27  |     // Suggestions dropdown locators
+  28  |     this.suggestionsDropdown = page.locator('[role="listbox"], .suggestions-dropdown, .autocomplete-dropdown');
+  29  |     this.suggestionItems = page.locator('[role="option"], .suggestion-item');
+  30  | 
+  31  |     // Results page locators
+  32  |     this.noResultsMessage = page.locator('text=/No results|no matches|nothing found/i');
+  33  |     this.resultCount = page.locator('text=/Found.*results|Showing.*of/i');
+  34  |     this.resultListings = page.locator('[role="region"] article, .listing-item, .result-item, [data-test="listing"]');
+  35  |     this.resultTitle = page.locator('h1, h2[role="heading"]');
+  36  | 
+  37  |     // Pagination locators
+  38  |     this.pagination = page.locator('[aria-label*="pagination"], .pagination, nav:has-text("Next")');
+  39  | 
+  40  |     // Filter locators
+  41  |     this.categoryFilter = page.locator('select[name*="category"], [aria-label*="Category"] select');
+  42  |     this.priceFilter = page.locator('input[name*="price"], [aria-label*="Price"]');
+  43  |     this.conditionFilter = page.locator('input[name*="condition"], [aria-label*="Condition"] input');
+  44  |   }
+  45  | 
+  46  |   async navigate() {
+  47  |     await this.page.goto('https://www.tmsandbox.co.nz/');
+  48  |     await this.page.waitForLoadState('domcontentloaded');
+  49  |   }
+  50  | 
+  51  |   async isSearchBoxVisible(): Promise<boolean> {
+  52  |     return await this.searchInput.isVisible();
+  53  |   }
+  54  | 
+  55  |   async getSearchPlaceholder(): Promise<string | null> {
+  56  |     return await this.searchInput.getAttribute('placeholder');
+  57  |   }
+  58  | 
+  59  |   async focusSearchBox() {
+  60  |     await this.searchInput.focus();
+  61  |   }
+  62  | 
+  63  |   async typeInSearchBox(text: string) {
+  64  |     await this.searchInput.fill(text);
+  65  |   }
+  66  | 
+  67  |   async clearSearchBox() {
+  68  |     await this.searchInput.clear();
+  69  |   }
+  70  | 
+  71  |   async waitForSuggestions(timeout: number = 5000): Promise<boolean> {
+  72  |     try {
+  73  |       await this.suggestionsDropdown.waitFor({ state: 'visible', timeout });
+  74  |       return true;
+  75  |     } catch {
+  76  |       return false;
+  77  |     }
+  78  |   }
+  79  | 
+  80  |   async getSuggestionsCount(): Promise<number> {
+  81  |     return await this.suggestionItems.count();
+  82  |   }
+  83  | 
+  84  |   async getSuggestionTexts(): Promise<string[]> {
+  85  |     return await this.suggestionItems.allTextContents();
+  86  |   }
+  87  | 
+  88  |   async selectSuggestion(index: number) {
+  89  |     const suggestions = this.suggestionItems;
+  90  |     await suggestions.nth(index).click();
+  91  |   }
+  92  | 
+  93  |   async selectSuggestionByText(text: string) {
+  94  |     const suggestion = this.page.locator(`[role="option"]:has-text("${text}"), .suggestion-item:has-text("${text}")`);
+  95  |     await suggestion.click();
+  96  |   }
+  97  | 
+  98  |   async searchByEnter() {
+> 99  |     await this.searchInput.press('Enter');
+      |                            ^ Error: locator.press: Error: strict mode violation: locator('input[type="search"], input[placeholder*="Search"]') resolved to 2 elements:
+  100 |   }
+  101 | 
+  102 |   async searchByButton() {
+  103 |     await this.searchButton.click();
+  104 |     await this.page.waitForLoadState('networkidle');
+  105 |   }
+  106 | 
+  107 |   async navigateWithArrows(direction: 'ArrowDown' | 'ArrowUp', count: number = 1) {
+  108 |     for (let i = 0; i < count; i++) {
+  109 |       await this.searchInput.press(direction);
+  110 |     }
+  111 |   }
+  112 | 
+  113 |   async selectWithKeyboard() {
+  114 |     await this.searchInput.press('Enter');
+  115 |   }
+  116 | 
+  117 |   async isNoResultsDisplayed(): Promise<boolean> {
+  118 |     return await this.noResultsMessage.isVisible().catch(() => false);
+  119 |   }
+  120 | 
+  121 |   async getResultsCount(): Promise<number> {
+  122 |     return await this.resultListings.count();
+  123 |   }
+  124 | 
+  125 |   async getResultCountText(): Promise<string> {
+  126 |     const text = await this.resultCount.textContent().catch(() => null);
+  127 |     return text || '';
+  128 |   }
+  129 | 
+  130 |   async getFirstResultTitle(): Promise<string> {
+  131 |     const text = await this.resultListings.first().locator('h2, a:first-of-type').textContent().catch(() => null);
+  132 |     return text || '';
+  133 |   }
+  134 | 
+  135 |   async clickFirstResult() {
+  136 |     await this.resultListings.first().click();
+  137 |     await this.page.waitForLoadState('domcontentloaded');
+  138 |   }
+  139 | 
+  140 |   async clickResultByTitle(title: string) {
+  141 |     const result = this.page.locator(`text=${title}`).first();
+  142 |     await result.click();
+  143 |     await this.page.waitForLoadState('domcontentloaded');
+  144 |   }
+  145 | 
+  146 |   async goToNextPage() {
+  147 |     const nextButton = this.page.locator('a:has-text("Next"), button:has-text("Next")');
+  148 |     await nextButton.click();
+  149 |     await this.page.waitForLoadState('networkidle');
+  150 |   }
+  151 | 
+  152 |   async goToPreviousPage() {
+  153 |     const prevButton = this.page.locator('a:has-text("Previous"), button:has-text("Previous")');
+  154 |     await prevButton.click();
+  155 |     await this.page.waitForLoadState('networkidle');
+  156 |   }
+  157 | 
+  158 |   async applyPriceFilter(minPrice: number, maxPrice: number) {
+  159 |     const minInput = this.page.locator('input[name*="min"], input[placeholder*="Min"]');
+  160 |     const maxInput = this.page.locator('input[name*="max"], input[placeholder*="Max"]');
+  161 | 
+  162 |     await minInput.fill(String(minPrice));
+  163 |     await maxInput.fill(String(maxPrice));
+  164 |     await this.page.locator('button:has-text("Apply"), button:has-text("Filter")').click();
+  165 |     await this.page.waitForLoadState('networkidle');
+  166 |   }
+  167 | 
+  168 |   async applyCategoryFilter(category: string) {
+  169 |     const select = this.page.locator('select, [role="combobox"]');
+  170 |     await select.selectOption(category);
+  171 |     await this.page.waitForLoadState('networkidle');
+  172 |   }
+  173 | 
+  174 |   async applyConditionFilter(condition: string) {
+  175 |     const conditionInput = this.page.locator(`input[value="${condition}"]`);
+  176 |     await conditionInput.check();
+  177 |     await this.page.waitForLoadState('networkidle');
+  178 |   }
+  179 | 
+  180 |   async getPageLoadTime(): Promise<number> {
+  181 |     const navigationTiming = await this.page.evaluate(() => {
+  182 |       const timing = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+  183 |       return timing.loadEventEnd - timing.fetchStart;
+  184 |     });
+  185 |     return navigationTiming;
+  186 |   }
+  187 | 
+  188 |   async getSuggestionsLoadTime(): Promise<number> {
+  189 |     const before = Date.now();
+  190 |     await this.waitForSuggestions();
+  191 |     return Date.now() - before;
+  192 |   }
+  193 | 
+  194 |   async isClearButtonVisible(): Promise<boolean> {
+  195 |     return await this.clearButton.isVisible().catch(() => false);
+  196 |   }
+  197 | 
+  198 |   async getSearchBoxAriaLabel(): Promise<string | null> {
+  199 |     return await this.searchInput.getAttribute('aria-label');
+```

@@ -1,0 +1,589 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: search.spec.ts >> TradeMe Search Functionality >> [TC-F-10] Search with valid keyword should return results
+- Location: tests\search.spec.ts:102:7
+
+# Error details
+
+```
+Error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 0
+Received:   0
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - link "Skip to site navigation" [ref=e4]:
+    - /url: ""
+  - link "Skip to main content" [ref=e5]:
+    - /url: ""
+  - complementary:
+    - generic:
+      - list
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - navigation "navigation bar" [ref=e8]:
+        - generic [ref=e12]:
+          - link "Trade Me" [ref=e15]:
+            - /url: /
+            - img "Trade Me" [ref=e17]
+          - list [ref=e18]:
+            - listitem [ref=e19]:
+              - button "Categories" [ref=e24] [cursor=pointer]:
+                - generic [ref=e25]: Categories
+                - img [ref=e27]
+            - listitem
+            - listitem [ref=e30]:
+              - link "Watchlist" [ref=e31]:
+                - /url: /a/my-trade-me/watchlist
+                - generic [ref=e32]: Watchlist
+                - img [ref=e34]
+            - listitem [ref=e36]:
+              - link "Favourites" [ref=e37]:
+                - /url: /a/my-trade-me/favourites/searches
+                - generic [ref=e38]: Favourites
+                - img [ref=e40]
+            - listitem [ref=e42]:
+              - link "Start a listing" [ref=e43]:
+                - /url: /a/list
+                - generic [ref=e44]: Start a listing
+                - img [ref=e46]
+            - listitem [ref=e48]:
+              - generic [ref=e49]:
+                - link "Sign up" [ref=e50]:
+                  - /url: /a/register
+                  - text: Sign up
+                  - img [ref=e52]
+                - link "Log in" [ref=e54]:
+                  - /url: (modal:login)
+                  - text: Log in
+                  - img [ref=e56]
+      - navigation [ref=e59]
+  - main [ref=e62]:
+    - generic [ref=e63]: main content
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - heading "Trade Me Homepage" [level=1] [ref=e67]
+        - navigation "Search and Verticals" [ref=e68]:
+          - search [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: Search all of Trade Me
+              - generic [ref=e76]:
+                - img [ref=e79]
+                - searchbox "Search all of Trade Me Clear input" [ref=e82]: camera
+                - button "Clear input" [ref=e84] [cursor=pointer]:
+                  - img "Clear input" [ref=e86]
+            - button "Search all of Trade Me" [ref=e88]
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Marketplace" [ref=e92]:
+                - /url: /a/marketplace
+                - img [ref=e94]
+                - text: Marketplace
+            - listitem [ref=e101]:
+              - link "Property" [ref=e102]:
+                - /url: /a/property
+                - img [ref=e104]
+                - text: Property
+            - listitem [ref=e109]:
+              - link "Motors" [ref=e110]:
+                - /url: /a/motors
+                - img [ref=e112]
+                - text: Motors
+            - listitem [ref=e117]:
+              - link "Jobs" [ref=e118]:
+                - /url: /a/jobs
+                - img [ref=e120]
+                - text: Jobs
+            - listitem [ref=e126]:
+              - link "Services" [ref=e127]:
+                - /url: /a/services
+                - img [ref=e129]
+                - text: Services
+      - region "Trade Me listings" [ref=e134]:
+        - heading "Trade Me listings" [level=2] [ref=e135]
+        - generic [ref=e136]:
+          - generic [ref=e138]:
+            - heading "Trending Categories" [level=3] [ref=e139]
+            - generic [ref=e140]:
+              - link "marketplace Listings In Concerts" [ref=e142]:
+                - /url: /a/marketplace/travel-events-activities/event-tickets/concerts
+                - generic [ref=e143]:
+                  - img [ref=e145]
+                  - generic [ref=e152]:
+                    - generic [ref=e153]: marketplace Listings
+                    - generic [ref=e154]: In Concerts
+              - link "marketplace Listings In Warhammer 40,000" [ref=e156]:
+                - /url: /a/marketplace/gaming/war-games/warhammer-40-000
+                - generic [ref=e157]:
+                  - img [ref=e159]
+                  - generic [ref=e166]:
+                    - generic [ref=e167]: marketplace Listings
+                    - generic [ref=e168]: In Warhammer 40,000
+              - link "marketplace Listings In Jackets" [ref=e170]:
+                - /url: /a/marketplace/sports/ski-board/snow-ski-clothing/jackets
+                - generic [ref=e171]:
+                  - img [ref=e173]
+                  - generic [ref=e180]:
+                    - generic [ref=e181]: marketplace Listings
+                    - generic [ref=e182]: In Jackets
+          - generic [ref=e185]: Advertisement
+  - generic [ref=e188]:
+    - generic [ref=e189]: We are upgrading some of our systems
+    - generic [ref=e190]:
+      - link "Learn more" [ref=e191]:
+        - /url: https://help.trademe.co.nz/hc/en-us/articles/10226621350159-We-re-upgrading-some-of-our-systems
+        - img [ref=e193]
+        - text: Learn more
+      - button "Tell us what you think" [ref=e197] [cursor=pointer]:
+        - img [ref=e199]
+        - text: Tell us what you think
+  - contentinfo [ref=e201]:
+    - generic [ref=e203]:
+      - generic [ref=e205]:
+        - generic [ref=e207]:
+          - list [ref=e208]:
+            - listitem [ref=e209]:
+              - link "Home" [ref=e211]:
+                - /url: /
+                - generic "Home" [ref=e212]:
+                  - img "Trade Me" [ref=e213]
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - generic [ref=e216]:
+                - img "Start a listing icon" [ref=e218]
+                - link "Start a listing" [ref=e220]:
+                  - /url: /a/list
+            - listitem [ref=e221]:
+              - generic [ref=e222]:
+                - img "Watchlist icon" [ref=e224]
+                - link "Watchlist" [ref=e226]:
+                  - /url: /a/my-trade-me/watchlist
+            - listitem [ref=e227]:
+              - generic [ref=e228]:
+                - img "Favourites icon" [ref=e230]
+                - link "Favourites" [ref=e232]:
+                  - /url: /a/my-trade-me/favourites
+            - listitem [ref=e233]:
+              - generic [ref=e235]:
+                - generic [ref=e236]:
+                  - img "Login icon" [ref=e238]
+                  - link "Log in" [ref=e241]:
+                    - /url: (modal:login)
+                - generic [ref=e242]:
+                  - img "Sign up icon" [ref=e244]
+                  - link "Sign up" [ref=e246]:
+                    - /url: /a/register
+        - generic [ref=e248]:
+          - list [ref=e249]:
+            - listitem [ref=e250]:
+              - generic [ref=e251]:
+                - img "Marketplace icon" [ref=e253]
+                - link "Marketplace" [ref=e255]:
+                  - /url: /a/marketplace
+            - listitem [ref=e256]:
+              - link "Latest deals" [ref=e258]:
+                - /url: /a/marketplace/deals/11
+            - listitem [ref=e259]:
+              - link "Stores" [ref=e261]:
+                - /url: /a/marketplace/stores
+            - listitem [ref=e262]:
+              - link "Closing soon" [ref=e264]:
+                - /url: /a/closing-soon
+            - listitem [ref=e265]:
+              - link "$1 reserve" [ref=e267]:
+                - /url: /a/one-dollar
+            - listitem [ref=e268]:
+              - link "Home & Living" [ref=e270]:
+                - /url: /a/marketplace/home-living
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - generic [ref=e273]:
+                - img "Property icon" [ref=e275]
+                - link "Property" [ref=e277]:
+                  - /url: /a/property
+            - listitem [ref=e278]:
+              - link "International property" [ref=e280]:
+                - /url: https://trademeproperty.co.nz/international
+            - listitem [ref=e281]:
+              - link "Property news & guides" [ref=e283]:
+                - /url: https://www.trademe.co.nz/c/property/property-news
+            - listitem [ref=e284]:
+              - link "Sold Properties" [ref=e286]:
+                - /url: /a/property/insights
+            - listitem [ref=e287]:
+              - link "OneHub for agents" [ref=e289]:
+                - /url: https://onehub.trademe.co.nz
+            - listitem [ref=e290]:
+              - link "Find a Real Estate Agent" [ref=e292]:
+                - /url: /a/property/agent
+          - list [ref=e293]:
+            - listitem [ref=e294]:
+              - generic [ref=e295]:
+                - img "Motors icon" [ref=e297]
+                - link "Motors" [ref=e299]:
+                  - /url: /a/motors
+            - listitem [ref=e300]:
+              - link "Cars for sale" [ref=e302]:
+                - /url: /a/motors/cars
+            - listitem [ref=e303]:
+              - link "Motorbikes for sale" [ref=e305]:
+                - /url: /a/motors/motorbikes-home
+            - listitem [ref=e306]:
+              - link "Buying & selling advice" [ref=e308]:
+                - /url: https://www.trademe.co.nz/c/motors/feature-articles
+            - listitem [ref=e309]:
+              - link "Dealer news & info" [ref=e311]:
+                - /url: https://www.trademe.co.nz/c/dealership/best-practices
+            - listitem [ref=e312]:
+              - link "Sell my car" [ref=e314]:
+                - /url: /a/sell-my-car
+          - list [ref=e315]:
+            - listitem [ref=e316]:
+              - generic [ref=e317]:
+                - img "Jobs icon" [ref=e319]
+                - link "Jobs" [ref=e322]:
+                  - /url: /a/jobs
+            - listitem [ref=e323]:
+              - link "Browse job categories" [ref=e325]:
+                - /url: /a/jobs/categories
+            - listitem [ref=e326]:
+              - link "Careers advice" [ref=e328]:
+                - /url: https://www.trademe.co.nz/c/jobs/careers-advice
+            - listitem [ref=e329]:
+              - link "JobSmart" [ref=e331]:
+                - /url: /jobs/smart/
+            - listitem [ref=e332]:
+              - link "Advertisers advice" [ref=e334]:
+                - /url: https://www.trademe.co.nz/c/employer/advertisers-advice
+            - listitem [ref=e335]:
+              - link "Salary guide" [ref=e337]:
+                - /url: /a/jobs/salary-guide
+          - list [ref=e338]:
+            - listitem [ref=e339]:
+              - generic [ref=e340]:
+                - img "Services icon" [ref=e342]
+                - link "Services" [ref=e344]:
+                  - /url: /a/services
+            - listitem [ref=e345]:
+              - link "Trades" [ref=e347]:
+                - /url: /a/services/trades
+            - listitem [ref=e348]:
+              - link "Domestic services" [ref=e350]:
+                - /url: /a/services/domestic-services
+            - listitem [ref=e351]:
+              - link "Events & entertainment" [ref=e353]:
+                - /url: /a/services/events-entertainment
+            - listitem [ref=e354]:
+              - link "Health & wellbeing" [ref=e356]:
+                - /url: /a/services/health-wellbeing
+            - listitem [ref=e357]:
+              - link "List my services" [ref=e359]:
+                - /url: https://www.tmsandbox.co.nz/Sell/Category.aspx?rfm=1&group=SERVICES&mcat=9334-
+          - list [ref=e360]:
+            - listitem [ref=e361]:
+              - generic [ref=e362]:
+                - img "Community icon" [ref=e364]
+                - link "Community" [ref=e368]:
+                  - /url: /a/community
+            - listitem [ref=e369]:
+              - link "Help" [ref=e371]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/
+            - listitem [ref=e372]:
+              - link "Announcements" [ref=e374]:
+                - /url: https://www.trademe.co.nz/c/community/announcements
+            - listitem [ref=e375]:
+              - link "Trust & safety" [ref=e377]:
+                - /url: https://www.trademe.co.nz/c/trust-safety/home
+            - listitem [ref=e378]:
+              - link "Seller information" [ref=e380]:
+                - /url: https://www.trademe.co.nz/c/marketplace/buying-and-selling
+            - listitem [ref=e381]:
+              - link "Help center community" [ref=e383]:
+                - /url: https://help.trademe.co.nz/hc/en-us/community/topics
+      - generic [ref=e384]:
+        - group "Affiliate links" [ref=e387]:
+          - list [ref=e388]:
+            - listitem [ref=e389]:
+              - link "Trade Me Insurance" [ref=e390]:
+                - /url: https://www.trademeinsurance.co.nz/?utm_source=trademe_preview&utm_medium=NavBar&utm_content=TradeMe&utm_campaign=TradeMe_header
+            - listitem [ref=e391]:
+              - link "homes.co.nz" [ref=e392]:
+                - /url: https://homes.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e393]:
+              - link "MotorWeb" [ref=e394]:
+                - /url: https://www.motorweb.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=free-vehicle-reports&utm_campaign=trademe-header
+            - listitem [ref=e395]:
+              - link "CarExpert" [ref=e396]:
+                - /url: https://www.carexpert.co.nz/?referral=trademe&utm_source=trademe_preview&utm_medium=text-link&utm_content=CarExpert&utm_campaign=trademe-header
+            - listitem [ref=e397]:
+              - link "Holiday Houses" [ref=e398]:
+                - /url: https://www.holidayhouses.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+            - listitem [ref=e399]:
+              - link "FindSomeone" [ref=e400]:
+                - /url: https://www.findsomeone.co.nz/?utm_source=trademe_preview&utm_medium=navbar&utm_campaign=homepage
+        - generic [ref=e401]:
+          - generic [ref=e402]: © 2026 Trade Me Limited
+          - list [ref=e405]:
+            - listitem [ref=e406]:
+              - link "Desktop site" [ref=e408]:
+                - /url: https://www.tmsandbox.co.nz/MyTradeMe/Default.aspx?rfm=1
+            - listitem [ref=e409]:
+              - link "About Us" [ref=e411]:
+                - /url: https://www.trademe.co.nz/c/community/about-us
+            - listitem [ref=e412]:
+              - link "Careers" [ref=e414]:
+                - /url: https://www.trademe.co.nz/c/community/careers-at-trade-me
+            - listitem [ref=e415]:
+              - link "News" [ref=e417]:
+                - /url: https://www.trademe.co.nz/c/
+            - listitem [ref=e418]:
+              - link "Advertise" [ref=e420]:
+                - /url: https://www.trademe.co.nz/c/advertising/advertising
+            - listitem [ref=e421]:
+              - link "Privacy policy" [ref=e423]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001832-Privacy-policy
+            - listitem [ref=e424]:
+              - link "Terms & conditions" [ref=e426]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360007001532-Trade-Me-site-terms-and-conditions
+            - listitem [ref=e427]:
+              - link "Contact Us" [ref=e429]:
+                - /url: https://ctech.help-sandbox.trademe.kiwi/hc/en-us/articles/360046907671-Contact-our-Support-team
+          - list [ref=e435]:
+            - listitem [ref=e436]:
+              - link "Follow Trade Me on Tiktok" [ref=e437]:
+                - /url: https://www.tiktok.com/@trademe_nz
+                - img "Follow Trade Me on Tiktok" [ref=e439]
+            - listitem [ref=e441]:
+              - link "Follow Trade Me on Instagram" [ref=e442]:
+                - /url: https://www.instagram.com/trademe_nz
+                - img "Follow Trade Me on Instagram" [ref=e444]
+            - listitem [ref=e446]:
+              - link "Follow Trade Me on Facebook" [ref=e447]:
+                - /url: https://www.facebook.com/TradeMe
+                - img "Follow Trade Me on Facebook" [ref=e449]
+            - listitem [ref=e451]:
+              - link "Follow Trade Me on LinkedIn" [ref=e452]:
+                - /url: https://www.linkedin.com/company/trade-me
+                - img "Follow Trade Me on LinkedIn" [ref=e454]
+            - listitem [ref=e456]:
+              - link "Follow Trade Me on YouTube" [ref=e457]:
+                - /url: https://www.youtube.com/user/trademe
+                - img "Follow Trade Me on YouTube" [ref=e459]
+```
+
+# Test source
+
+```ts
+  8   |   test.beforeEach(async ({ browser }) => {
+  9   |     page = await browser.newPage();
+  10  |     searchPage = new SearchPage(page);
+  11  |     await searchPage.navigate();
+  12  |   });
+  13  | 
+  14  |   test.afterEach(async () => {
+  15  |     await page.close();
+  16  |   });
+  17  | 
+  18  |   // ==================== FUNCTIONAL TESTS: SEARCH BOX VISIBILITY ====================
+  19  | 
+  20  |   test('[TC-F-01] Search box should be visible on homepage', async () => {
+  21  |     const isVisible = await searchPage.isSearchBoxVisible();
+  22  |     expect(isVisible).toBe(true);
+  23  |   });
+  24  | 
+  25  |   test('[TC-F-02] Search box should have correct placeholder text', async () => {
+  26  |     const placeholder = await searchPage.getSearchPlaceholder();
+  27  |     expect(placeholder).toBeTruthy();
+  28  |     expect(placeholder?.toLowerCase()).toMatch(/search/i);
+  29  |   });
+  30  | 
+  31  |   test('[TC-F-03] Search box should receive focus on click', async () => {
+  32  |     await searchPage.focusSearchBox();
+  33  |     const isFocused = await page.evaluate(() => {
+  34  |       const searchInput = document.querySelector('input[type="search"], input[placeholder*="Search"]');
+  35  |       return searchInput === document.activeElement;
+  36  |     });
+  37  |     expect(isFocused).toBe(true);
+  38  |   });
+  39  | 
+  40  |   test('[TC-F-04] Search box should accept text input', async () => {
+  41  |     await searchPage.focusSearchBox();
+  42  |     await searchPage.typeInSearchBox('laptop');
+  43  |     const value = await searchPage.searchInput.inputValue();
+  44  |     expect(value).toBe('laptop');
+  45  |   });
+  46  | 
+  47  |   // ==================== FUNCTIONAL TESTS: SEARCH SUGGESTIONS ====================
+  48  | 
+  49  |   test('[TC-F-05] Search suggestions should appear while typing', async () => {
+  50  |     await searchPage.focusSearchBox();
+  51  |     await searchPage.typeInSearchBox('car');
+  52  |     const hasSuggestions = await searchPage.waitForSuggestions();
+  53  |     expect(hasSuggestions).toBe(true);
+  54  |   });
+  55  | 
+  56  |   test('[TC-F-06] Suggestions should be relevant to input', async () => {
+  57  |     await searchPage.focusSearchBox();
+  58  |     await searchPage.typeInSearchBox('phone');
+  59  |     await searchPage.waitForSuggestions();
+  60  |     const suggestions = await searchPage.getSuggestionTexts();
+  61  |     const relevant = suggestions.some(s => s.toLowerCase().includes('phone'));
+  62  |     expect(suggestions.length).toBeGreaterThan(0);
+  63  |     expect(relevant).toBe(true);
+  64  |   });
+  65  | 
+  66  |   test('[TC-F-07] Suggestions dropdown should be accessible', async () => {
+  67  |     await searchPage.focusSearchBox();
+  68  |     await searchPage.typeInSearchBox('computer');
+  69  |     await searchPage.waitForSuggestions();
+  70  |     const count = await searchPage.getSuggestionsCount();
+  71  |     expect(count).toBeGreaterThan(0);
+  72  |   });
+  73  | 
+  74  |   test('[TC-F-08] Selecting a suggestion should perform search', async () => {
+  75  |     await searchPage.focusSearchBox();
+  76  |     await searchPage.typeInSearchBox('laptop');
+  77  |     await searchPage.waitForSuggestions();
+  78  |     const count = await searchPage.getSuggestionsCount();
+  79  | 
+  80  |     if (count > 0) {
+  81  |       await searchPage.selectSuggestion(0);
+  82  |       await page.waitForLoadState('networkidle');
+  83  |       const url = page.url();
+  84  |       const hasSearchOrListing = url.includes('search') || url.includes('listing');
+  85  |       expect(hasSearchOrListing).toBe(true);
+  86  |     }
+  87  |   });
+  88  | 
+  89  |   test('[TC-F-09] Keyboard navigation through suggestions', async () => {
+  90  |     await searchPage.focusSearchBox();
+  91  |     await searchPage.typeInSearchBox('phone');
+  92  |     await searchPage.waitForSuggestions();
+  93  |     await searchPage.navigateWithArrows('ArrowDown');
+  94  | 
+  95  |     const firstSuggestion = page.locator('[role="option"]').first();
+  96  |     const hasAriaSelected = await firstSuggestion.getAttribute('aria-selected');
+  97  |     expect(hasAriaSelected).toBe('true');
+  98  |   });
+  99  | 
+  100 |   // ==================== FUNCTIONAL TESTS: SEARCH EXECUTION ====================
+  101 | 
+  102 |   test('[TC-F-10] Search with valid keyword should return results', async () => {
+  103 |     await searchPage.focusSearchBox();
+  104 |     await searchPage.typeInSearchBox('camera');
+  105 |     await searchPage.searchByEnter();
+  106 | 
+  107 |     const resultsCount = await searchPage.getResultsCount();
+> 108 |     expect(resultsCount).toBeGreaterThan(0);
+      |                          ^ Error: expect(received).toBeGreaterThan(expected)
+  109 |   });
+  110 | 
+  111 |   test('[TC-F-11] Search with multiple words should return results', async () => {
+  112 |     await searchPage.focusSearchBox();
+  113 |     await searchPage.typeInSearchBox('vintage camera');
+  114 |     await searchPage.searchByEnter();
+  115 | 
+  116 |     const resultsCount = await searchPage.getResultsCount();
+  117 |     expect(resultsCount).toBeGreaterThanOrEqual(0);
+  118 |   });
+  119 | 
+  120 |   test('[TC-F-12] Search should be case-insensitive', async () => {
+  121 |     // Search 1: Uppercase
+  122 |     await searchPage.focusSearchBox();
+  123 |     await searchPage.typeInSearchBox('LAPTOP');
+  124 |     await searchPage.searchByEnter();
+  125 |     const count1 = await searchPage.getResultsCount();
+  126 | 
+  127 |     // Navigate back
+  128 |     await searchPage.navigate();
+  129 | 
+  130 |     // Search 2: Lowercase
+  131 |     await searchPage.focusSearchBox();
+  132 |     await searchPage.typeInSearchBox('laptop');
+  133 |     await searchPage.searchByEnter();
+  134 |     const count2 = await searchPage.getResultsCount();
+  135 | 
+  136 |     // Should return same or similar results
+  137 |     expect(count1).toBe(count2);
+  138 |   });
+  139 | 
+  140 |   test('[TC-F-13] Search with special characters should be handled', async () => {
+  141 |     await searchPage.searchWithSpecialCharacters('watch-band');
+  142 |     const hasError = await page.locator('text=/error|invalid/i').isVisible().catch(() => false);
+  143 |     expect(hasError).toBe(false);
+  144 |   });
+  145 | 
+  146 |   test('[TC-F-14] Search with numbers should work correctly', async () => {
+  147 |     await searchPage.focusSearchBox();
+  148 |     await searchPage.typeInSearchBox('iPhone 13');
+  149 |     await searchPage.searchByEnter();
+  150 | 
+  151 |     const resultsCount = await searchPage.getResultsCount();
+  152 |     expect(resultsCount).toBeGreaterThanOrEqual(0);
+  153 |   });
+  154 | 
+  155 |   // ==================== FUNCTIONAL TESTS: EDGE CASES ====================
+  156 | 
+  157 |   test('[TC-F-15] Empty search should be prevented or handled', async () => {
+  158 |     await searchPage.focusSearchBox();
+  159 |     await searchPage.searchByEnter();
+  160 | 
+  161 |     // Either error message or back on search page
+  162 |     const isOnSearchPage = page.url().includes('tmsandbox.co.nz');
+  163 |     const hasErrorMessage = await page.locator('text=/enter|search term/i').isVisible().catch(() => false);
+  164 | 
+  165 |     expect(isOnSearchPage || hasErrorMessage).toBe(true);
+  166 |   });
+  167 | 
+  168 |   test('[TC-F-16] Search with only whitespace should be handled', async () => {
+  169 |     await searchPage.focusSearchBox();
+  170 |     await searchPage.typeInSearchBox('    ');
+  171 |     await searchPage.searchByEnter();
+  172 | 
+  173 |     const isOnSearchPage = page.url().includes('tmsandbox.co.nz');
+  174 |     expect(isOnSearchPage).toBe(true);
+  175 |   });
+  176 | 
+  177 |   test('[TC-F-17] No results message should be displayed', async () => {
+  178 |     await searchPage.focusSearchBox();
+  179 |     await searchPage.typeInSearchBox('xyzabc123notreal');
+  180 |     await searchPage.searchByEnter();
+  181 | 
+  182 |     const noResultsVisible = await searchPage.isNoResultsDisplayed();
+  183 |     const resultsCount = await searchPage.getResultsCount();
+  184 | 
+  185 |     expect(noResultsVisible || resultsCount === 0).toBe(true);
+  186 |   });
+  187 | 
+  188 |   test('[TC-F-18] Search results should show correct count', async () => {
+  189 |     await searchPage.focusSearchBox();
+  190 |     await searchPage.typeInSearchBox('furniture');
+  191 |     await searchPage.searchByEnter();
+  192 | 
+  193 |     const countText = await searchPage.getResultCountText();
+  194 |     const displayedResults = await searchPage.getResultsCount();
+  195 | 
+  196 |     expect(countText.length > 0 || displayedResults > 0).toBe(true);
+  197 |   });
+  198 | 
+  199 |   // ==================== FUNCTIONAL TESTS: RESULT NAVIGATION ====================
+  200 | 
+  201 |   test('[TC-F-19] Search result listings should be clickable', async () => {
+  202 |     await searchPage.focusSearchBox();
+  203 |     await searchPage.typeInSearchBox('phone');
+  204 |     await searchPage.searchByEnter();
+  205 | 
+  206 |     const resultsCount = await searchPage.getResultsCount();
+  207 | 
+  208 |     if (resultsCount > 0) {
+```
