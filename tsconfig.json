@@ -32,6 +32,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["tests", "pages", "utils", "config"],
+  "include": ["tests", "pages", "utils", "config", "data"],
   "exclude": ["node_modules", "test-results"]
 }

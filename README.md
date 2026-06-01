@@ -3,6 +3,7 @@
 Playwright test framework for checking TradeMe sandbox search behaviour and the public Categories API.
 
 The project is intentionally small: UI tests live under `tests/UI`, API tests under `tests/API`, with shared page objects and helpers kept in `pages` and `utils`.
+A new `data` layer holds reusable UI and API test inputs, and a `docs` folder stores markdown test case documentation generated from the spec files.
 
 ## What is covered
 
@@ -18,6 +19,15 @@ The project is intentionally small: UI tests live under `tests/UI`, API tests un
 .
 |-- config/
 |   `-- test.config.ts
+|-- data/
+|   |-- api/
+|   |   `-- categoriesData.ts
+|   `-- ui/
+|       `-- searchData.ts
+|-- docs/
+|   |-- Task1- homepage-testcases.md
+|   |-- Task2-search-testcases.md
+|   `-- Task3-categories-testcases.md
 |-- pages/
 |   `-- SearchPage.ts
 |-- tests/
@@ -109,6 +119,8 @@ Main settings are in `config/test.config.ts`:
 - Wait times and performance thresholds
 - Viewport sizes
 - Shared search terms and edge-case inputs
+
+Reusable test data now lives in `data/` so UI and API specs can avoid hard-coded values.
 
 Playwright settings are in `playwright.config.ts`:
 

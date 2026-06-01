@@ -1,5 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 import { SearchPage } from '../../pages/SearchPage';
+import { SearchData } from '../../data/ui/searchData';
 
 let page: Page;
 let searchPage: SearchPage;
@@ -39,16 +40,16 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-04] Search box should accept text input', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('laptop');
+    await searchPage.typeInSearchBox(SearchData.validKeyword);
     const value = await searchPage.searchInput.inputValue();
-    expect(value).toBe('laptop');
+    expect(value).toBe(SearchData.validKeyword);
   });
 
   // Suggestions are optional in the sandbox.
 
   test('[TC-F-05] Search suggestions should appear while typing', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('car');
+    await searchPage.typeInSearchBox(SearchData.suggestionTerm);
     const hasSuggestions = await searchPage.waitForSuggestions();
     if (!hasSuggestions) {
       test.skip();
@@ -59,7 +60,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-06] Suggestions should be relevant to input', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     const hasSuggestions = await searchPage.waitForSuggestions();
     if (!hasSuggestions) {
       return test.skip();
@@ -75,7 +76,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-07] Suggestions dropdown should be accessible', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('computer');
+    await searchPage.typeInSearchBox(SearchData.suggestionTermAlternate);
     const hasSuggestions = await searchPage.waitForSuggestions();
     if (!hasSuggestions) {
       return test.skip();
@@ -89,7 +90,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-08] Selecting a suggestion should perform search', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('laptop');
+    await searchPage.typeInSearchBox(SearchData.validKeyword);
     await searchPage.waitForSuggestions();
     const count = await searchPage.getSuggestionsCount();
 
@@ -104,7 +105,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-09] Keyboard navigation through suggestions', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
 
     const hasSuggestions = await searchPage.waitForSuggestions();
     if (!hasSuggestions) {
@@ -131,7 +132,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-10] Search with valid keyword should return results', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('camera');
+    await searchPage.typeInSearchBox(SearchData.validKeyword);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -141,7 +142,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-11] Search with multiple words should return results', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('vintage camera');
+    await searchPage.typeInSearchBox(SearchData.multipleWords);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -150,14 +151,14 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-12] Search should be case-insensitive', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('LAPTOP');
+    await searchPage.typeInSearchBox(SearchData.validKeyword.toUpperCase());
     await searchPage.searchByEnter();
     const count1 = await searchPage.getResultsCount();
 
     await searchPage.navigate();
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('laptop');
+    await searchPage.typeInSearchBox(SearchData.validKeyword);
     await searchPage.searchByEnter();
     const count2 = await searchPage.getResultsCount();
 
@@ -165,14 +166,14 @@ test.describe('TradeMe Search Functionality', () => {
   });
 
   test('[TC-F-13] Search with special characters should be handled', async () => {
-    await searchPage.searchWithSpecialCharacters('watch-band');
+    await searchPage.searchWithSpecialCharacters(SearchData.specialCharacters);
     const hasError = await page.locator('text=/error|invalid/i').isVisible().catch(() => false);
     expect(hasError).toBe(false);
   });
 
   test('[TC-F-14] Search with numbers should work correctly', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('iPhone 13');
+    await searchPage.typeInSearchBox(SearchData.numbersSearch);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -193,7 +194,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-16] Search with only whitespace should be handled', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('    ');
+    await searchPage.typeInSearchBox(SearchData.whitespace);
     await searchPage.searchByEnter();
 
     const isOnSearchPage = page.url().includes('tmsandbox.co.nz');
@@ -202,7 +203,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-17] No results message should be displayed', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('xyzabc123notreal');
+    await searchPage.typeInSearchBox(SearchData.noResultsSearch);
     await searchPage.searchByEnter();
 
     const noResultsVisible = await searchPage.isNoResultsDisplayed();
@@ -213,7 +214,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-18] Search results should show correct count', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('furniture');
+    await searchPage.typeInSearchBox(SearchData.resultCountSearch);
     await searchPage.searchByEnter();
 
     const countText = await searchPage.getResultCountText();
@@ -227,7 +228,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-19] Search result listings should be clickable', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -245,7 +246,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-20] Detail page should show correct item', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('laptop');
+    await searchPage.typeInSearchBox(SearchData.validKeyword);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -261,12 +262,12 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-21] Search should be refinable', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     await searchPage.searchByEnter();
     const count1 = await searchPage.getResultsCount();
 
     await searchPage.clearSearchBox();
-    await searchPage.typeInSearchBox('smartphone');
+    await searchPage.typeInSearchBox(SearchData.refinedSearch);
     await searchPage.searchByEnter();
     const count2 = await searchPage.getResultsCount();
 
@@ -275,7 +276,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-F-22] Pagination should work on results', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('car');
+    await searchPage.typeInSearchBox(SearchData.suggestionTerm);
     await searchPage.searchByEnter();
 
     const paginationExists = await page.locator('button:has-text("Next"), a:has-text("Next")').isVisible().catch(() => false);
@@ -295,7 +296,7 @@ test.describe('TradeMe Search Functionality', () => {
     const startTime = Date.now();
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('camera');
+    await searchPage.typeInSearchBox(SearchData.suggestionTerm);
     const hasSuggestions = await searchPage.waitForSuggestions();
 
     if (!hasSuggestions) {
@@ -310,7 +311,7 @@ test.describe('TradeMe Search Functionality', () => {
     const startTime = Date.now();
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     await searchPage.searchByEnter();
 
     const loadTime = Date.now() - startTime;
@@ -329,7 +330,7 @@ test.describe('TradeMe Search Functionality', () => {
 
   test('[TC-NF-04] Clear button should exist when text is entered', async () => {
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('test');
+    await searchPage.typeInSearchBox(SearchData.testTerm);
 
     const hasClearButton = await searchPage.isClearButtonVisible();
     const inputValue = await searchPage.searchInput.inputValue();
@@ -340,17 +341,17 @@ test.describe('TradeMe Search Functionality', () => {
   // Responsive checks
 
   test('[TC-NF-05] Search box should be visible on mobile (320px)', async () => {
-    await searchPage.setViewport(320, 667);
+    await searchPage.setViewport(SearchData.viewportMobile.width, SearchData.viewportMobile.height);
 
     const isVisible = await searchPage.isSearchBoxVisible();
     expect(isVisible).toBe(true);
   });
 
   test('[TC-NF-06] Search suggestions on mobile should be readable', async () => {
-    await searchPage.setViewport(320, 667);
+    await searchPage.setViewport(SearchData.viewportMobile.width, SearchData.viewportMobile.height);
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('camera');
+    await searchPage.typeInSearchBox(SearchData.suggestionTerm);
     const hasSuggestions = await searchPage.waitForSuggestions();
 
     if (!hasSuggestions) {
@@ -361,10 +362,10 @@ test.describe('TradeMe Search Functionality', () => {
   });
 
   test('[TC-NF-07] Search results layout should adapt to tablet (768px)', async () => {
-    await searchPage.setViewport(768, 1024);
+    await searchPage.setViewport(SearchData.viewportTablet.width, SearchData.viewportTablet.height);
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -372,10 +373,10 @@ test.describe('TradeMe Search Functionality', () => {
   });
 
   test('[TC-NF-08] Search results layout should adapt to desktop (1920px)', async () => {
-    await searchPage.setViewport(1920, 1080);
+    await searchPage.setViewport(SearchData.viewportDesktop.width, SearchData.viewportDesktop.height);
 
     await searchPage.focusSearchBox();
-    await searchPage.typeInSearchBox('phone');
+    await searchPage.typeInSearchBox(SearchData.suggestionPhrase);
     await searchPage.searchByEnter();
 
     const resultsCount = await searchPage.getResultsCount();
@@ -401,16 +402,16 @@ test.describe('TradeMe Search Functionality', () => {
     });
 
     if (isFocused) {
-      await page.keyboard.type('test');
+      await page.keyboard.type(SearchData.testTerm);
       const value = await searchPage.searchInput.inputValue();
-      expect(value).toBe('test');
+      expect(value).toBe(SearchData.testTerm);
     }
   });
 
   // Input handling
 
   test('[TC-NF-11] Long search strings should be handled', async () => {
-    const longString = 'a'.repeat(500);
+    const longString = SearchData.longSearch;
 
     await searchPage.focusSearchBox();
     await searchPage.typeInSearchBox(longString);
@@ -421,7 +422,7 @@ test.describe('TradeMe Search Functionality', () => {
   });
 
   test('[TC-NF-12] Unicode and international characters should be supported', async () => {
-    await searchPage.searchWithUnicode('caf\u00e9');
+    await searchPage.searchWithUnicode(SearchData.unicodeSearch);
     const hasError = await page.locator('text=/error|invalid/i').isVisible().catch(() => false);
     expect(hasError).toBe(false);
   });

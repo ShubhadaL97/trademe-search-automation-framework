@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { ApiHelper } from '../../utils/apiHelper';
+import { CategoriesApiData } from '../../data/api/categoriesData';
 
 let apiHelper: ApiHelper;
 
@@ -30,7 +31,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   // Happy path
 
   test('[API-CAT-01] Should retrieve all categories successfully', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const rootCategory = getRootCategory(response);
 
     await expect(response.status).toBe(200);
@@ -40,7 +41,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-02] Response should contain valid category structure', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
     expect(categories.length).toBeGreaterThan(0);
 
@@ -52,7 +53,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-03] Each category should have correct data types', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     categories.forEach((cat) => {
@@ -68,7 +69,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-04] Category numbers should be unique', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     const numbers = categories.map(cat => String(cat.Number));
@@ -78,7 +79,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-05] Category names should not be empty', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     categories.forEach((cat) => {
@@ -89,7 +90,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-06] Category paths should follow expected format', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     categories.forEach((cat) => {
@@ -102,7 +103,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-07] Subcategories should have same structure as categories', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const rootCategory = getRootCategory(response);
     const categories = flattenCategories(rootCategory);
 
@@ -124,21 +125,21 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-08] Response headers should include content type', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
 
     const contentType = response.headers['content-type'] || '';
     expect(contentType.toLowerCase()).toContain('application/json');
   });
 
   test('[API-CAT-09] Response should include cache control headers', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
 
     expect(response.headers['cache-control']).toBeDefined();
   });
 
   test('[API-CAT-10] Categories count should be consistent across requests', async () => {
-    const response1 = await apiHelper.get('/v1/Categories.json');
-    const response2 = await apiHelper.get('/v1/Categories.json');
+    const response1 = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
+    const response2 = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
 
     const cats1 = flattenCategories(getRootCategory(response1));
     const cats2 = flattenCategories(getRootCategory(response2));
@@ -149,14 +150,14 @@ test.describe('TradeMe Retrieve Categories API', () => {
   // Negative cases
 
   test('[API-CAT-11] Should handle invalid endpoint gracefully', async () => {
-    const response = await apiHelper.get('/v1/InvalidCategories.json');
+    const response = await apiHelper.get(CategoriesApiData.invalidEndpoint);
 
     expect(response.status).toBe(404);
     expect(response.isClientError).toBe(true);
   });
 
   test('[API-CAT-12] Should reject unsupported HTTP methods', async () => {
-    const response = await apiHelper.post('/v1/Categories.json', {
+    const response = await apiHelper.post(CategoriesApiData.categoriesEndpoint, {
       name: 'test',
     });
 
@@ -164,7 +165,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-13] Should handle malformed query parameters gracefully', async () => {
-    const response = await apiHelper.get('/v1/Categories.json?invalid=<script>');
+    const response = await apiHelper.get(CategoriesApiData.malformedQuery);
 
     expect([200, 400]).toContain(response.status);
   });
@@ -174,7 +175,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   test('[API-CAT-14] Should handle rapid successive requests', async () => {
     const requests = Array(5)
       .fill(null)
-      .map(() => apiHelper.get('/v1/Categories.json'));
+      .map(() => apiHelper.get(CategoriesApiData.categoriesEndpoint));
 
     const responses = await Promise.all(requests);
 
@@ -186,8 +187,8 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-15] Response should be consistent regardless of request order', async () => {
-    const response1 = await apiHelper.get('/v1/Categories.json');
-    const response2 = await apiHelper.get('/v1/Categories.json');
+    const response1 = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
+    const response2 = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
 
     const json1 = JSON.stringify(response1.body);
     const json2 = JSON.stringify(response2.body);
@@ -196,7 +197,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-16] Should handle large result sets efficiently', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     expect(categories.length).toBeGreaterThan(0);
@@ -204,7 +205,7 @@ test.describe('TradeMe Retrieve Categories API', () => {
   });
 
   test('[API-CAT-17] Nested subcategories should maintain hierarchy', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
     const categories = flattenCategories(getRootCategory(response));
 
     categories.forEach((cat) => {
@@ -224,14 +225,8 @@ test.describe('TradeMe Retrieve Categories API', () => {
   // Security checks
 
   test('[API-CAT-18] Should not expose sensitive information in response', async () => {
-    const response = await apiHelper.get('/v1/Categories.json');
-    const sensitiveTerms = new Set([
-      'password',
-      'secret',
-      'token',
-      'apikey',
-      'api_key',
-    ]);
+    const response = await apiHelper.get(CategoriesApiData.categoriesEndpoint);
+    const sensitiveTerms = CategoriesApiData.sensitiveTerms;
 
     const containsSensitive = (obj: unknown): boolean => {
       if (obj === null || obj === undefined) {
