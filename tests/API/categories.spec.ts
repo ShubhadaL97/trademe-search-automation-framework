@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { ApiHelper } from '../../utils/apiHelper';
-import { CategoriesApiData } from '../../data/api/categoriesData';
+import CategoriesApiData from '../../data/api/categoriesData.json';
 
 let apiHelper: ApiHelper;
 

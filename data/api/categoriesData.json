@@ -1,0 +1,23 @@
+{
+  "categoriesEndpoint": "/v1/Categories.json",
+  "invalidEndpoint": "/v1/InvalidCategories.json",
+  "malformedQuery": "/v1/Categories.json?invalid=<script>",
+  "sqlInjectionPayloads": [
+    "' OR '1'='1",
+    "1; DROP TABLE categories;--",
+    "1 UNION SELECT * FROM users"
+  ],
+  "httpsBaseUrl": "https://api.trademe.co.nz",
+  "acceptLanguageHeader": {
+    "Accept-Language": "en-NZ, en;q=0.9"
+  },
+  "responseSizeLimitBytes": 1536000,
+  "invalidPathPattern": "[<>|?*\\u0000-\\u001f]",
+  "sensitiveTerms": [
+    "password",
+    "secret",
+    "token",
+    "apikey",
+    "api_key"
+  ]
+}

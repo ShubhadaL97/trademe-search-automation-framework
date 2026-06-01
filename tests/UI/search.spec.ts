@@ -1,6 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 import { SearchPage } from '../../pages/SearchPage';
-import { SearchData } from '../../data/ui/searchData';
+import SearchData from '../../data/ui/searchData.json';
 
 let page: Page;
 let searchPage: SearchPage;
