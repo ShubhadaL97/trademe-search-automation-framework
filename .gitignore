@@ -1,6 +1,5 @@
 node_modules/
 allure-results/
-playwright-report/
 test-results/
 .env
 .DS_Store
